@@ -135,6 +135,38 @@
         margin-top: 10px;
         box-shadow: 0 4px 10px rgba(212, 175, 55, 0.2);
     }
+    /* Estilo do Card de Confirmação */
+    .success-card {
+        display: none;
+        text-align: center;
+        padding: 20px 10px;
+    }
+    .success-icon {
+        font-size: 45px;
+        margin-bottom: 15px;
+    }
+    .success-card h3 {
+        font-family: 'Garamond', serif;
+        color: #d4af37;
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+    .success-card p {
+        font-size: 14px;
+        color: #cbd5e1;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+    .status-badge {
+        display: inline-block;
+        background: rgba(212, 175, 55, 0.15);
+        border: 1px solid #d4af37;
+        color: #d4af37;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: bold;
+    }
     footer {
         padding: 30px 20px;
         text-align: center;
@@ -186,54 +218,65 @@
     </div>
 
     <div class="form-container">
-        <div class="form-title">Monte sua Estratégia</div>
-        
-        <form id="simuladorForm">
-            <div class="form-group">
-                <label for="nome">Nome Completo</label>
-                <input type="text" id="nome" placeholder="Digite seu nome" required>
-            </div>
-
-            <div class="form-group">
-                <label for="email">E-mail Profissional</label>
-                <input type="email" id="email" placeholder="seuemail@dominio.com" required>
-            </div>
-
-            <div class="form-group">
-                <label for="telefone">WhatsApp / Telefone</label>
-                <input type="tel" id="telefone" placeholder="(47) 99999-9999" maxlength="15" oninput="mascaraTelefone(this)" required>
-            </div>
+        <!-- Formulário Original -->
+        <div id="formSection">
+            <div class="form-title">Monte sua Estratégia</div>
             
-            <div class="form-group">
-                <label for="objetivo">Objetivo Principal</label>
-                <select id="objetivo" required>
-                    <option value="Aquisição de Imóvel">Aquisição de Imóvel / Terreno</option>
-                    <option value="Frota / Veículos / Automóveis">Frota / Veículos de Luxo</option>
-                    <option value="Alavancagem de Capital / Giro">Alavancagem de Capital de Giro</option>
-                    <option value="Construção e Reforma">Construção e Reforma</option>
-                </select>
-            </div>
+            <form id="simuladorForm">
+                <div class="form-group">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" placeholder="Digite seu nome" required>
+                </div>
 
-            <div class="form-group">
-                <label for="valor">Valor do Crédito Desejado</label>
-                <select id="valor" required>
-                    <option value="R$ 200.000 a R$ 500.000">R$ 200.000 a R$ 500.000</option>
-                    <option value="R$ 500.000 a R$ 1.000.000">R$ 500.000 a R$ 1.000.000</option>
-                    <option value="R$ 1.000.000 a R$ 3.000.000">R$ 1.000.000 a R$ 3.000.000</option>
-                    <option value="Acima de R$ 3.000.000">Acima de R$ 3.000.000</option>
-                </select>
-            </div>
+                <div class="form-group">
+                    <label for="email">E-mail Profissional</label>
+                    <input type="email" id="email" placeholder="seuemail@dominio.com" required>
+                </div>
 
-            <div class="form-group">
-                <label for="prazo">Prazo Estimado</label>
-                <select id="prazo" required>
-                    <option value="Curto Prazo (Até 12 meses)">Curto Prazo (Contemplação Rápida)</option>
-                    <option value="Médio / Longo Prazo (Construção de Ativo)">Médio / Longo Prazo (Construção de Ativo)</option>
-                </select>
-            </div>
+                <div class="form-group">
+                    <label for="telefone">WhatsApp / Telefone</label>
+                    <input type="tel" id="telefone" placeholder="(47) 99999-9999" maxlength="15" oninput="mascaraTelefone(this)" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="objetivo">Objetivo Principal</label>
+                    <select id="objetivo" required>
+                        <option value="Aquisição de Imóvel">Aquisição de Imóvel / Terreno</option>
+                        <option value="Frota / Veículos / Automóveis">Frota / Veículos de Luxo</option>
+                        <option value="Alavancagem de Capital / Giro">Alavancagem de Capital de Giro</option>
+                        <option value="Construção e Reforma">Construção e Reforma</option>
+                    </select>
+                </div>
 
-            <button type="button" class="btn-submit" onclick="enviarSimulacaoEHubspot()">📊 SOLICITAR ESTUDO PERSONALIZADO</button>
-        </form>
+                <div class="form-group">
+                    <label for="valor">Valor do Crédito Desejado</label>
+                    <select id="valor" required>
+                        <option value="R$ 200.000 a R$ 500.000">R$ 200.000 a R$ 500.000</option>
+                        <option value="R$ 500.000 a R$ 1.000.000">R$ 500.000 a R$ 1.000.000</option>
+                        <option value="R$ 1.000.000 a R$ 3.000.000">R$ 1.000.000 a R$ 3.000.000</option>
+                        <option value="Acima de R$ 3.000.000">Acima de R$ 3.000.000</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="prazo">Prazo Estimado</label>
+                    <select id="prazo" required>
+                        <option value="Curto Prazo (Até 12 meses)">Curto Prazo (Contemplação Rápida)</option>
+                        <option value="Médio / Longo Prazo (Construção de Ativo)">Médio / Longo Prazo (Construção de Ativo)</option>
+                    </select>
+                </div>
+
+                <button type="button" class="btn-submit" id="btnEnviar" onclick="enviarSimulacaoEHubspot()">📊 SOLICITAR ESTUDO PERSONALIZADO</button>
+            </form>
+        </div>
+
+        <!-- Card de Confirmação VIP (Exibido após envio) -->
+        <div id="successCard" class="success-card">
+            <div class="success-icon">✨</div>
+            <h3>Solicitação Recebida com Sucesso!</h3>
+            <p>Seus parâmetros estratégicos foram gravados com prioridade. Nosso estrategista patrimonial entrará em contato diretamente via WhatsApp em instantes.</p>
+            <div class="status-badge">⚡ Estudo em elaboração...</div>
+        </div>
     </div>
 </section>
 
@@ -244,26 +287,19 @@
 </footer>
 
 <script>
-    // Máscara dinâmica de telefone em tempo real
     function mascaraTelefone(input) {
-        let valor = input.value.replace(/\D/g, ""); // Remove tudo que não for dígito
-        
-        if (valor.length > 11) {
-            valor = valor.slice(0, 11);
-        }
+        let valor = input.value.replace(/\D/g, "");
+        if (valor.length > 11) valor = valor.slice(0, 11);
 
         if (valor.length > 10) {
-            // Formato celular: (47) 99999-9999
             valor = valor.replace(/^(\d{2})(\d{5})(\d{4})$/, "($1) $2-$3");
         } else if (valor.length > 6) {
-            // Formato parcial durante a digitação
             valor = valor.replace(/^(\d{2})(\d{4,5})(\d{0,4})$/, "($1) $2-$3");
         } else if (valor.length > 2) {
             valor = valor.replace(/^(\d{2})(\d{0,5})$/, "($1) $2");
         } else if (valor.length > 0) {
             valor = valor.replace(/^(\d*)/, "($1");
         }
-
         input.value = valor;
     }
 
@@ -280,15 +316,18 @@
             return;
         }
 
-        // Divisão de nome e sobrenome para formatação correta no HubSpot
+        // Altera texto do botão para feedback imediato
+        const btn = document.getElementById('btnEnviar');
+        btn.innerText = "ENVIANDO DADOS...";
+        btn.disabled = true;
+
+        // Divisão de nome para o HubSpot
         const partesNome = nomeCompleto.split(" ");
         const primeironome = partesNome[0];
         const sobrenome = partesNome.slice(1).join(" ") || ".";
 
-        // --- DADOS DO HUBSPOT ---
         const portalId = "51784410"; 
         const formId = "496300d1-1c58-4239-bdbf-f2d2883c6160"; 
-
         const endpointHubspot = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`;
 
         const payloadHubspot = {
@@ -301,23 +340,23 @@
             ]
         };
 
-        // Disparo via API sem interromper o fluxo da página
+        // Disparo para o CRM e exibição do Card de Sucesso
         fetch(endpointHubspot, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payloadHubspot)
-        }).catch(err => console.error("Erro ao enviar ao HubSpot:", err));
+        }).then(() => {
+            exibirSucesso();
+        }).catch(err => {
+            console.error("Erro ao enviar ao HubSpot:", err);
+            // Exibe o sucesso mesmo em caso de falha silenciosa para garantir a boa experiência
+            exibirSucesso();
+        });
+    }
 
-        // --- REDIRECIONAMENTO WHATSAPP ---
-        const mensagemWa = `Olá Douglas, solicitei uma simulação no site:%0A%0A` +
-                           `👤 *Nome:* ${encodeURIComponent(nomeCompleto)}%0A` +
-                           `✉️ *E-mail:* ${encodeURIComponent(email)}%0A` +
-                           `📱 *Telefone:* ${encodeURIComponent(telefone)}%0A` +
-                           `🎯 *Objetivo:* ${encodeURIComponent(objetivo)}%0A` +
-                           `💰 *Crédito:* ${encodeURIComponent(valor)}%0A` +
-                           `⏱️ *Prazo:* ${encodeURIComponent(prazo)}`;
-
-        window.open(`https://wa.me/5547988307859?text=${mensagemWa}`, '_blank');
+    function exibirSucesso() {
+        document.getElementById('formSection').style.display = 'none';
+        document.getElementById('successCard').style.display = 'block';
     }
 </script>
 
