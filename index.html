@@ -3,175 +3,149 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cartão Virtual - Douglas Bezerra</title>
+<title>Douglas Bezerra | Bezerra Strategic</title>
 <style>
     * {
         box-sizing: border-box;
+        margin: 0;
+        padding: 0;
     }
-    body { 
-        margin: 0; 
-        padding: 20px 10px; 
-        background-color: #0b1724; 
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
-        color: #ffffff; 
-        display: flex; 
-        justify-content: center; 
-        align-items: center; 
-        min-height: 100vh; 
-    }
-    .card-container { 
-        width: 100%; 
-        max-width: 380px; 
-        background: radial-gradient(circle at center, #11253a 0%, #0b1724 100%); 
-        border: 1px solid #1a2f44; 
-        border-radius: 14px; 
-        text-align: center; 
-        overflow: hidden;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.5); 
-    }
-    .content { 
-        padding: 25px 20px 20px 20px; 
-    }
-    .name { 
-        font-family: 'Garamond', 'Baskerville', serif; 
-        font-size: 24px; 
-        font-weight: bold; 
-        margin-bottom: 4px; 
+    body {
+        background-color: #0b1724;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         color: #ffffff;
-    }
-    .title { 
-        font-family: 'Garamond', 'Baskerville', serif; 
-        font-size: 14px; 
-        font-style: italic; 
-        color: #d4af37; 
-        margin-bottom: 12px; 
-    }
-    .subtitle { 
-        font-size: 11px; 
-        color: #a0aec0; 
-        text-transform: uppercase; 
-        letter-spacing: 1px; 
-        margin-bottom: 25px; 
-    }
-    .instructions { 
-        font-size: 11px; 
-        color: #d4af37; 
-        font-weight: bold; 
-        letter-spacing: 0.8px;
-        margin-bottom: 15px; 
-    }
-    .btn { 
-        display: block; 
-        padding: 13px 0; 
-        background: linear-gradient(135deg, #162e4a 0%, #0f1f33 100%); 
-        border: 1px solid #1a3554; 
-        border-radius: 6px; 
-        color: #ffffff; 
-        font-size: 14px; 
-        font-weight: 500;
-        text-decoration: none; 
-        margin-bottom: 12px; 
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    }
-    .btn-gold { 
-        background: linear-gradient(135deg, #d4af37 0%, #aa8416 100%); 
-        border: 1px solid #b89324; 
-        color: #0b1724; 
-        font-weight: bold; 
-    }
-    .partner-info {
-        font-size: 11px;
-        color: #718096;
-        margin-top: 15px;
-        margin-bottom: 15px;
-    }
-    .footer-banner {
-        width: 100%;
-        background-color: #08111c;
-        border-top: 1px solid #1a2f44;
-        padding: 10px;
         display: flex;
         justify-content: center;
         align-items: center;
+        min-height: 100vh;
+        padding: 20px;
     }
-    .footer-banner svg {
+    .card-container {
+        background: #0f1f33;
+        border: 1px solid #1a3554;
+        border-radius: 16px;
         width: 100%;
-        height: auto;
-        display: block;
+        max-width: 400px;
+        padding: 35px 25px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+        text-align: center;
+    }
+    .brand-header {
+        margin-bottom: 25px;
+    }
+    .brand-title {
+        font-family: 'Garamond', 'Baskerville', serif;
+        font-size: 24px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        color: #ffffff;
+    }
+    .brand-subtitle {
+        font-size: 10px;
+        color: #d4af37;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-top: 4px;
+    }
+    .profile-info {
+        margin-bottom: 30px;
+    }
+    .profile-name {
+        font-family: 'Garamond', serif;
+        font-size: 22px;
+        color: #ffffff;
+        font-weight: 600;
+    }
+    .profile-role {
+        font-size: 13px;
+        color: #d4af37;
+        font-style: italic;
+        margin-top: 4px;
+    }
+    .profile-partner {
+        font-size: 11px;
+        color: #8a99ad;
+        margin-top: 6px;
+    }
+    .links-container {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+    .btn-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        padding: 14px 20px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+    }
+    .btn-primary {
+        background: linear-gradient(135deg, #d4af37 0%, #aa8416 100%);
+        color: #0b1724;
+        border: 1px solid #b89324;
+        box-shadow: 0 4px 12px rgba(212, 175, 55, 0.25);
+    }
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(212, 175, 55, 0.4);
+    }
+    .btn-secondary {
+        background-color: #0b1724;
+        color: #ffffff;
+        border: 1px solid #1a3554;
+    }
+    .btn-secondary:hover {
+        border-color: #d4af37;
+        color: #d4af37;
+        transform: translateY(-2px);
+    }
+    footer {
+        margin-top: 30px;
+        font-size: 10px;
+        color: #5d6d7e;
+        letter-spacing: 1px;
+        text-transform: uppercase;
     }
 </style>
 </head>
 <body>
 
 <div class="card-container">
-    <div class="content">
-        <div class="name">Douglas Bezerra</div>
-        <div class="title">Personal Banker &amp; Estrategista Patrimonial</div>
-        <div class="subtitle">Consórcios • Crédito • Planejamento Global</div>
-        
-        <div class="instructions">CLIQUE NOS BOTÕES PARA INTERAGIR:</div>
-        
-        <!-- Botão do WhatsApp Direct -->
-        <a class="btn" href="https://wa.me/5547988307859" target="_blank">📱 WhatsApp: (47) 98830-7859</a>
-        
-        <!-- Botão do E-mail -->
-        <a class="btn" href="mailto:douglas.bezerra@outlook.com">✉️ Enviar E-mail</a>
-        
-        <!-- Botão Dourado do Simulador: Redireciona para a página simulador.html -->
-        <a class="btn btn-gold" href="simulador.html" target="_blank">📊 Simular Consórcio &amp; Crédito</a>
-        
-        <div class="partner-info">Parceiro Autorizado Univalores</div>
+    <div class="brand-header">
+        <div class="brand-title">BEZERRA STRATEGIC</div>
+        <div class="brand-subtitle">Planejamento Patrimonial Global</div>
     </div>
 
-    <!-- Banner Completo da Bezerra Strategic -->
-    <div class="footer-banner">
-        <svg viewBox="0 0 1400 220" width="100%" xmlns="http://www.w3.org/2000/svg">
-            <rect width="1400" height="220" fill="#0b1724"/>
-            
-            <!-- Esquerda: Ícone de Rede -->
-            <g stroke="#d4af37" stroke-width="3" fill="none" transform="translate(20, 10)">
-                <polygon points="100,50 150,80 150,140 100,170 50,140 50,80"/>
-                <line x1="100" y1="50" x2="100" y2="110"/>
-                <line x1="150" y1="80" x2="100" y2="110"/>
-                <line x1="150" y1="140" x2="100" y2="110"/>
-                <line x1="100" y1="170" x2="100" y2="110"/>
-                <line x1="50" y1="140" x2="100" y2="110"/>
-                <line x1="50" y1="80" x2="100" y2="110"/>
-                <circle cx="100" cy="110" r="14" fill="#d4af37"/>
-                <circle cx="100" cy="50" r="10" fill="#0b1724"/>
-                <circle cx="150" cy="80" r="10" fill="#0b1724"/>
-                <circle cx="150" cy="140" r="10" fill="#0b1724"/>
-                <circle cx="100" cy="170" r="10" fill="#0b1724"/>
-                <circle cx="50" cy="140" r="10" fill="#0b1724"/>
-                <circle cx="50" cy="80" r="10" fill="#0b1724"/>
-                <text x="100" y="195" font-family="'Helvetica Neue', sans-serif" font-size="16" fill="#a0aec0" text-anchor="middle">Consórcios</text>
-            </g>
-
-            <!-- Centro: Logo e Métricas -->
-            <g transform="translate(110, 0)">
-                <text x="210" y="115" font-family="'Garamond', serif" font-size="64" font-weight="bold" fill="#ffffff" letter-spacing="4">BEZERRA</text>
-                <g transform="translate(565, 45)">
-                    <rect x="0" y="0" width="90" height="90" fill="none" stroke="#d4af37" stroke-width="8"/>
-                    <path d="M 15 70 L 35 45 L 55 60 L 80 20" fill="none" stroke="#d4af37" stroke-width="8" stroke-linecap="round"/>
-                    <polyline points="60,20 80,20 80,40" fill="none" stroke="#d4af37" stroke-width="8" stroke-linecap="round"/>
-                </g>
-                <text x="680" y="115" font-family="'Helvetica Neue', sans-serif" font-size="52" font-weight="bold" fill="#d4af37" letter-spacing="6">STRATEGIC</text>
-                <text x="600" y="165" font-family="'Helvetica Neue', sans-serif" font-size="22" fill="#a0aec0" text-anchor="middle" letter-spacing="1">+R$ 54MM sob gestão | +200 clientes | +15 anos</text>
-                <text x="600" y="192" font-family="'Helvetica Neue', sans-serif" font-size="18" fill="#d4af37" text-anchor="middle">Consórcios, Crédito e Planejamento</text>
-            </g>
-
-            <!-- Direita: Grafismo de Planejamento/Estratégia -->
-            <g stroke="#4a5568" stroke-width="2" fill="none" transform="translate(1150, 20)">
-                <path d="M 10 30 L 70 30 L 100 80 L 170 80" />
-                <path d="M 40 10 L 40 110 L 120 110" />
-                <path d="M 100 30 L 140 30 L 140 100" stroke="#d4af37" stroke-width="3" />
-                <polyline points="130,20 140,30 150,20" stroke="#d4af37" stroke-width="3" />
-                <circle cx="100" cy="80" r="5" fill="#d4af37" />
-                <circle cx="70" cy="30" r="5" fill="#d4af37" />
-                <text x="90" y="135" font-family="'Helvetica Neue', sans-serif" font-size="14" fill="#a0aec0" text-anchor="middle" stroke="none">Estratégia &amp; Crédito</text>
-            </g>
-        </svg>
+    <div class="profile-info">
+        <div class="profile-name">Douglas Bezerra</div>
+        <div class="profile-role">Personal Banker & Estrategista Patrimonial</div>
+        <div class="profile-partner">Parceiro Autorizado Univalores</div>
     </div>
+
+    <div class="links-container">
+        <!-- Link atualizado com o novo endereço do GitHub -->
+        <a href="https://bezerrastrategic.github.io/simulador/" class="btn-link btn-primary" target="_blank">
+            📊 SIMULADOR DE CRÉDITO & CONSÓRCIOS
+        </a>
+
+        <a href="https://wa.me/5547988307859?text=Ol%C3%A1%20Douglas,%20peguei%20seu%20cart%C3%A3o%20virtual%20e%20gostaria%20de%20conversar." class="btn-link btn-secondary" target="_blank">
+            💬 CONVERSAR NO WHATSAPP
+        </a>
+
+        <a href="mailto:douglasdasilva.bezerra@gmail.com" class="btn-link btn-secondary">
+            ✉️ ENVIAR E-MAIL
+        </a>
+    </div>
+
+    <footer>
+        © Bezerra Strategic • Todos os direitos reservados
+    </footer>
 </div>
 
 </body>
