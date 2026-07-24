@@ -16,7 +16,6 @@
         color: #ffffff;
         line-height: 1.6;
     }
-    /* Header & Navigation */
     header {
         background-color: #08111c;
         border-bottom: 1px solid #1a2f44;
@@ -39,7 +38,6 @@
         letter-spacing: 3px;
         text-transform: uppercase;
     }
-    /* Hero Section */
     .hero {
         padding: 40px 20px;
         text-align: center;
@@ -60,7 +58,6 @@
         max-width: 500px;
         margin: 0 auto 30px auto;
     }
-    /* Metrics Badge */
     .metrics-bar {
         display: flex;
         justify-content: center;
@@ -85,7 +82,6 @@
         color: #cbd5e1;
         text-transform: uppercase;
     }
-    /* Form Card */
     .form-container {
         max-width: 480px;
         margin: 0 auto;
@@ -139,7 +135,6 @@
         margin-top: 10px;
         box-shadow: 0 4px 10px rgba(212, 175, 55, 0.2);
     }
-    /* Footer */
     footer {
         padding: 30px 20px;
         text-align: center;
@@ -175,7 +170,6 @@
     <h1>Simulação de <span>Crédito & Consórcios</span></h1>
     <p>Acelere a aquisição de ativos e alavanque seu patrimônio com estratégias sob medida e custo financeiro otimizado.</p>
 
-    <!-- Métricas da Marca -->
     <div class="metrics-bar">
         <div class="metric-item">
             <div class="metric-number">+R$ 54MM</div>
@@ -191,7 +185,6 @@
         </div>
     </div>
 
-    <!-- Formulário Interativo -->
     <div class="form-container">
         <div class="form-title">Monte sua Estratégia</div>
         
@@ -199,6 +192,16 @@
             <div class="form-group">
                 <label for="nome">Nome Completo</label>
                 <input type="text" id="nome" placeholder="Digite seu nome" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail Profissional</label>
+                <input type="email" id="email" placeholder="seuemail@dominio.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="telefone">WhatsApp / Telefone</label>
+                <input type="tel" id="telefone" placeholder="(47) 99999-9999" required>
             </div>
             
             <div class="form-group">
@@ -229,7 +232,7 @@
                 </select>
             </div>
 
-            <button type="button" class="btn-submit" onclick="enviarSimulacao()">📊 SOLICITAR ESTUDO PERSONALIZADO</button>
+            <button type="button" class="btn-submit" onclick="enviarSimulacaoEHubspot()">📊 SOLICITAR ESTUDO PERSONALIZADO</button>
         </form>
     </div>
 </section>
@@ -241,25 +244,50 @@
 </footer>
 
 <script>
-    function enviarSimulacao() {
+    function enviarSimulacaoEHubspot() {
         const nome = document.getElementById('nome').value;
+        const email = document.getElementById('email').value;
+        const telefone = document.getElementById('telefone').value;
         const objetivo = document.getElementById('objetivo').value;
         const valor = document.getElementById('valor').value;
         const prazo = document.getElementById('prazo').value;
 
-        if (!nome) {
-            alert('Por favor, informe seu nome para prosseguir.');
+        if (!nome || !email || !telefone) {
+            alert('Por favor, preencha o seu nome, e-mail e telefone para continuar.');
             return;
         }
 
-        // Monta a mensagem personalizada para o seu WhatsApp
+        // --- DADOS DO HUBSPOT ---
+        const portalId = "51784410"; 
+        const formId = "496300d1-1c58-4239-bdbf-f2d2883c6160"; 
+
+        const endpointHubspot = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`;
+
+        const payloadHubspot = {
+            fields: [
+                { name: "firstname", value: nome },
+                { name: "email", value: email },
+                { name: "phone", value: telefone },
+                { name: "message", value: `Objetivo: ${objetivo} | Crédito: ${valor} | Prazo: ${prazo}` }
+            ]
+        };
+
+        // Dispara para a API do HubSpot em segundo plano
+        fetch(endpointHubspot, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payloadHubspot)
+        }).catch(err => console.error("Erro ao enviar ao HubSpot:", err));
+
+        // --- REDIRECIONAMENTO WHATSAPP ---
         const mensagem = `Olá Douglas, solicitei uma simulação no site:%0A%0A` +
                          `👤 *Nome:* ${encodeURIComponent(nome)}%0A` +
+                         `✉️ *E-mail:* ${encodeURIComponent(email)}%0A` +
+                         `📱 *Telefone:* ${encodeURIComponent(telefone)}%0A` +
                          `🎯 *Objetivo:* ${encodeURIComponent(objetivo)}%0A` +
                          `💰 *Crédito:* ${encodeURIComponent(valor)}%0A` +
                          `⏱️ *Prazo:* ${encodeURIComponent(prazo)}`;
 
-        // Redireciona para o seu WhatsApp com os dados preenchidos
         window.open(`https://wa.me/5547988307859?text=${mensagem}`, '_blank');
     }
 </script>
