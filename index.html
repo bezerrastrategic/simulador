@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bezerra Strategic | Simulação de Consórcios & Crédito Estratégico</title>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        background-color: #0b1724;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        color: #ffffff;
+        line-height: 1.6;
+    }
+    /* Header & Navigation */
+    header {
+        background-color: #08111c;
+        border-bottom: 1px solid #1a2f44;
+        padding: 15px 20px;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+    .brand-title {
+        font-family: 'Garamond', 'Baskerville', serif;
+        font-size: 22px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        color: #ffffff;
+    }
+    .brand-subtitle {
+        font-size: 11px;
+        color: #d4af37;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+    }
+    /* Hero Section */
+    .hero {
+        padding: 40px 20px;
+        text-align: center;
+        background: radial-gradient(circle at top, #11253a 0%, #0b1724 100%);
+    }
+    .hero h1 {
+        font-family: 'Garamond', 'Baskerville', serif;
+        font-size: 28px;
+        color: #ffffff;
+        margin-bottom: 10px;
+    }
+    .hero h1 span {
+        color: #d4af37;
+    }
+    .hero p {
+        font-size: 14px;
+        color: #a0aec0;
+        max-width: 500px;
+        margin: 0 auto 30px auto;
+    }
+    /* Metrics Badge */
+    .metrics-bar {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+    }
+    .metric-item {
+        background: rgba(26, 47, 68, 0.5);
+        border: 1px solid #1a3554;
+        border-radius: 8px;
+        padding: 10px 15px;
+        min-width: 130px;
+    }
+    .metric-number {
+        font-size: 16px;
+        font-weight: bold;
+        color: #d4af37;
+    }
+    .metric-label {
+        font-size: 10px;
+        color: #cbd5e1;
+        text-transform: uppercase;
+    }
+    /* Form Card */
+    .form-container {
+        max-width: 480px;
+        margin: 0 auto;
+        background: #0f1f33;
+        border: 1px solid #1a3554;
+        border-radius: 12px;
+        padding: 25px 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        text-align: left;
+    }
+    .form-title {
+        font-family: 'Garamond', serif;
+        font-size: 20px;
+        color: #d4af37;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .form-group label {
+        display: block;
+        font-size: 12px;
+        color: #cbd5e1;
+        margin-bottom: 5px;
+        font-weight: 500;
+    }
+    .form-group input, .form-group select {
+        width: 100%;
+        padding: 12px;
+        background-color: #0b1724;
+        border: 1px solid #1a3554;
+        border-radius: 6px;
+        color: #ffffff;
+        font-size: 14px;
+        outline: none;
+    }
+    .form-group input:focus, .form-group select:focus {
+        border-color: #d4af37;
+    }
+    .btn-submit {
+        width: 100%;
+        padding: 14px 0;
+        background: linear-gradient(135deg, #d4af37 0%, #aa8416 100%);
+        border: 1px solid #b89324;
+        border-radius: 6px;
+        color: #0b1724;
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 10px;
+        box-shadow: 0 4px 10px rgba(212, 175, 55, 0.2);
+    }
+    /* Footer */
+    footer {
+        padding: 30px 20px;
+        text-align: center;
+        border-top: 1px solid #1a2f44;
+        margin-top: 40px;
+        background-color: #08111c;
+    }
+    .footer-name {
+        font-family: 'Garamond', serif;
+        font-size: 16px;
+        color: #ffffff;
+    }
+    .footer-role {
+        font-size: 12px;
+        color: #d4af37;
+        font-style: italic;
+        margin-bottom: 10px;
+    }
+    .footer-partner {
+        font-size: 11px;
+        color: #718096;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <div class="brand-title">BEZERRA STRATEGIC</div>
+    <div class="brand-subtitle">Planejamento Patrimonial Global</div>
+</header>
+
+<section class="hero">
+    <h1>Simulação de <span>Crédito & Consórcios</span></h1>
+    <p>Acelere a aquisição de ativos e alavanque seu patrimônio com estratégias sob medida e custo financeiro otimizado.</p>
+
+    <!-- Métricas da Marca -->
+    <div class="metrics-bar">
+        <div class="metric-item">
+            <div class="metric-number">+R$ 54MM</div>
+            <div class="metric-label">Sob Gestão</div>
+        </div>
+        <div class="metric-item">
+            <div class="metric-number">+200</div>
+            <div class="metric-label">Clientes Atendidos</div>
+        </div>
+        <div class="metric-item">
+            <div class="metric-number">+15 Anos</div>
+            <div class="metric-label">de Mercado</div>
+        </div>
+    </div>
+
+    <!-- Formulário Interativo -->
+    <div class="form-container">
+        <div class="form-title">Monte sua Estratégia</div>
+        
+        <form id="simuladorForm">
+            <div class="form-group">
+                <label for="nome">Nome Completo</label>
+                <input type="text" id="nome" placeholder="Digite seu nome" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="objetivo">Objetivo Principal</label>
+                <select id="objetivo" required>
+                    <option value="Aquisição de Imóvel">Aquisição de Imóvel / Terreno</option>
+                    <option value="Frota / Veículos / Automóveis">Frota / Veículos de Luxo</option>
+                    <option value="Alavancagem de Capital / Giro">Alavancagem de Capital de Giro</option>
+                    <option value="Construção e Reforma">Construção e Reforma</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="valor">Valor do Crédito Desejado</label>
+                <select id="valor" required>
+                    <option value="R$ 200.000 a R$ 500.000">R$ 200.000 a R$ 500.000</option>
+                    <option value="R$ 500.000 a R$ 1.000.000">R$ 500.000 a R$ 1.000.000</option>
+                    <option value="R$ 1.000.000 a R$ 3.000.000">R$ 1.000.000 a R$ 3.000.000</option>
+                    <option value="Acima de R$ 3.000.000">Acima de R$ 3.000.000</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="prazo">Prazo Estimado</label>
+                <select id="prazo" required>
+                    <option value="Curto Prazo (Até 12 meses)">Curto Prazo (Contemplação Rápida)</option>
+                    <option value="Médio / Longo Prazo (Construção de Ativo)">Médio / Longo Prazo (Construção de Ativo)</option>
+                </select>
+            </div>
+
+            <button type="button" class="btn-submit" onclick="enviarSimulacao()">📊 SOLICITAR ESTUDO PERSONALIZADO</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-name">Douglas Bezerra</div>
+    <div class="footer-role">Personal Banker & Estrategista Patrimonial</div>
+    <div class="footer-partner">Parceiro Autorizado Univalores • Bezerra Strategic</div>
+</footer>
+
+<script>
+    function enviarSimulacao() {
+        const nome = document.getElementById('nome').value;
+        const objetivo = document.getElementById('objetivo').value;
+        const valor = document.getElementById('valor').value;
+        const prazo = document.getElementById('prazo').value;
+
+        if (!nome) {
+            alert('Por favor, informe seu nome para prosseguir.');
+            return;
+        }
+
+        // Monta a mensagem personalizada para o seu WhatsApp
+        const mensagem = `Olá Douglas, solicitei uma simulação no site:%0A%0A` +
+                         `👤 *Nome:* ${encodeURIComponent(nome)}%0A` +
+                         `🎯 *Objetivo:* ${encodeURIComponent(objetivo)}%0A` +
+                         `💰 *Crédito:* ${encodeURIComponent(valor)}%0A` +
+                         `⏱️ *Prazo:* ${encodeURIComponent(prazo)}`;
+
+        // Redireciona para o seu WhatsApp com os dados preenchidos
+        window.open(`https://wa.me/5547988307859?text=${mensagem}`, '_blank');
+    }
+</script>
+
+</body>
+</html>
