@@ -135,7 +135,6 @@
         margin-top: 10px;
         box-shadow: 0 4px 10px rgba(212, 175, 55, 0.2);
     }
-    /* Estilo do Card de Confirmação */
     .success-card {
         display: none;
         text-align: center;
@@ -218,7 +217,6 @@
     </div>
 
     <div class="form-container">
-        <!-- Formulário Original -->
         <div id="formSection">
             <div class="form-title">Monte sua Estratégia</div>
             
@@ -270,7 +268,6 @@
             </form>
         </div>
 
-        <!-- Card de Confirmação VIP (Exibido após envio) -->
         <div id="successCard" class="success-card">
             <div class="success-icon">✨</div>
             <h3>Solicitação Recebida com Sucesso!</h3>
@@ -316,12 +313,10 @@
             return;
         }
 
-        // Altera texto do botão para feedback imediato
         const btn = document.getElementById('btnEnviar');
         btn.innerText = "ENVIANDO DADOS...";
         btn.disabled = true;
 
-        // Divisão de nome para o HubSpot
         const partesNome = nomeCompleto.split(" ");
         const primeironome = partesNome[0];
         const sobrenome = partesNome.slice(1).join(" ") || ".";
@@ -330,17 +325,18 @@
         const formId = "496300d1-1c58-4239-bdbf-f2d2883c6160"; 
         const endpointHubspot = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`;
 
+        // Mapeia tanto "phone" quanto "mobilephone" para cobrir ambas as propriedades de telefone do CRM
         const payloadHubspot = {
             fields: [
                 { name: "firstname", value: primeironome },
                 { name: "lastname", value: sobrenome },
                 { name: "email", value: email },
                 { name: "phone", value: telefone },
-                { name: "message", value: `Simulação Bezerra Strategic:\n- Objetivo: ${objetivo}\n- Valor do Crédito: ${valor}\n- Prazo Estimado: ${prazo}` }
+                { name: "mobilephone", value: telefone },
+                { name: "message", value: `Simulação Bezerra Strategic:\n- Telefone: ${telefone}\n- Objetivo: ${objetivo}\n- Valor do Crédito: ${valor}\n- Prazo Estimado: ${prazo}` }
             ]
         };
 
-        // Disparo para o CRM e exibição do Card de Sucesso
         fetch(endpointHubspot, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -349,7 +345,6 @@
             exibirSucesso();
         }).catch(err => {
             console.error("Erro ao enviar ao HubSpot:", err);
-            // Exibe o sucesso mesmo em caso de falha silenciosa para garantir a boa experiência
             exibirSucesso();
         });
     }
