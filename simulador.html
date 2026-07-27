@@ -102,14 +102,6 @@
                     </select>
                 </div>
 
-                <div class="form-group">
-                    <label for="prazo">Prazo Estimado</label>
-                    <select id="prazo" required>
-                        <option value="Curto Prazo (Até 12 meses)">Curto Prazo (Contemplação Rápida)</option>
-                        <option value="Médio / Longo Prazo (Construção de Ativo)">Médio / Longo Prazo (Construção de Ativo)</option>
-                    </select>
-                </div>
-
                 <button type="button" class="btn-submit" id="btnEnviar" onclick="enviarSimulacaoEHubspot()">📊 SOLICITAR ESTUDO PERSONALIZADO</button>
             </form>
         </div>
@@ -145,7 +137,6 @@
         const telefone = document.getElementById('telefone').value.trim();
         const objetivo = document.getElementById('objetivo').value;
         const valor = document.getElementById('valor').value;
-        const prazo = document.getElementById('prazo').value;
 
         if (!nomeCompleto || !email || !telefone) {
             alert('Por favor, preencha o seu nome, e-mail e telefone para continuar.');
@@ -171,7 +162,7 @@
                 { name: "email", value: email },
                 { name: "phone", value: telefone },
                 { name: "mobilephone", value: telefone },
-                { name: "message", value: `Simulação Bezerra Strategic:\n- Telefone: ${telefone}\n- Objetivo: ${objetivo}\n- Valor do Crédito: ${valor}\n- Prazo Estimado: ${prazo}` }
+                { name: "message", value: `Simulação Bezerra Strategic:\n- Telefone: ${telefone}\n- Objetivo: ${objetivo}\n- Valor do Crédito/Aporte: ${valor}` }
             ]
         };
 
