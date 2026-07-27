@@ -9,7 +9,7 @@
         body { background-color: #0b1724; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #ffffff; line-height: 1.6; }
         
         /* Header */
-        header { background-color: #08111c; border-bottom: 1px solid #1a2f44; padding: 18px 20px; text-align: center; sticky; top: 0; z-index: 100; }
+        header { background-color: #08111c; border-bottom: 1px solid #1a2f44; padding: 18px 20px; text-align: center; position: sticky; top: 0; z-index: 100; }
         .brand-title { font-family: 'Garamond', 'Baskerville', serif; font-size: 24px; font-weight: bold; letter-spacing: 2px; color: #ffffff; }
         .brand-subtitle { font-size: 11px; color: #d4af37; letter-spacing: 3px; text-transform: uppercase; margin-top: 2px; }
 
@@ -38,6 +38,18 @@
         .card-icon { font-size: 28px; margin-bottom: 12px; }
         .card-solution h3 { font-family: 'Garamond', serif; font-size: 20px; color: #ffffff; margin-bottom: 8px; }
         .card-solution p { font-size: 13px; color: #a0aec0; line-height: 1.5; }
+
+        /* Depoimentos Google Meu Negócio */
+        .testimonials-section { max-width: 900px; margin: 60px auto; padding: 0 20px; }
+        .grid-testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 20px; }
+        .testimonial-card { background: #0f1f33; border: 1px solid #1a3554; border-radius: 12px; padding: 22px; position: relative; text-align: left; }
+        .testimonial-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+        .avatar { width: 44px; height: 44px; border-radius: 50%; background-color: #1a3554; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #d4af37; font-size: 18px; border: 1px solid #d4af37; }
+        .user-info h4 { font-size: 14px; color: #ffffff; font-weight: 600; }
+        .user-info span { font-size: 11px; color: #718096; display: block; }
+        .google-icon { margin-left: auto; width: 18px; height: 18px; }
+        .stars { color: #f1c40f; font-size: 14px; margin-bottom: 10px; }
+        .testimonial-text { font-size: 13px; color: #cbd5e1; line-height: 1.5; font-style: italic; }
 
         /* Sobre / Personal Banker */
         .about-section { max-width: 800px; margin: 60px auto 40px; padding: 30px 20px; background: rgba(8, 17, 28, 0.6); border: 1px solid #1a2f44; border-radius: 12px; text-align: center; }
@@ -106,6 +118,50 @@
             <h3>Gestão Patrimonial Global</h3>
             <p>Arquitetura financeira para proteção de ativos, sucessão familiar e otimização fiscal.</p>
         </div>
+    </div>
+</section>
+
+<!-- Nova Seção de Prova Social / Avaliações do Google -->
+<section class="testimonials-section">
+    <h2 class="section-title">O que dizem nossos clientes</h2>
+    <div class="grid-testimonials">
+        
+        <div class="testimonial-card">
+            <div class="testimonial-header">
+                <div class="avatar">V</div>
+                <div class="user-info">
+                    <h4>Vanessa Rocha</h4>
+                    <span>Avaliação via Google</span>
+                </div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">"Pode confiar, melhor profissional que eu já consultei."</p>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="testimonial-header">
+                <div class="avatar">J</div>
+                <div class="user-info">
+                    <h4>Juliana Alves</h4>
+                    <span>Avaliação via Google</span>
+                </div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">"Profissional super comprometido e de grande excelência no que faz... agradeço."</p>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="testimonial-header">
+                <div class="avatar">D</div>
+                <div class="user-info">
+                    <h4>David William</h4>
+                    <span>Avaliação via Google</span>
+                </div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">"Muito bom, confiável e tem muita opção de produtos."</p>
+        </div>
+
     </div>
 </section>
 
