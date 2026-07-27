@@ -8,27 +8,75 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { background-color: #0b1724; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #ffffff; line-height: 1.6; }
         
-        /* Header Container */
-        header { background-color: #08111c; border-bottom: 1px solid #1a2f44; padding: 25px 15px; text-align: center; position: sticky; top: 0; z-index: 100; }
-        
-        /* Estilo do Banner Panorâmico Nítido */
-        .banner-container { max-width: 950px; margin: 0 auto; width: 100%; }
-        .brand-banner { 
-            width: 100%; 
-            height: auto; 
-            display: block;
+        /* Header Nativo em Alta Definição */
+        header { 
+            background: linear-gradient(180deg, #060d17 0%, #08111c 100%); 
+            border-bottom: 1px solid #1a2f44; 
+            padding: 25px 20px; 
+            text-align: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 100; 
+        }
+
+        .header-content {
+            max-width: 1000px;
             margin: 0 auto;
-            border-radius: 8px; 
-            border: 1px solid #1a3554;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            /* Regras de Renderização para Imagem de Alta Definição */
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .brand-title-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .brand-text-main { 
+            font-family: 'Garamond', 'Baskerville', serif; 
+            font-size: 32px; 
+            font-weight: bold; 
+            letter-spacing: 3px; 
+            color: #ffffff; 
+            text-transform: uppercase;
+        }
+
+        .brand-text-gold { 
+            font-family: 'Garamond', 'Baskerville', serif; 
+            font-size: 32px; 
+            font-weight: bold; 
+            letter-spacing: 3px; 
+            color: #d4af37; 
+            text-transform: uppercase;
+        }
+
+        .brand-icon {
+            font-size: 28px;
+            color: #d4af37;
+            line-height: 1;
+        }
+
+        .header-submetrics {
+            font-size: 12px;
+            color: #a0aec0;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .header-submetrics span {
+            color: #d4af37;
+            font-weight: bold;
         }
 
         /* Hero Section */
-        .hero { padding: 40px 20px 30px; text-align: center; background: radial-gradient(circle at top, #11253a 0%, #0b1724 100%); }
-        .hero h1 { font-family: 'Garamond', 'Baskerville', serif; font-size: 32px; color: #ffffff; margin-bottom: 16px; line-height: 1.2; }
+        .hero { padding: 50px 20px 40px; text-align: center; background: radial-gradient(circle at top, #11253a 0%, #0b1724 100%); }
+        .hero h1 { font-family: 'Garamond', 'Baskerville', serif; font-size: 34px; color: #ffffff; margin-bottom: 16px; line-height: 1.2; }
         .hero h1 span { color: #d4af37; }
         .hero p { font-size: 16px; color: #a0aec0; max-width: 600px; margin: 0 auto 30px auto; }
 
@@ -75,8 +123,15 @@
 <body>
 
 <header>
-    <div class="banner-container">
-        <img src="banner.jpeg" alt="Bezerra Strategic - Consórcios, Crédito e Planejamento" class="brand-banner">
+    <div class="header-content">
+        <div class="brand-title-group">
+            <span class="brand-text-main">BEZERRA</span>
+            <span class="brand-icon">📈</span>
+            <span class="brand-text-gold">STRATEGIC</span>
+        </div>
+        <div class="header-submetrics">
+            <span>+R$ 54MM</span> sob gestão &nbsp;|&nbsp; <span>+200</span> clientes &nbsp;|&nbsp; <span>+15 anos</span> de mercado
+        </div>
     </div>
 </header>
 
