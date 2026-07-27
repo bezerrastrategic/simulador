@@ -179,7 +179,11 @@
     }
 
     function redirecionarParaWhatsapp() {
-        window.location.href = "https://wa.me/message/UIIPKFOC52EJ1";
+        // Seu número configurado diretamente com DDI + DDD
+        const numeroWhatsapp = "5547988307859"; 
+        const mensagem = encodeURIComponent("Olá! Preenchi o formulário no site da Bezerra Strategic e gostaria de receber o estudo personalizado.");
+        
+        window.location.href = `https://api.whatsapp.com/send?phone=${numeroWhatsapp}&text=${mensagem}`;
     }
 </script>
 
