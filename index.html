@@ -1,152 +1,128 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Douglas Bezerra | Bezerra Strategic</title>
-<style>
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-    body {
-        background-color: #0b1724;
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        color: #ffffff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        padding: 20px;
-    }
-    .card-container {
-        background: #0f1f33;
-        border: 1px solid #1a3554;
-        border-radius: 16px;
-        width: 100%;
-        max-width: 400px;
-        padding: 35px 25px;
-        box-shadow: 0 15px 35px rgba(0,0,0,0.6);
-        text-align: center;
-    }
-    .brand-header {
-        margin-bottom: 25px;
-    }
-    .brand-title {
-        font-family: 'Garamond', 'Baskerville', serif;
-        font-size: 24px;
-        font-weight: bold;
-        letter-spacing: 2px;
-        color: #ffffff;
-    }
-    .brand-subtitle {
-        font-size: 10px;
-        color: #d4af37;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        margin-top: 4px;
-    }
-    .profile-info {
-        margin-bottom: 30px;
-    }
-    .profile-name {
-        font-family: 'Garamond', serif;
-        font-size: 22px;
-        color: #ffffff;
-        font-weight: 600;
-    }
-    .profile-role {
-        font-size: 13px;
-        color: #d4af37;
-        font-style: italic;
-        margin-top: 4px;
-    }
-    .profile-partner {
-        font-size: 11px;
-        color: #8a99ad;
-        margin-top: 6px;
-    }
-    .links-container {
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
-    }
-    .btn-link {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        width: 100%;
-        padding: 14px 20px;
-        border-radius: 8px;
-        text-decoration: none;
-        font-size: 14px;
-        font-weight: bold;
-        transition: all 0.3s ease;
-    }
-    .btn-primary {
-        background: linear-gradient(135deg, #d4af37 0%, #aa8416 100%);
-        color: #0b1724;
-        border: 1px solid #b89324;
-        box-shadow: 0 4px 12px rgba(212, 175, 55, 0.25);
-    }
-    .btn-primary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 16px rgba(212, 175, 55, 0.4);
-    }
-    .btn-secondary {
-        background-color: #0b1724;
-        color: #ffffff;
-        border: 1px solid #1a3554;
-    }
-    .btn-secondary:hover {
-        border-color: #d4af37;
-        color: #d4af37;
-        transform: translateY(-2px);
-    }
-    footer {
-        margin-top: 30px;
-        font-size: 10px;
-        color: #5d6d7e;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-    }
-</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bezerra Strategic | Planejamento Patrimonial Global</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: #0b1724; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #ffffff; line-height: 1.6; }
+        
+        /* Header */
+        header { background-color: #08111c; border-bottom: 1px solid #1a2f44; padding: 18px 20px; text-align: center; sticky; top: 0; z-index: 100; }
+        .brand-title { font-family: 'Garamond', 'Baskerville', serif; font-size: 24px; font-weight: bold; letter-spacing: 2px; color: #ffffff; }
+        .brand-subtitle { font-size: 11px; color: #d4af37; letter-spacing: 3px; text-transform: uppercase; margin-top: 2px; }
+
+        /* Hero Section */
+        .hero { padding: 60px 20px 40px; text-align: center; background: radial-gradient(circle at top, #11253a 0%, #0b1724 100%); }
+        .hero h1 { font-family: 'Garamond', 'Baskerville', serif; font-size: 34px; color: #ffffff; margin-bottom: 16px; line-height: 1.2; }
+        .hero h1 span { color: #d4af37; }
+        .hero p { font-size: 16px; color: #a0aec0; max-width: 600px; margin: 0 auto 30px auto; }
+
+        /* CTA Main Button */
+        .btn-primary { display: inline-block; padding: 16px 32px; background: linear-gradient(135deg, #d4af37 0%, #aa8416 100%); border: 1px solid #b89324; border-radius: 8px; color: #0b1724; font-size: 15px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25); transition: all 0.3s ease; }
+        .btn-primary:hover { background: linear-gradient(135deg, #f1c40f 0%, #d4af37 100%); transform: translateY(-2px); }
+
+        /* Metrics */
+        .metrics-bar { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 40px 0; }
+        .metric-item { background: rgba(26, 47, 68, 0.4); border: 1px solid #1a3554; border-radius: 10px; padding: 16px 24px; min-width: 140px; text-align: center; }
+        .metric-number { font-size: 22px; font-weight: bold; color: #d4af37; }
+        .metric-label { font-size: 11px; color: #cbd5e1; text-transform: uppercase; margin-top: 4px; }
+
+        /* Soluções / Pilares */
+        .solutions-section { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        .section-title { font-family: 'Garamond', serif; font-size: 26px; color: #d4af37; text-align: center; margin-bottom: 30px; }
+        .grid-solutions { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+        .card-solution { background: #0f1f33; border: 1px solid #1a3554; border-radius: 12px; padding: 25px; transition: border-color 0.3s ease; }
+        .card-solution:hover { border-color: #d4af37; }
+        .card-icon { font-size: 28px; margin-bottom: 12px; }
+        .card-solution h3 { font-family: 'Garamond', serif; font-size: 20px; color: #ffffff; margin-bottom: 8px; }
+        .card-solution p { font-size: 13px; color: #a0aec0; line-height: 1.5; }
+
+        /* Sobre / Personal Banker */
+        .about-section { max-width: 800px; margin: 60px auto 40px; padding: 30px 20px; background: rgba(8, 17, 28, 0.6); border: 1px solid #1a2f44; border-radius: 12px; text-align: center; }
+        .about-role { font-size: 12px; color: #d4af37; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+        .about-name { font-family: 'Garamond', serif; font-size: 24px; color: #ffffff; margin-bottom: 12px; }
+        .about-text { font-size: 14px; color: #a0aec0; line-height: 1.6; max-width: 650px; margin: 0 auto 20px auto; }
+
+        /* CTA Box Final */
+        .cta-box { text-align: center; margin: 50px 0; }
+
+        /* Footer */
+        footer { padding: 30px 20px; text-align: center; border-top: 1px solid #1a2f44; margin-top: 60px; background-color: #08111c; }
+        .footer-name { font-family: 'Garamond', serif; font-size: 16px; color: #ffffff; }
+        .footer-role { font-size: 12px; color: #d4af37; font-style: italic; margin-bottom: 10px; }
+        .footer-partner { font-size: 11px; color: #718096; }
+    </style>
 </head>
 <body>
 
-<div class="card-container">
-    <div class="brand-header">
-        <div class="brand-title">BEZERRA STRATEGIC</div>
-        <div class="brand-subtitle">Planejamento Patrimonial Global</div>
+<header>
+    <div class="brand-title">BEZERRA STRATEGIC</div>
+    <div class="brand-subtitle">Planejamento Patrimonial Global</div>
+</header>
+
+<section class="hero">
+    <h1>Soluções Estratégicas para <span>Alavancagem & Proteção Patrimonial</span></h1>
+    <p>Modelagem de crédito inteligente, consórcios estruturados e planejamento financeiro para investidores e empresas.</p>
+
+    <div class="cta-box">
+        <a href="simulador.html" class="btn-primary">📊 SOLICITAR ESTUDO PERSONALIZADO</a>
     </div>
 
-    <div class="profile-info">
-        <div class="profile-name">Douglas Bezerra</div>
-        <div class="profile-role">Personal Banker & Estrategista Patrimonial</div>
-        <div class="profile-partner">Parceiro Autorizado Univalores</div>
+    <div class="metrics-bar">
+        <div class="metric-item">
+            <div class="metric-number">+R$ 54MM</div>
+            <div class="metric-label">Sob Gestão</div>
+        </div>
+        <div class="metric-item">
+            <div class="metric-number">+200</div>
+            <div class="metric-label">Clientes Atendidos</div>
+        </div>
+        <div class="metric-item">
+            <div class="metric-number">+15 Anos</div>
+            <div class="metric-label">de Mercado</div>
+        </div>
     </div>
+</section>
 
-    <div class="links-container">
-        <!-- Apontamento direto e relativo para o arquivo simulador.html -->
-        <a href="./simulador.html" class="btn-link btn-primary" target="_blank">
-            📊 SIMULADOR DE CRÉDITO & CONSÓRCIOS
-        </a>
+<section class="solutions-section">
+    <h2 class="section-title">Pilares de Atuação</h2>
+    <div class="grid-solutions">
+        <div class="card-solution">
+            <div class="card-icon">🏛️</div>
+            <h3>Consórcios Estruturados</h3>
+            <p>Aquisição preditiva de imóveis, veículos de alto padrão e frotas operacionais com custo financeiro reduzido.</p>
+        </div>
 
-        <a href="https://wa.me/5547988307859?text=Ol%C3%A1%20Douglas,%20peguei%20seu%20cart%C3%A3o%20virtual%20e%20gostaria%20de%20conversar." class="btn-link btn-secondary" target="_blank">
-            💬 CONVERSAR NO WHATSAPP
-        </a>
+        <div class="card-solution">
+            <div class="card-icon">⚡</div>
+            <h3>Alavancagem & Capital de Giro</h3>
+            <p>Estratégias de crédito sob medida para otimização do balanço patrimonial e expansão de negócios.</p>
+        </div>
 
-        <a href="mailto:douglasdasilva.bezerra@gmail.com" class="btn-link btn-secondary">
-            ✉️ ENVIAR E-MAIL
-        </a>
+        <div class="card-solution">
+            <div class="card-icon">📈</div>
+            <h3>Gestão Patrimonial Global</h3>
+            <p>Arquitetura financeira para proteção de ativos, sucessão familiar e otimização fiscal.</p>
+        </div>
     </div>
+</section>
 
-    <footer>
-        © Bezerra Strategic • Todos os direitos reservados
-    </footer>
-</div>
+<section class="about-section">
+    <div class="about-role">Personal Banker & Estrategista Patrimonial</div>
+    <div class="about-name">Douglas Bezerra</div>
+    <p class="about-text">
+        Com mais de 15 anos de atuação no mercado financeiro, ajudo famílias e empresários a estruturar soluções inteligentes de crédito, consórcio e planejamento de ativos, garantindo segurança e eficiência de capital.
+    </p>
+    <a href="simulador.html" class="btn-primary">AGENDAR CONVERSA ESTRATÉGICA</a>
+</section>
+
+<footer>
+    <div class="footer-name">Douglas Bezerra</div>
+    <div class="footer-role">Personal Banker & Estrategista Patrimonial</div>
+    <div class="footer-partner">Parceiro Autorizado Univalores • Bezerra Strategic</div>
+</footer>
 
 </body>
 </html>
