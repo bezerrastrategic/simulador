@@ -257,6 +257,18 @@
   .final-cta p{color:rgba(246,243,236,0.72); max-width:480px; margin:0 auto 32px;}
   .final-cta .cta-row{justify-content:center;}
 
+  /* ARTICLES */
+  .articles-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:24px;}
+  .article-card{
+    background:#fff; border:1px solid rgba(11,29,51,0.08); border-radius:4px;
+    padding:26px 22px; display:flex; flex-direction:column;
+  }
+  .article-card .eyebrow{margin-bottom:14px;}
+  .article-card h3{font-size:1.08rem; margin-bottom:10px; line-height:1.3;}
+  .article-card p{color:var(--slate); font-size:0.9rem; margin-bottom:18px; flex-grow:1;}
+  .article-card .read-more{font-size:0.85rem; font-weight:600; color:var(--teal); border-bottom:1px solid currentColor; align-self:flex-start;}
+  @media (max-width:860px){ .articles-grid{grid-template-columns:1fr;} }
+
   footer{background:var(--navy-2); color:rgba(246,243,236,0.55); padding:28px 0; font-size:0.82rem;}
   footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
 
@@ -419,6 +431,35 @@
     <div class="faq-item">
       <h3>Quanto custa fazer um estudo personalizado com a Bezerra Strategic?</h3>
       <p>O estudo inicial é gratuito e sem compromisso — o objetivo é entender seu momento financeiro e apresentar as opções mais adequadas.</p>
+    </div>
+  </div>
+</section>
+
+<section id="artigos" style="background:#fff;">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Aprenda mais</span>
+      <h2>Artigos e guias</h2>
+    </div>
+    <div class="articles-grid">
+      <div class="article-card">
+        <span class="eyebrow">Consórcio &amp; Investimentos</span>
+        <h3>Consórcio Vale a Pena em 2026? Guia Completo</h3>
+        <p>Consórcio ou financiamento: entenda quando cada estratégia compensa mais e como usar lances para acelerar a contemplação.</p>
+        <a href="consorcio-vale-a-pena-2026.html" class="read-more">Ler artigo →</a>
+      </div>
+      <div class="article-card">
+        <span class="eyebrow">Crédito &amp; Empresas</span>
+        <h3>Alavancagem de Crédito para Empresas</h3>
+        <p>Como crescer usando crédito estratégico sem comprometer o capital de giro do seu negócio.</p>
+        <a href="alavancagem-credito-empresas.html" class="read-more">Ler artigo →</a>
+      </div>
+      <div class="article-card">
+        <span class="eyebrow">Planejamento Patrimonial</span>
+        <h3>Planejamento Sucessório: Proteja seu Patrimônio</h3>
+        <p>As principais ferramentas para organizar a transmissão do patrimônio da família antes que seja tarde.</p>
+        <a href="planejamento-sucessorio-patrimonial.html" class="read-more">Ler artigo →</a>
+      </div>
     </div>
   </div>
 </section>
