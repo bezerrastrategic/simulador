@@ -28,9 +28,6 @@
     .btn-submit { width: 100%; padding: 14px 0; background: linear-gradient(135deg, #d4af37 0%, #aa8416 100%); border: 1px solid #b89324; border-radius: 6px; color: #0b1724; font-size: 15px; font-weight: bold; cursor: pointer; margin-top: 10px; box-shadow: 0 4px 10px rgba(212, 175, 55, 0.2); transition: all 0.2s ease; }
     .btn-submit:hover { background: linear-gradient(135deg, #f1c40f 0%, #d4af37 100%); }
 
-    /* Estilização para Iframe / Container do HubSpot se for usar embed */
-    .hs-form-frame iframe { width: 100% !important; border: none !important; }
-
     footer { padding: 30px 20px; text-align: center; border-top: 1px solid #1a2f44; margin-top: 40px; background-color: #08111c; }
     .footer-name { font-family: 'Garamond', serif; font-size: 16px; color: #ffffff; }
     .footer-role { font-size: 12px; color: #d4af37; font-style: italic; margin-bottom: 10px; }
@@ -86,15 +83,17 @@
                 <div class="form-group">
                     <label for="objetivo">Objetivo Principal</label>
                     <select id="objetivo" required>
-                        <option value="Aquisição de Imóvel">Aquisição de Imóvel / Terreno</option>
-                        <option value="Frota / Veículos / Automóveis">Frota / Veículos de Luxo</option>
-                        <option value="Alavancagem de Capital / Giro">Alavancagem de Capital de Giro</option>
-                        <option value="Construção e Reforma">Construção e Reforma</option>
+                        <option value="Consórcio Imobiliário / Aquisição de Imóvel">Consórcio Imobiliário / Aquisição de Imóvel</option>
+                        <option value="Consórcio de Veículos / Frota / Pesados">Consórcio de Veículos / Frota / Pesados</option>
+                        <option value="Planejamento Financeiro & Gestão Patrimonial">Planejamento Financeiro & Gestão Patrimonial</option>
+                        <option value="Alavancagem Patrimonial & Capital de Giro">Alavancagem Patrimonial & Capital de Giro</option>
+                        <option value="Construção, Reforma e Investimentos">Construção, Reforma e Investimentos</option>
+                        <option value="Outras Soluções de Crédito Estratégico">Outras Soluções de Crédito Estratégico</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="valor">Valor do Crédito Desejado</label>
+                    <label for="valor">Valor do Crédito / Aporte Desejado</label>
                     <select id="valor" required>
                         <option value="R$ 200.000 a R$ 500.000">R$ 200.000 a R$ 500.000</option>
                         <option value="R$ 500.000 a R$ 1.000.000">R$ 500.000 a R$ 1.000.000</option>
@@ -161,7 +160,6 @@
         const primeironome = partesNome[0];
         const sobrenome = partesNome.slice(1).join(" ") || ".";
 
-        // IDs corretos da sua conta HubSpot
         const portalId = "51784410"; 
         const formId = "9463f943-26bd-43e4-a6f8-d4c94b20ad59"; 
         const endpointHubspot = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`;
