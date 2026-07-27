@@ -9,20 +9,21 @@
         body { background-color: #0b1724; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #ffffff; line-height: 1.6; }
         
         /* Header Container */
-        header { background-color: #08111c; border-bottom: 1px solid #1a2f44; padding: 20px 15px; text-align: center; position: sticky; top: 0; z-index: 100; }
+        header { background-color: #08111c; border-bottom: 1px solid #1a2f44; padding: 25px 15px; text-align: center; position: sticky; top: 0; z-index: 100; }
         
-        /* Estilo do Banner Panorâmico */
-        .banner-container { max-width: 900px; margin: 0 auto; padding: 0 10px; }
+        /* Estilo do Banner Panorâmico Nítido */
+        .banner-container { max-width: 950px; margin: 0 auto; width: 100%; }
         .brand-banner { 
             width: 100%; 
             height: auto; 
-            max-height: 180px; 
-            object-fit: contain; 
-            border-radius: 8px; 
-            border: 1px solid #1a3554;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
             display: block;
             margin: 0 auto;
+            border-radius: 8px; 
+            border: 1px solid #1a3554;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            /* Regras de Renderização para Imagem de Alta Definição */
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
         }
 
         /* Hero Section */
