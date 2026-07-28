@@ -116,19 +116,44 @@
     color:var(--brass);
   }
 
-  /* HEADER */
+  /* HEADER CORRIGIDO */
   header.top{
     background:var(--navy);
-    padding:18px 0;
+    padding:16px 0;
+    border-bottom:1px solid var(--line);
   }
-  header.top .wrap{display:flex; align-items:center; justify-content:space-between; gap:12px;}
-  .brand{display:flex; align-items:center; gap:12px; min-width:0;}
-  .brand img{height:68px; width:auto; flex-shrink:0;}
+  header.top .wrap{
+    display:flex; 
+    align-items:center; 
+    justify-content:space-between; 
+    gap:12px;
+  }
+  .brand{
+    display:flex; 
+    align-items:center; 
+    text-decoration:none;
+  }
+  /* Mascara para cortar apenas a marca no banner horizontal */
+  .logo-crop{
+    width:230px;
+    height:50px;
+    overflow:hidden;
+    position:relative;
+    display:flex;
+    align-items:center;
+  }
+  .logo-crop img{
+    height:100%;
+    width:auto;
+    max-width:none;
+    object-fit:cover;
+    object-position:left center;
+  }
   .btn.header-cta{padding:10px 18px; font-size:0.85rem; flex-shrink:0; white-space:nowrap;}
 
   @media (max-width:520px){
     .btn.header-cta{padding:7px 12px; font-size:0.72rem;}
-    .brand img{height:46px;}
+    .logo-crop{width:160px; height:38px;}
   }
 
   /* HERO */
@@ -305,9 +330,11 @@
 
 <header class="top">
   <div class="wrap">
-    <div class="brand">
-      <img src="https://bezerrastrategic.github.io/simulador/banner.jpeg" alt="Bezerra Strategic">
-    </div>
+    <a href="#" class="brand">
+      <div class="logo-crop">
+        <img src="https://bezerrastrategic.github.io/simulador/banner.jpeg" alt="Bezerra Strategic Logo">
+      </div>
+    </a>
     <a href="simulador.html" class="btn btn-outline header-cta">Simular agora</a>
   </div>
 </header>
