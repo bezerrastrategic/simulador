@@ -218,41 +218,48 @@
     line-height:1.5;
   }
 
-  /* MARCAS PARCEIRAS / ECOSSISTEMA */
+  /* ECOSSISTEMA COM LOGOS VISUAIS */
   .partners-section{
     background:#fff;
-    padding:48px 0;
-    border-top:1px solid rgba(11,29,51,0.06);
-    border-bottom:1px solid rgba(11,29,51,0.06);
+    padding:54px 0;
+    border-top:1px solid rgba(11,29,51,0.08);
+    border-bottom:1px solid rgba(11,29,51,0.08);
   }
   .partners-head{
     text-align:center;
-    margin-bottom:28px;
+    margin-bottom:36px;
   }
   .partners-head p{
     font-family:'IBM Plex Mono', monospace;
     font-size:0.75rem;
     text-transform:uppercase;
-    letter-spacing:0.12em;
+    letter-spacing:0.14em;
     color:var(--slate);
   }
-  .partners-badges{
+  .partners-logos{
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
     align-items:center;
-    gap:28px 40px;
+    gap:36px 48px;
   }
-  .partner-badge{
-    font-family:'Inter', sans-serif;
-    font-weight:700;
-    font-size:1.05rem;
-    color:var(--navy);
-    opacity:0.65;
-    letter-spacing:-0.02em;
-    transition:opacity 0.2s ease;
+  .partner-logo-item{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:36px;
+    filter:grayscale(100%) opacity(0.6);
+    transition:filter 0.25s ease, transform 0.25s ease;
   }
-  .partner-badge:hover{opacity:1;}
+  .partner-logo-item:hover{
+    filter:grayscale(0%) opacity(1);
+    transform:scale(1.05);
+  }
+  .partner-logo-item img{
+    max-height:100%;
+    width:auto;
+    object-fit:contain;
+  }
 
   /* TESTIMONIALS */
   .testi-section{background:var(--navy-2); color:var(--ivory);}
@@ -321,7 +328,6 @@
   
   footer{background:var(--navy-2); color:rgba(246,243,236,0.65); padding:32px 0; font-size:0.82rem;}
   footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;}
-  footer .ecosystem{font-family:'IBM Plex Mono', monospace; font-size:0.75rem; color:var(--brass-light);}
 
   /* WHATSAPP FLOAT */
   .wa-float{
@@ -344,6 +350,8 @@
   @media (max-width:560px){
     .solutions-grid{grid-template-columns:1fr;}
     .testi-grid{grid-template-columns:1fr;}
+    .partners-logos{gap:24px 32px;}
+    .partner-logo-item{height:28px;}
     .stat-bar{gap:20px;}
   }
 </style>
@@ -439,20 +447,34 @@
   </div>
 </section>
 
-<!-- FAIXA DE ECOSSISTEMA E PARCERIAS INSTITUCIONAIS -->
+<!-- FAIXA DE LOGOS INSTITUCIONAIS -->
 <div class="partners-section">
   <div class="wrap">
     <div class="partners-head">
       <p>Acesso direto às maiores plataformas e instituições do mercado</p>
     </div>
-    <div class="partners-badges">
-      <span class="partner-badge">XP Inc.</span>
-      <span class="partner-badge">Itaú</span>
-      <span class="partner-badge">Icatu Seguros</span>
-      <span class="partner-badge">MetLife</span>
-      <span class="partner-badge">Azure</span>
-      <span class="partner-badge">BTG Pactual</span>
-      <span class="partner-badge">Porto Seguro</span>
+    <div class="partners-logos">
+      <div class="partner-logo-item" title="XP Inc.">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Logo_XP.png" alt="XP Inc.">
+      </div>
+      <div class="partner-logo-item" title="Itaú">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Ita%C3%BA_Unibanco_logo.svg" alt="Itaú">
+      </div>
+      <div class="partner-logo-item" title="BTG Pactual">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/BTG_Pactual_logo.svg" alt="BTG Pactual">
+      </div>
+      <div class="partner-logo-item" title="Icatu Seguros">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Icatu_Seguros_logo.svg" alt="Icatu Seguros">
+      </div>
+      <div class="partner-logo-item" title="MetLife">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/MetLife_logo.svg" alt="MetLife">
+      </div>
+      <div class="partner-logo-item" title="Azure">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg" alt="Microsoft Azure">
+      </div>
+      <div class="partner-logo-item" title="Porto Seguro">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Porto_Seguro_logo.svg" alt="Porto Seguro">
+      </div>
     </div>
   </div>
 </div>
@@ -571,7 +593,6 @@
 <footer>
   <div class="wrap">
     <span>Douglas Bezerra — Personal Banker &amp; Estrategista Patrimonial</span>
-    <span class="ecosystem">XP Inc. • Itaú • Icatu • MetLife • Azure • BTG</span>
     <span>Bezerra Strategic</span>
   </div>
 </footer>
