@@ -8,7 +8,7 @@
 
 <meta property="og:title" content="Bezerra Strategic | Planejamento Patrimonial Global">
 <meta property="og:description" content="Soluções de crédito, consórcio e gestão patrimonial para quem quer proteger e multiplicar patrimônio.">
-<meta property="og:image" content="https://bezerrastrategic.github.io/simulador/banner.jpeg">
+<meta property="og:image" content="https://bezerrastrategic.github.io/simulador/logo.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bezerrastrategic.github.io/simulador/">
 <meta property="og:locale" content="pt_BR">
@@ -24,7 +24,7 @@
   "name": "Bezerra Strategic",
   "description": "Planejamento patrimonial, consórcios estruturados e alavancagem de crédito para investidores e empresas.",
   "url": "https://bezerrastrategic.github.io/simulador/",
-  "image": "https://bezerrastrategic.github.io/simulador/banner.jpeg",
+  "image": "https://bezerrastrategic.github.io/simulador/logo.png",
   "founder": {
     "@type": "Person",
     "name": "Douglas Bezerra",
@@ -116,7 +116,7 @@
     color:var(--brass);
   }
 
-  /* HEADER CORRIGIDO */
+  /* HEADER AJUSTADO PARA LOGO RECORTADA */
   header.top{
     background:var(--navy);
     padding:16px 0;
@@ -133,27 +133,21 @@
     align-items:center; 
     text-decoration:none;
   }
-  /* Mascara para cortar apenas a marca no banner horizontal */
   .logo-crop{
-    width:230px;
-    height:50px;
-    overflow:hidden;
-    position:relative;
+    height:46px;
     display:flex;
     align-items:center;
   }
   .logo-crop img{
     height:100%;
     width:auto;
-    max-width:none;
-    object-fit:cover;
-    object-position:left center;
+    object-fit:contain;
   }
   .btn.header-cta{padding:10px 18px; font-size:0.85rem; flex-shrink:0; white-space:nowrap;}
 
   @media (max-width:520px){
     .btn.header-cta{padding:7px 12px; font-size:0.72rem;}
-    .logo-crop{width:160px; height:38px;}
+    .logo-crop{height:36px;}
   }
 
   /* HERO */
@@ -332,7 +326,7 @@
   <div class="wrap">
     <a href="#" class="brand">
       <div class="logo-crop">
-        <img src="https://bezerrastrategic.github.io/simulador/banner.jpeg" alt="Bezerra Strategic Logo">
+        <img src="logo.png" alt="Bezerra Strategic Logo">
       </div>
     </a>
     <a href="simulador.html" class="btn btn-outline header-cta">Simular agora</a>
