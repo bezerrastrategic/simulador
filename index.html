@@ -116,39 +116,47 @@
     color:var(--brass);
   }
 
-  /* HEADER CONFIGURADO PARA O BANNER ORIGINAL */
+  /* HEADER COM BANNER AUMENTADO EM ~80% */
   header.top{
     background:var(--navy);
-    padding:16px 0;
+    padding:24px 0;
     border-bottom:1px solid var(--line);
   }
   header.top .wrap{
     display:flex; 
     align-items:center; 
     justify-content:space-between; 
-    gap:16px;
+    gap:20px;
   }
   .brand{
     display:flex; 
     align-items:center; 
     text-decoration:none;
+    max-width:70%; /* Permite que o banner se expanda bastante */
   }
   .brand img{
-    height:56px;
+    height:100px; /* Aumentado de 56px para 100px */
     width:auto;
-    border-radius:2px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.25);
+    max-width:100%;
+    object-fit:contain;
+    border-radius:4px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.35);
   }
   .btn.header-cta{
-    padding:10px 18px; 
-    font-size:0.85rem; 
+    padding:12px 22px; 
+    font-size:0.92rem; 
     flex-shrink:0; 
     white-space:nowrap;
   }
 
+  @media (max-width:768px){
+    .brand img{height:70px;}
+  }
+
   @media (max-width:520px){
-    .brand img{height:40px;}
-    .btn.header-cta{padding:7px 12px; font-size:0.75rem;}
+    header.top{padding:16px 0;}
+    .brand img{height:52px;}
+    .btn.header-cta{padding:8px 12px; font-size:0.75rem;}
   }
 
   /* HERO */
