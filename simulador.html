@@ -74,24 +74,35 @@
     margin-bottom:32px;
   }
 
-  /* Estilização para o formulário do HubSpot se harmonizar com o tema escuro */
+  /* Ajustes visuais finos para o formulário do HubSpot */
   .hs-form-frame {
     color: #fff !important;
+  }
+  /* Oculta textos duplicados internos do form do hubspot se houver */
+  .hs-richtext {
+    display: none !important;
   }
   .hs-form label {
     color: var(--ivory) !important;
     font-family: 'Inter', sans-serif !important;
     font-weight: 600 !important;
     font-size: 0.88rem !important;
+    margin-bottom: 6px !important;
   }
-  .hs-input, .hs-field-desc {
+  .hs-input, .hs-field-desc, select.hs-input {
     background: rgba(255,255,255,0.06) !important;
     border: 1px solid rgba(246,243,236,0.2) !important;
     color: #fff !important;
     border-radius: 4px !important;
     padding: 12px 16px !important;
+    font-family: 'Inter', sans-serif !important;
   }
-  .hs-button {
+  .hs-input:focus {
+    border-color: var(--brass) !important;
+    outline: none !important;
+  }
+  /* Botão do HubSpot customizado na cor Brass (padrão do site) */
+  .actions .hs-button, input[type="submit"].hs-button {
     background: var(--brass) !important;
     color: var(--navy) !important;
     width: 100% !important;
@@ -103,8 +114,9 @@
     cursor: pointer !important;
     transition: background 0.2s ease !important;
     text-transform: uppercase;
+    margin-top: 12px !important;
   }
-  .hs-button:hover {
+  .actions .hs-button:hover, input[type="submit"].hs-button:hover {
     background: var(--brass-light) !important;
   }
 
