@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Investimentos no Exterior, Off-shore & Câmbio | Bezerra Strategic</title>
-<meta name="description" content="Proteção patrimonial internacional, estruturação de contas off-shore, câmbio corporativo e alocação global de ativos com a Bezerra Strategic.">
+<title>Investimentos no Exterior e Off-shore | Bezerra Strategic</title>
+<meta name="description" content="Guia sobre internacionalização de capital, diversificação cambial em moeda forte e proteção patrimonial através de estruturas off-shore.">
 
-<meta property="og:title" content="Investimentos no Exterior, Off-shore & Câmbio | Bezerra Strategic">
-<meta property="og:description" content="Proteja seu patrimônio contra riscos locais e acesse os principais mercados financeiros do mundo com inteligência cambial e tributária.">
+<meta property="og:title" content="Investimentos no Exterior e Off-shore | Bezerra Strategic">
+<meta property="og:description" content="Como proteger seu patrimônio contra incertezas econômicas locais diversificando em moeda forte e jurisdições globais.">
 <meta property="og:image" content="https://bezerrastrategic.github.io/simulador/banner.jpeg">
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:url" content="https://bezerrastrategic.github.io/simulador/investimentos-no-exterior-offshore.html">
 <meta property="og:locale" content="pt_BR">
 
@@ -21,48 +21,52 @@
   :root{
     --navy:#0B1D33;
     --navy-2:#122841;
-    --navy-3:#081627;
     --ivory:#F6F3EC;
     --brass:#B8963E;
     --brass-light:#D9BE72;
     --slate:#5C6B7A;
     --teal:#1F4B43;
-    --line:rgba(246,243,236,0.14);
+    --line:rgba(11,29,51,0.1);
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   body{
-    background:var(--navy);
-    color:var(--ivory);
+    background:var(--ivory);
+    color:var(--navy);
     font-family:'Inter', sans-serif;
-    line-height:1.6;
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
+    line-height:1.7;
     -webkit-font-smoothing:antialiased;
   }
   a{color:inherit; text-decoration:none;}
   img{max-width:100%; display:block;}
-  .wrap{max-width:1000px; margin:0 auto; padding:0 24px; width:100%;}
+  .wrap{max-width:800px; margin:0 auto; padding:0 24px;}
 
   /* HEADER */
   header.top{
     background:var(--navy);
-    padding:20px 0;
-    border-bottom:1px solid var(--line);
-    position:sticky;
-    top:0;
-    z-index:100;
+    padding:16px 0;
+    border-bottom:1px solid rgba(246,243,236,0.12);
   }
   header.top .wrap{
+    max-width:1080px;
     display:flex;
     align-items:center;
     justify-content:space-between;
   }
-  .brand img{
-    height:54px;
+  .brand-group{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .brand-group img{
+    height:42px;
     width:auto;
-    border-radius:4px;
+    border-radius:3px;
+  }
+  .brand-name{
+    color:var(--ivory);
+    font-family:'Fraunces', serif;
+    font-size:1.1rem;
+    font-weight:600;
   }
   .btn-back{
     border:1px solid rgba(246,243,236,0.35);
@@ -76,120 +80,103 @@
     background:rgba(246,243,236,0.08);
   }
 
-  /* HERO */
-  .hero-page{
-    padding:64px 0 48px;
-    text-align:center;
-    background:radial-gradient(circle at top, #142d4a 0%, var(--navy) 70%);
+  /* ARTIGO */
+  article.post{
+    padding:64px 0 80px;
   }
-  .eyebrow{
+  .category-tag{
     font-family:'IBM Plex Mono', monospace;
     font-size:0.75rem;
-    letter-spacing:0.14em;
+    letter-spacing:0.12em;
     text-transform:uppercase;
-    color:var(--brass-light);
+    color:var(--brass);
     display:block;
     margin-bottom:12px;
   }
-  h1{
+  h1.post-title{
     font-family:'Fraunces', serif;
-    font-size:clamp(2rem, 4vw, 3.2rem);
+    font-size:clamp(2rem, 4vw, 2.8rem);
     font-weight:600;
     line-height:1.2;
     margin-bottom:16px;
-    color:var(--ivory);
+    color:var(--navy);
   }
-  p.lead{
-    font-size:1.1rem;
-    color:rgba(246,243,236,0.8);
-    max-width:720px;
-    margin:0 auto 32px;
+  .post-meta{
+    font-size:0.9rem;
+    color:var(--slate);
+    margin-bottom:40px;
+    padding-bottom:24px;
+    border-bottom:1px solid var(--line);
+  }
+  
+  .post-body p{
+    font-size:1.05rem;
+    color:#2D3748;
+    margin-bottom:24px;
+  }
+  .post-body h2{
+    font-family:'Fraunces', serif;
+    font-size:1.6rem;
+    color:var(--navy);
+    margin:40px 0 16px;
+  }
+  .post-body ul{
+    margin:0 0 24px 20px;
+    color:#2D3748;
+  }
+  .post-body li{
+    margin-bottom:8px;
+    font-size:1.02rem;
   }
 
-  /* CONTEÚDO PRINCIPAL */
-  .content-section{
-    padding:48px 0 80px;
+  /* CALLOUT BOX */
+  .callout-box{
+    background:#FFFFFF;
+    border-left:4px solid var(--brass);
+    padding:24px;
+    margin:36px 0;
+    border-radius:0 4px 4px 0;
+    box-shadow:0 4px 12px rgba(0,0,0,0.03);
   }
-  .grid-2{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
-    gap:32px;
-    margin-bottom:48px;
-  }
-  .feature-card{
-    background:var(--navy-2);
-    border:1px solid var(--line);
-    border-radius:6px;
-    padding:32px;
-  }
-  .feature-card h3{
+  .callout-box h3{
     font-family:'Fraunces', serif;
-    font-size:1.35rem;
-    color:var(--brass-light);
-    margin-bottom:12px;
-    display:flex;
-    align-items:center;
-    gap:10px;
+    font-size:1.2rem;
+    margin-bottom:8px;
+    color:var(--navy);
   }
-  .feature-card p{
-    color:rgba(246,243,236,0.78);
+  .callout-box p{
     font-size:0.95rem;
-    line-height:1.6;
+    color:var(--slate);
+    margin-bottom:16px;
   }
 
-  /* BANNER CTA */
-  .cta-banner{
-    background:var(--navy-3);
-    border:1px solid var(--brass);
-    border-radius:8px;
-    padding:48px 32px;
-    text-align:center;
-    margin-top:24px;
-  }
-  .cta-banner h2{
-    font-family:'Fraunces', serif;
-    font-size:1.8rem;
-    color:var(--ivory);
-    margin-bottom:12px;
-  }
-  .cta-banner p{
-    color:rgba(246,243,236,0.8);
-    max-width:600px;
-    margin:0 auto 28px;
-  }
-  .btn-gold{
+  .btn-cta{
     background:var(--brass);
     color:var(--navy);
-    padding:16px 32px;
-    font-size:1rem;
+    padding:12px 24px;
     font-weight:700;
-    border-radius:3px;
-    transition:background 0.2s ease, transform 0.15s ease;
+    font-size:0.9rem;
+    border-radius:2px;
     display:inline-block;
+    transition:background 0.2s ease;
   }
-  .btn-gold:hover{
+  .btn-cta:hover{
     background:var(--brass-light);
-    transform:translateY(-1px);
   }
 
   footer{
-    background:var(--navy-3);
-    color:rgba(246,243,236,0.5);
-    padding:24px 0;
-    font-size:0.8rem;
-    border-top:1px solid var(--line);
+    background:var(--navy-2);
+    color:rgba(246,243,236,0.6);
+    padding:32px 0;
+    font-size:0.85rem;
   }
   footer .wrap{
+    max-width:1080px;
     display:flex;
     justify-content:space-between;
     align-items:center;
     flex-wrap:wrap;
-    gap:10px;
-  }
-
-  @media (max-width:560px){
-    .cta-banner{padding:32px 20px;}
-    .brand img{height:42px;}
+    gap:12px;
   }
 </style>
 </head>
@@ -197,55 +184,47 @@
 
 <header class="top">
   <div class="wrap">
-    <a href="index.html" class="brand">
+    <a href="index.html" class="brand-group">
       <img src="banner.jpeg" alt="Bezerra Strategic">
+      <span class="brand-name">Bezerra Strategic</span>
     </a>
     <a href="index.html" class="btn-back">← Voltar ao site</a>
   </div>
 </header>
 
-<main>
-  <section class="hero-page">
-    <div class="wrap">
-      <span class="eyebrow">Internacionalização &amp; Proteção Cambial</span>
-      <h1>Investimentos no Exterior, Off-shore &amp; Câmbio</h1>
-      <p class="lead">Acesso aos mercados mais consolidados do mundo, diversificação de jurisdição e eficiência tributária para proteger e perpetuar seu patrimônio.</p>
+<main class="wrap">
+  <article class="post">
+    <span class="category-tag">Proteção Cambial &amp; Internacionalização</span>
+    <h1 class="post-title">Investimentos no Exterior e Off-shore: Proteção Patrimonial Global</h1>
+    <div class="post-meta">
+      Por Douglas Bezerra · Bezerra Strategic
     </div>
-  </section>
 
-  <section class="content-section">
-    <div class="wrap">
-      <div class="grid-2">
-        
-        <div class="feature-card">
-          <h3>🌐 Diversificação de Jurisdição</h3>
-          <p>Mantenha parcela relevante do seu patrimônio alocada em moedas fortes (Dólar, Euro, Franco Suíço) e protegida contra oscilações e incertezas políticas/econômicas locais.</p>
-        </div>
+    <div class="post-body">
+      <p>A diversificação geográfica deixou de ser um luxo exclusivo de grandes fortunas e se tornou uma necessidade estratégica para qualquer investidor que busca proteger seu capital contra volatilidades geopolíticas, instabilidades jurídicas e a inflação em moeda local.</p>
 
-        <div class="feature-card">
-          <h3>🏛️ Estruturação de Off-shores &amp; PICs</h3>
-          <p>Assessoria na criação e manutenção de veículos jurídicos internacionais (Private Investment Companies) focados em otimização sucessória, eficiência fiscal e blindagem patrimonial.</p>
-        </div>
+      <h2>Por que internacionalizar parte do seu patrimônio?</h2>
+      <p>Manter 100% dos seus ativos expostos a uma única moeda e a uma única jurisdição significa aceitar um risco concentrado desnecessário. A alocação internacional permite acessar os mercados mais consolidados do mundo, garantindo estabilidade e acesso a ativos de altíssima qualidade.</p>
 
-        <div class="feature-card">
-          <h3>💱 Operações de Câmbio Corporativo &amp; Remessas</h3>
-          <p>Mesa de câmbio especializada para pessoas físicas e jurídicas. Taxas competitivas em spreads para aportes, retornos de capital, pagamento de fornecedores e comércio exterior.</p>
-        </div>
+      <ul>
+        <li><strong>Proteção Cambial:</strong> Otimização da carteira com exposição a moedas fortes como Dólar, Euro e Franco Suíço.</li>
+        <li><strong>Segurança Jurídica:</strong> Alocação de ativos em jurisdições de alta estabilidade regulatória e proteção de direitos de propriedade.</li>
+        <li><strong>Eficiência Sucessória:</strong> Estruturação de veículos internacionais como PICs (Private Investment Companies) e Off-shores para facilitar a transmissão do patrimônio familiar.</li>
+      </ul>
 
-        <div class="feature-card">
-          <h3>📈 Asset Allocation Global</h3>
-          <p>Acesso a fundos internacionais, REITs, bonds corporativos, treasuries americanas e ativos globais de alta qualidade com acompanhamento técnico independente.</p>
-        </div>
+      <h2>A estrutura ideal para o seu momento</h2>
+      <p>A escolha entre investir via pessoa física no exterior, abrir uma conta internacional ou constituir uma estrutura off-shore depende diretamente do volume patrimonial, dos objetivos familiares e do horizonte de longo prazo.</p>
 
+      <div class="callout-box">
+        <h3>Quer entender a melhor estratégia cambial para o seu perfil?</h3>
+        <p>A Bezerra Strategic desenha diagnósticos personalizados para estruturação de capital no exterior e operações de câmbio eficientes.</p>
+        <a href="simulador.html" class="btn-cta">Solicitar Estudo Personalizado</a>
       </div>
 
-      <div class="cta-banner">
-        <h2>Pronto para internacionalizar seu patrimônio?</h2>
-        <p>Solicite uma análise estratégica com nossa equipe para mapear a melhor estrutura cambial e de investimentos internacionais para o seu perfil.</p>
-        <a href="simulador.html" class="btn-gold">📊 SOLICITAR ESTUDO DE CÂMBIO &amp; OFF-SHORE</a>
-      </div>
+      <h2>Como atuamos na consultoria de câmbio e off-shore</h2>
+      <p>Acompanhamos desde a análise inicial de perfil e necessidades cambiais até a conexão com as principais instituições financeiras globais e mesas de câmbio, garantindo agilidade, taxas competitivas de spread e total conformidade regulatória.</p>
     </div>
-  </section>
+  </article>
 </main>
 
 <footer>
