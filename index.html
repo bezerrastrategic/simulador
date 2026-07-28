@@ -218,7 +218,7 @@
     line-height:1.5;
   }
 
-  /* ECOSSISTEMA INSTITUCIONAL & MARCAS */
+  /* ECOSSISTEMA CLEAN SEM CAIXINHAS */
   .partners-section{
     background:#fff;
     padding:54px 0;
@@ -227,8 +227,8 @@
   }
   .partners-head{
     text-align:center;
-    margin-bottom:32px;
-    max-width:640px;
+    margin-bottom:28px;
+    max-width:680px;
     margin-left:auto;
     margin-right:auto;
   }
@@ -237,42 +237,53 @@
     display:block;
   }
   .partners-head p{
-    font-size:0.92rem;
+    font-size:0.95rem;
     color:var(--slate);
   }
-  .partners-badges{
+  .partners-flow{
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
     align-items:center;
-    gap:14px;
+    gap:18px 28px;
+    max-width:920px;
+    margin:0 auto;
   }
-  .partner-pill{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    background:var(--ivory);
-    border:1px solid rgba(11,29,51,0.12);
-    padding:10px 18px;
-    border-radius:4px;
+  .partner-item{
     font-weight:700;
-    font-size:0.88rem;
+    font-size:1.05rem;
     color:var(--navy);
     letter-spacing:-0.01em;
-    box-shadow:0 2px 4px rgba(0,0,0,0.02);
-    transition:transform 0.15s ease, border-color 0.15s ease;
+    position:relative;
+    transition:color 0.2s ease;
   }
-  .partner-pill:hover{
-    transform:translateY(-2px);
-    border-color:var(--brass);
+  .partner-item:hover{
+    color:var(--brass);
   }
-  .partner-pill.more{
+  /* Pontinho divisor em tom dourado entre os nomes */
+  .partner-item:not(:last-child)::after{
+    content:"•";
+    position:absolute;
+    right:-16px;
+    color:var(--brass);
+    opacity:0.6;
+    font-weight:400;
+  }
+  .partner-tag-more{
+    display:inline-flex;
+    align-items:center;
+    margin-top:20px;
+    padding:8px 18px;
     background:var(--navy);
     color:var(--brass-light);
-    border-color:var(--navy);
-    font-weight:500;
+    border-radius:2px;
     font-family:'IBM Plex Mono', monospace;
     font-size:0.78rem;
+    letter-spacing:0.04em;
+  }
+  .partners-footer-wrap{
+    text-align:center;
+    width:100%;
   }
 
   /* TESTIMONIALS */
@@ -364,8 +375,9 @@
   @media (max-width:560px){
     .solutions-grid{grid-template-columns:1fr;}
     .testi-grid{grid-template-columns:1fr;}
-    .partners-badges{gap:10px;}
-    .partner-pill{padding:8px 14px; font-size:0.82rem;}
+    .partner-item{font-size:0.95rem;}
+    .partner-item:not(:last-child)::after{right:-14px;}
+    .partners-flow{gap:14px 22px;}
     .stat-bar{gap:20px;}
   }
 </style>
@@ -461,23 +473,27 @@
   </div>
 </section>
 
-<!-- FAIXA DE ECOSSISTEMA INSTITUCIONAL (ARQUITETURA ABERTA) -->
+<!-- FAIXA DE ECOSSISTEMA INSTITUCIONAL (FLUXO CLEAN) -->
 <div class="partners-section">
   <div class="wrap">
     <div class="partners-head">
       <span class="eyebrow">Arquitetura Aberta &amp; Multibanco</span>
       <p>Acesso e independência para operar com os principais bancos, seguradoras e plataformas do mercado</p>
     </div>
-    <div class="partners-badges">
-      <span class="partner-pill">XP Inc.</span>
-      <span class="partner-pill">BTG Pactual</span>
-      <span class="partner-pill">Itaú</span>
-      <span class="partner-pill">Icatu Seguros</span>
-      <span class="partner-pill">MetLife</span>
-      <span class="partner-pill">Porto Seguro</span>
-      <span class="partner-pill">Bradesco</span>
-      <span class="partner-pill">Santander</span>
-      <span class="partner-pill more">+ Principais bancos e seguradoras</span>
+    
+    <div class="partners-flow">
+      <span class="partner-item">XP Inc.</span>
+      <span class="partner-item">BTG Pactual</span>
+      <span class="partner-item">Itaú</span>
+      <span class="partner-item">Icatu Seguros</span>
+      <span class="partner-item">MetLife</span>
+      <span class="partner-item">Porto Seguro</span>
+      <span class="partner-item">Bradesco</span>
+      <span class="partner-item">Santander</span>
+    </div>
+
+    <div class="partners-footer-wrap">
+      <span class="partner-tag-more">+ Principais bancos e seguradoras do país</span>
     </div>
   </div>
 </div>
