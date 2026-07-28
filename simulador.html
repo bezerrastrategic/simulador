@@ -198,7 +198,6 @@
   }
 </style>
 
-<!-- SCRIPT DE RASTREAMENTO DO HUBSPOT (CAPTURA AUTOMÁTICA DE LEADS) -->
 <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/51784410.js"></script>
 </head>
 <body>
@@ -219,7 +218,7 @@
     <p class="lead">Preencha o formulário abaixo para entender as melhores opções de crédito, alavancagem, câmbio ou gestão patrimonial para o seu momento.</p>
 
     <div class="form-card">
-      <form id="leadForm" onsubmit="processarEnvio(event)">
+      <form id="leadForm" onsubmit="enviarParaHubspotEWhatsapp(event)">
         
         <div class="form-group">
           <label for="firstname">Nome Completo</label>
@@ -281,7 +280,6 @@
 </footer>
 
 <script>
-// MÁSCARA AUTOMÁTICA DE TELEFONE BRASILEIRO (XX) XXXXX-XXXX
 function mascaraTelefone(input) {
   let v = input.value.replace(/\D/g, "");
   if (v.length > 11) v = v.substring(0, 11);
@@ -298,9 +296,12 @@ function mascaraTelefone(input) {
   input.value = v;
 }
 
-// PROCESSAMENTO DO ENVIO
-function processarEnvio(event) {
+async function enviarParaHubspotEWhatsapp(event) {
   event.preventDefault();
+
+  const btn = document.getElementById('btnSubmit');
+  btn.innerText = "ENVIANDO...";
+  btn.disabled = true;
 
   const nome = document.getElementById('firstname').value;
   const phone = document.getElementById('phone').value;
@@ -308,16 +309,11 @@ function processarEnvio(event) {
   const objetivo = document.getElementById('objetivo_principal').value;
   const valor = document.getElementById('valor_desejado').value;
 
-  const btn = document.getElementById('btnSubmit');
-  btn.innerText = "ENVIANDO...";
-  btn.disabled = true;
-
-  // Envio direto via Endpoint REST de submissão do HubSpot Forms
   const portalId = "51784410";
   const formGuid = "9463f943-26bd-43e4-a6f8-d4c94b20ad59";
-  const endpoint = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formGuid}`;
+  const hubspotUrl = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formGuid}`;
 
-  const payload = {
+  const formData = {
     fields: [
       { name: "firstname", value: nome },
       { name: "email", value: email },
@@ -326,15 +322,20 @@ function processarEnvio(event) {
     ]
   };
 
-  fetch(endpoint, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload)
-  }).finally(() => {
-    // Redireciona para o WhatsApp após a tentativa de salvamento
-    const mensagem = `Olá Douglas! Solicitei um estudo pelo site.\n\n*Nome:* ${nome}\n*Objetivo:* ${objetivo}\n*Valor:* ${valor}\n*E-mail:* ${email}`;
-    window.location.href = `https://wa.me/5547988307859?text=${encodeURIComponent(mensagem)}`;
-  });
+  try {
+    // Aguarda o HubSpot confirmar o recebimento do formulário antes de redirecionar
+    await fetch(hubspotUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData)
+    });
+  } catch (err) {
+    console.error("Erro no HubSpot:", err);
+  }
+
+  // Redireciona para o WhatsApp após a conclusão da chamada
+  const mensagem = `Olá Douglas! Solicitei um estudo pelo site.\n\n*Nome:* ${nome}\n*Objetivo:* ${objetivo}\n*Valor:* ${valor}\n*E-mail:* ${email}`;
+  window.location.href = `https://wa.me/5547988307859?text=${encodeURIComponent(mensagem)}`;
 }
 </script>
 
