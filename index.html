@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bezerra Strategic | Consórcio, Crédito e Planejamento Patrimonial</title>
-<meta name="description" content="Consultoria especializada em consórcios estruturados, alavancagem de crédito e planejamento patrimonial para investidores e empresários. +R$54MM sob gestão, 15+ anos de mercado.">
+<title>Bezerra Strategic | Wealth Management, Crédito e Soluções Patrimoniais</title>
+<meta name="description" content="Consultoria financeira global: consórcios estruturados, alavancagem de crédito, offshore, seguro de vida e gestão patrimonial para investidores e empresas. +R$54MM sob gestão.">
 
-<meta property="og:title" content="Bezerra Strategic | Planejamento Patrimonial Global">
-<meta property="og:description" content="Soluções de crédito, consórcio e gestão patrimonial para quem quer proteger e multiplicar patrimônio.">
+<meta property="og:title" content="Bezerra Strategic | Planejamento e Soluções Patrimoniais Global">
+<meta property="og:description" content="Soluções completas em câmbio, real estate, crédito, consórcio e wealth management para proteger e multiplicar seu patrimônio.">
 <meta property="og:image" content="https://bezerrastrategic.github.io/simulador/banner.jpeg">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bezerrastrategic.github.io/simulador/">
@@ -22,7 +22,7 @@
   "@context": "https://schema.org",
   "@type": "FinancialService",
   "name": "Bezerra Strategic",
-  "description": "Planejamento patrimonial, consórcios estruturados e alavancagem de crédito para investidores e empresas.",
+  "description": "Planejamento patrimonial, wealth management, consórcios estruturados e alavancagem de crédito para investidores e empresas.",
   "url": "https://bezerrastrategic.github.io/simulador/",
   "image": "https://bezerrastrategic.github.io/simulador/banner.jpeg",
   "founder": {
@@ -36,46 +36,6 @@
     "reviewCount": "4"
   },
   "areaServed": "BR"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Consórcio vale a pena ou é melhor financiar?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Depende do objetivo. O consórcio tem juros menores que o financiamento, mas exige planejamento de prazo, já que a contemplação pode não ser imediata. Para quem não tem pressa, costuma ser mais vantajoso."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Preciso ter um patrimônio alto para contratar planejamento patrimonial?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Não necessariamente. É útil tanto para quem está construindo patrimônio quanto para quem já tem ativos consolidados e quer proteção, sucessão ou eficiência fiscal."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Como funciona a alavancagem de crédito para empresas?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "É o uso estratégico de linhas de crédito para financiar crescimento ou capital de giro sem comprometer o caixa, otimizando custo financeiro e retorno sobre o capital investido."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Quanto custa fazer um estudo personalizado com a Bezerra Strategic?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "O estudo inicial é gratuito e sem compromisso, com o objetivo de entender o momento financeiro do cliente e apresentar as opções mais adequadas."
-      }
-    }
-  ]
 }
 </script>
 
@@ -116,10 +76,10 @@
     color:var(--brass);
   }
 
-  /* HEADER COM BANNER AUMENTADO EM ~80% */
+  /* HEADER */
   header.top{
     background:var(--navy);
-    padding:24px 0;
+    padding:20px 0;
     border-bottom:1px solid var(--line);
   }
   header.top .wrap{
@@ -132,10 +92,10 @@
     display:flex; 
     align-items:center; 
     text-decoration:none;
-    max-width:70%; /* Permite que o banner se expanda bastante */
+    max-width:70%;
   }
   .brand img{
-    height:100px; /* Aumentado de 56px para 100px */
+    height:90px;
     width:auto;
     max-width:100%;
     object-fit:contain;
@@ -150,12 +110,11 @@
   }
 
   @media (max-width:768px){
-    .brand img{height:70px;}
+    .brand img{height:65px;}
   }
-
   @media (max-width:520px){
-    header.top{padding:16px 0;}
-    .brand img{height:52px;}
+    header.top{padding:14px 0;}
+    .brand img{height:48px;}
     .btn.header-cta{padding:8px 12px; font-size:0.75rem;}
   }
 
@@ -217,24 +176,83 @@
 
   /* SECTION SHARED */
   section{padding:80px 0;}
-  .section-head{max-width:560px; margin-bottom:48px;}
+  .section-head{max-width:640px; margin-bottom:48px;}
   .section-head h2{font-size:clamp(1.6rem, 3vw, 2.2rem); margin-top:10px;}
 
-  /* PILLARS */
-  .pillars{display:grid; grid-template-columns:repeat(3, 1fr); gap:28px;}
-  .pillar{
+  /* SOLUÇÕES (GRID EXPANDIDO DE 8 PILARES) */
+  .solutions-grid{
+    display:grid; 
+    grid-template-columns:repeat(4, 1fr); 
+    gap:20px;
+  }
+  .solution-card{
     background:#fff;
     border:1px solid rgba(11,29,51,0.08);
-    padding:32px 26px;
+    padding:28px 22px;
     border-radius:4px;
+    display:flex;
+    flex-direction:column;
+    transition:transform 0.2s ease, box-shadow 0.2s ease;
   }
-  .pillar .icon{
-    width:44px; height:44px;
-    margin-bottom:20px;
+  .solution-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 28px rgba(11,29,51,0.06);
+  }
+  .solution-card .icon-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.7rem;
     color:var(--teal);
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    margin-bottom:12px;
+    font-weight:600;
   }
-  .pillar h3{font-size:1.15rem; margin-bottom:10px;}
-  .pillar p{color:var(--slate); font-size:0.95rem;}
+  .solution-card h3{
+    font-size:1.1rem; 
+    margin-bottom:10px;
+    line-height:1.25;
+  }
+  .solution-card p{
+    color:var(--slate); 
+    font-size:0.88rem;
+    line-height:1.5;
+  }
+
+  /* MARCAS PARCEIRAS / ECOSSISTEMA */
+  .partners-section{
+    background:#fff;
+    padding:48px 0;
+    border-top:1px solid rgba(11,29,51,0.06);
+    border-bottom:1px solid rgba(11,29,51,0.06);
+  }
+  .partners-head{
+    text-align:center;
+    margin-bottom:28px;
+  }
+  .partners-head p{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.75rem;
+    text-transform:uppercase;
+    letter-spacing:0.12em;
+    color:var(--slate);
+  }
+  .partners-badges{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+    gap:28px 40px;
+  }
+  .partner-badge{
+    font-family:'Inter', sans-serif;
+    font-weight:700;
+    font-size:1.05rem;
+    color:var(--navy);
+    opacity:0.65;
+    letter-spacing:-0.02em;
+    transition:opacity 0.2s ease;
+  }
+  .partner-badge:hover{opacity:1;}
 
   /* TESTIMONIALS */
   .testi-section{background:var(--navy-2); color:var(--ivory);}
@@ -300,10 +318,10 @@
   .article-card h3{font-size:1.08rem; margin-bottom:10px; line-height:1.3;}
   .article-card p{color:var(--slate); font-size:0.9rem; margin-bottom:18px; flex-grow:1;}
   .article-card .read-more{font-size:0.85rem; font-weight:600; color:var(--teal); border-bottom:1px solid currentColor; align-self:flex-start;}
-  @media (max-width:860px){ .articles-grid{grid-template-columns:1fr;} }
-
-  footer{background:var(--navy-2); color:rgba(246,243,236,0.55); padding:28px 0; font-size:0.82rem;}
-  footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
+  
+  footer{background:var(--navy-2); color:rgba(246,243,236,0.65); padding:32px 0; font-size:0.82rem;}
+  footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;}
+  footer .ecosystem{font-family:'IBM Plex Mono', monospace; font-size:0.75rem; color:var(--brass-light);}
 
   /* WHATSAPP FLOAT */
   .wa-float{
@@ -314,18 +332,19 @@
     box-shadow:0 8px 24px rgba(11,29,51,0.35);
   }
 
+  @media (max-width:1024px){
+    .solutions-grid{grid-template-columns:repeat(2, 1fr);}
+  }
   @media (max-width:860px){
-    .pillars{grid-template-columns:1fr;}
     .testi-grid{grid-template-columns:1fr 1fr;}
     .about-grid{grid-template-columns:1fr;}
     .about-photo{max-width:180px;}
+    .articles-grid{grid-template-columns:1fr;}
   }
   @media (max-width:560px){
+    .solutions-grid{grid-template-columns:1fr;}
     .testi-grid{grid-template-columns:1fr;}
     .stat-bar{gap:20px;}
-  }
-  @media (prefers-reduced-motion: reduce){
-    *{transition:none !important;}
   }
 </style>
 </head>
@@ -352,7 +371,7 @@
       <div><strong>15+</strong>anos de mercado</div>
     </div>
     <h1>Alavancagem e proteção patrimonial para quem pensa em décadas, não em meses.</h1>
-    <p class="lead">Modelagem de crédito inteligente, consórcios estruturados e planejamento financeiro para investidores e empresas.</p>
+    <p class="lead">Modelagem de crédito inteligente, consórcios estruturados e arquitetura financeira personalizada para investidores e empresas.</p>
     <div class="cta-row">
       <a href="simulador.html" class="btn btn-primary">Solicitar estudo personalizado</a>
       <a href="https://wa.me/5547988307859?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais." class="btn btn-outline">Falar no WhatsApp</a>
@@ -360,40 +379,83 @@
   </div>
 </section>
 
-<section id="pilares">
+<!-- SEÇÃO DE SOLUÇÕES (ABRANGÊNCIA COMPLETA) -->
+<section id="solucoes">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Pilares de atuação</span>
-      <h2>Onde a estratégia encontra o resultado</h2>
+      <span class="eyebrow">Soluções Patrimoniais</span>
+      <h2>Arquitetura financeira completa para cada momento do seu capital</h2>
     </div>
-    <div class="pillars">
-      <div class="pillar">
-        <svg class="icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M8 20L24 8L40 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M12 20V40H36V20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M20 40V28H28V40" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+    
+    <div class="solutions-grid">
+      <div class="solution-card">
+        <span class="icon-tag">01 • Crédito &amp; Aquisição</span>
         <h3>Consórcios Estruturados</h3>
-        <p>Aquisição preditiva de imóveis, veículos de alto padrão e frotas operacionais com custo financeiro reduzido.</p>
+        <p>Alavancagem preditiva de patrimônio imobiliário, veículos de alto padrão e frota com custo financeiro significativamente inferior ao financiamento.</p>
       </div>
-      <div class="pillar">
-        <svg class="icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M26 6L10 28H22L20 42L38 18H26L26 6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-        </svg>
-        <h3>Alavancagem &amp; Capital de Giro</h3>
-        <p>Estratégias de crédito sob medida para otimização do balanço patrimonial e expansão de negócios.</p>
+
+      <div class="solution-card">
+        <span class="icon-tag">02 • Liquidez &amp; Expansão</span>
+        <h3>Financiamento e Home Equity</h3>
+        <p>Acesso a recursos com imóvel em garantia para alavancagem de negócios ou otimização do balanço patrimonial com taxas competitivas.</p>
       </div>
-      <div class="pillar">
-        <svg class="icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M6 38L18 26L26 32L42 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M32 12H42V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <h3>Gestão Patrimonial Global</h3>
-        <p>Arquitetura financeira para proteção de ativos, sucessão familiar e otimização fiscal.</p>
+
+      <div class="solution-card">
+        <span class="icon-tag">03 • Estratégia Patrimonial</span>
+        <h3>Wealth Management</h3>
+        <p>Estratégia integrada de wealth conectando proteção, crescimento e sucessão para garantir controle absoluto sobre seus ativos.</p>
+      </div>
+
+      <div class="solution-card">
+        <span class="icon-tag">04 • Proteção Familiar</span>
+        <h3>Seguro de Vida Estruturado</h3>
+        <p>Proteção financeira com eficiência tributária, liquidez imediata para sucessão e blindagem em cenários imprevistos.</p>
+      </div>
+
+      <div class="solution-card">
+        <span class="icon-tag">05 • Longo Prazo</span>
+        <h3>Previdência Privada</h3>
+        <p>Planejamento de aposentadoria e sucessão com gestão ativa, incentivo fiscal (PGBL/VGBL) e liberdade de alocação.</p>
+      </div>
+
+      <div class="solution-card">
+        <span class="icon-tag">06 • Proteção Cambial</span>
+        <h3>Investimentos no Exterior</h3>
+        <p>Alocação de capital off-shore e diversificação em moeda forte para proteger seu patrimônio do risco geopolítico e econômico local.</p>
+      </div>
+
+      <div class="solution-card">
+        <span class="icon-tag">07 • Transações Globais</span>
+        <h3>Câmbio &amp; Remessas</h3>
+        <p>Soluções de câmbio eficientes para transferências internacionais, aportes ou operações corporativas com agilidade e cotação competitiva.</p>
+      </div>
+
+      <div class="solution-card">
+        <span class="icon-tag">08 • Ativos Reais</span>
+        <h3>Real Estate</h3>
+        <p>Operações estruturadas no mercado imobiliário voltadas para valorização de capital e geração de renda passiva consistente.</p>
       </div>
     </div>
   </div>
 </section>
+
+<!-- FAIXA DE ECOSSISTEMA E PARCERIAS INSTITUCIONAIS -->
+<div class="partners-section">
+  <div class="wrap">
+    <div class="partners-head">
+      <p>Acesso direto às maiores plataformas e instituições do mercado</p>
+    </div>
+    <div class="partners-badges">
+      <span class="partner-badge">XP Inc.</span>
+      <span class="partner-badge">Itaú</span>
+      <span class="partner-badge">Icatu Seguros</span>
+      <span class="partner-badge">MetLife</span>
+      <span class="partner-badge">Azure</span>
+      <span class="partner-badge">BTG Pactual</span>
+      <span class="partner-badge">Porto Seguro</span>
+    </div>
+  </div>
+</div>
 
 <section class="testi-section">
   <div class="wrap">
@@ -509,7 +571,8 @@
 <footer>
   <div class="wrap">
     <span>Douglas Bezerra — Personal Banker &amp; Estrategista Patrimonial</span>
-    <span>Parceiro Autorizado Univalores • Bezerra Strategic</span>
+    <span class="ecosystem">XP Inc. • Itaú • Icatu • MetLife • Azure • BTG</span>
+    <span>Bezerra Strategic</span>
   </div>
 </footer>
 
