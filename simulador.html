@@ -182,7 +182,7 @@
     <h1>Estudo Patrimonial Personalizado</h1>
     <p class="sub">Preencha os dados abaixo para alinharmos a melhor estratégia de crédito, consórcio ou alavancagem para o seu momento.</p>
 
-    <!-- FORMULÁRIO OFICIAL DO HUBSPOT — embed clássico (inline, sem iframe) para permitir estilização via CSS -->
+    <!-- FORMULÁRIO OFICIAL DO HUBSPOT — CSS injetado via parâmetro 'css' para estilizar por dentro do iframe -->
     <div id="hubspotForm"></div>
     <script src="https://js.hsforms.net/forms/v2.js"></script>
     <script>
@@ -190,7 +190,56 @@
         region: "na1",
         portalId: "51784410",
         formId: "9463f943-26bd-43e4-a6f8-d4c94b20ad59",
-        target: "#hubspotForm"
+        target: "#hubspotForm",
+        cssClass: "bs-form",
+        inlineMessage: "Recebemos seus dados! Em breve entraremos em contato.",
+        css: `
+          body{ background:transparent !important; font-family:'Inter',sans-serif !important; }
+          .hs-richtext{ display:none !important; }
+          fieldset{ max-width:100% !important; }
+          .hs-form-field{ margin-bottom:18px !important; }
+          label{
+            display:block !important;
+            color:#D9BE72 !important;
+            font-family:'Inter',sans-serif !important;
+            font-weight:600 !important;
+            font-size:14px !important;
+            margin-bottom:6px !important;
+          }
+          label span.hs-form-required{ color:#D9BE72 !important; }
+          .hs-input{
+            width:100% !important;
+            background:rgba(255,255,255,0.08) !important;
+            border:1px solid rgba(217,190,114,0.35) !important;
+            color:#F6F3EC !important;
+            border-radius:4px !important;
+            padding:12px 16px !important;
+            font-size:15px !important;
+            font-family:'Inter',sans-serif !important;
+          }
+          .hs-input:focus{ border-color:#B8963E !important; outline:none !important; }
+          select.hs-input option{ color:#0B1D33 !important; }
+          .hs-error-msgs label{ color:#f2a5a5 !important; font-weight:400 !important; font-size:12px !important; }
+          .hs-form-booleancheckbox label, .hs-form-checkbox label{
+            display:flex !important; align-items:flex-start; gap:8px;
+            font-weight:400 !important; font-size:13px !important; color:#D9BE72 !important;
+          }
+          .hs-button{
+            background:#B8963E !important;
+            color:#0B1D33 !important;
+            width:100% !important;
+            padding:16px !important;
+            font-size:16px !important;
+            font-weight:700 !important;
+            border:none !important;
+            border-radius:4px !important;
+            cursor:pointer !important;
+            text-transform:uppercase;
+            margin-top:8px !important;
+          }
+          .hs-button:hover{ background:#D9BE72 !important; }
+          .submitted-message{ color:#F6F3EC !important; font-size:18px !important; }
+        `
       });
     </script>
 
