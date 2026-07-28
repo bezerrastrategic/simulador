@@ -218,7 +218,7 @@
     line-height:1.5;
   }
 
-  /* ECOSSISTEMA COM LOGOS VISUAIS */
+  /* ECOSSISTEMA INSTITUCIONAL & MARCAS */
   .partners-section{
     background:#fff;
     padding:54px 0;
@@ -227,38 +227,52 @@
   }
   .partners-head{
     text-align:center;
-    margin-bottom:36px;
+    margin-bottom:32px;
+    max-width:640px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .partners-head span.eyebrow{
+    margin-bottom:6px;
+    display:block;
   }
   .partners-head p{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.75rem;
-    text-transform:uppercase;
-    letter-spacing:0.14em;
+    font-size:0.92rem;
     color:var(--slate);
   }
-  .partners-logos{
+  .partners-badges{
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
     align-items:center;
-    gap:36px 48px;
+    gap:14px;
   }
-  .partner-logo-item{
-    display:flex;
+  .partner-pill{
+    display:inline-flex;
     align-items:center;
-    justify-content:center;
-    height:36px;
-    filter:grayscale(100%) opacity(0.6);
-    transition:filter 0.25s ease, transform 0.25s ease;
+    gap:8px;
+    background:var(--ivory);
+    border:1px solid rgba(11,29,51,0.12);
+    padding:10px 18px;
+    border-radius:4px;
+    font-weight:700;
+    font-size:0.88rem;
+    color:var(--navy);
+    letter-spacing:-0.01em;
+    box-shadow:0 2px 4px rgba(0,0,0,0.02);
+    transition:transform 0.15s ease, border-color 0.15s ease;
   }
-  .partner-logo-item:hover{
-    filter:grayscale(0%) opacity(1);
-    transform:scale(1.05);
+  .partner-pill:hover{
+    transform:translateY(-2px);
+    border-color:var(--brass);
   }
-  .partner-logo-item img{
-    max-height:100%;
-    width:auto;
-    object-fit:contain;
+  .partner-pill.more{
+    background:var(--navy);
+    color:var(--brass-light);
+    border-color:var(--navy);
+    font-weight:500;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
   }
 
   /* TESTIMONIALS */
@@ -350,8 +364,8 @@
   @media (max-width:560px){
     .solutions-grid{grid-template-columns:1fr;}
     .testi-grid{grid-template-columns:1fr;}
-    .partners-logos{gap:24px 32px;}
-    .partner-logo-item{height:28px;}
+    .partners-badges{gap:10px;}
+    .partner-pill{padding:8px 14px; font-size:0.82rem;}
     .stat-bar{gap:20px;}
   }
 </style>
@@ -447,34 +461,23 @@
   </div>
 </section>
 
-<!-- FAIXA DE LOGOS INSTITUCIONAIS -->
+<!-- FAIXA DE ECOSSISTEMA INSTITUCIONAL (ARQUITETURA ABERTA) -->
 <div class="partners-section">
   <div class="wrap">
     <div class="partners-head">
-      <p>Acesso direto às maiores plataformas e instituições do mercado</p>
+      <span class="eyebrow">Arquitetura Aberta &amp; Multibanco</span>
+      <p>Acesso e independência para operar com os principais bancos, seguradoras e plataformas do mercado</p>
     </div>
-    <div class="partners-logos">
-      <div class="partner-logo-item" title="XP Inc.">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Logo_XP.png" alt="XP Inc.">
-      </div>
-      <div class="partner-logo-item" title="Itaú">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Ita%C3%BA_Unibanco_logo.svg" alt="Itaú">
-      </div>
-      <div class="partner-logo-item" title="BTG Pactual">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/BTG_Pactual_logo.svg" alt="BTG Pactual">
-      </div>
-      <div class="partner-logo-item" title="Icatu Seguros">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Icatu_Seguros_logo.svg" alt="Icatu Seguros">
-      </div>
-      <div class="partner-logo-item" title="MetLife">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/MetLife_logo.svg" alt="MetLife">
-      </div>
-      <div class="partner-logo-item" title="Azure">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg" alt="Microsoft Azure">
-      </div>
-      <div class="partner-logo-item" title="Porto Seguro">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Porto_Seguro_logo.svg" alt="Porto Seguro">
-      </div>
+    <div class="partners-badges">
+      <span class="partner-pill">XP Inc.</span>
+      <span class="partner-pill">BTG Pactual</span>
+      <span class="partner-pill">Itaú</span>
+      <span class="partner-pill">Icatu Seguros</span>
+      <span class="partner-pill">MetLife</span>
+      <span class="partner-pill">Porto Seguro</span>
+      <span class="partner-pill">Bradesco</span>
+      <span class="partner-pill">Santander</span>
+      <span class="partner-pill more">+ Principais bancos e seguradoras</span>
     </div>
   </div>
 </div>
