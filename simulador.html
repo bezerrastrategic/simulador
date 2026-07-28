@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Estudo Personalizado &amp; Simulador | Bezerra Strategic</title>
-<meta name="description" content="Solicite um estudo personalizado de crédito, consórcio, wealth management, câmbio ou planejamento patrimonial com a Bezerra Strategic.">
+<title>Bezerra Strategic | Planejamento e Soluções Patrimoniais Global</title>
+<meta name="description" content="Modelagem de crédito inteligente, consórcios estruturados e arquitetura financeira personalizada para investidores e empresas.">
 
-<meta property="og:title" content="Estudo Personalizado &amp; Simulador | Bezerra Strategic">
-<meta property="og:description" content="Simule e receba um diagnóstico financeiro sob medida para o seu momento patrimonial ou empresarial.">
+<meta property="og:title" content="Bezerra Strategic | Planejamento Patrimonial e Soluções Financeiras">
+<meta property="og:description" content="+R$ 54MM sob gestão | +200 clientes atendidos | Estratégia patrimonial e financeira completa.">
 <meta property="og:image" content="https://bezerrastrategic.github.io/simulador/banner.jpeg">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://bezerrastrategic.github.io/simulador/simulador.html">
+<meta property="og:url" content="https://bezerrastrategic.github.io/simulador/">
 <meta property="og:locale" content="pt_BR">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,12 +21,14 @@
   :root{
     --navy:#0B1D33;
     --navy-2:#122841;
+    --navy-3:#081627;
     --ivory:#F6F3EC;
     --brass:#B8963E;
     --brass-light:#D9BE72;
     --slate:#5C6B7A;
     --teal:#1F4B43;
-    --line:rgba(246,243,236,0.14);
+    --line:rgba(11,29,51,0.1);
+    --card-bg:#FFFFFF;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   body{
@@ -34,21 +36,20 @@
     color:var(--ivory);
     font-family:'Inter', sans-serif;
     line-height:1.6;
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
     -webkit-font-smoothing:antialiased;
   }
   a{color:inherit; text-decoration:none;}
   img{max-width:100%; display:block;}
-  .wrap{max-width:680px; margin:0 auto; padding:0 24px; width:100%;}
+  .wrap{max-width:1140px; margin:0 auto; padding:0 24px; width:100%;}
 
   /* HEADER */
   header.top{
     background:var(--navy);
     padding:20px 0;
-    border-bottom:1px solid var(--line);
+    border-bottom:1px solid rgba(246,243,236,0.12);
+    position:sticky;
+    top:0;
+    z-index:100;
   }
   header.top .wrap{
     display:flex;
@@ -60,321 +61,815 @@
     width:auto;
     border-radius:4px;
   }
-  .btn-back{
+  .btn-simular-top{
     border:1px solid rgba(246,243,236,0.35);
     color:var(--ivory);
-    padding:8px 16px;
-    font-size:0.85rem;
-    border-radius:2px;
-    transition:background 0.2s ease;
+    padding:10px 22px;
+    font-size:0.88rem;
+    font-weight:600;
+    border-radius:3px;
+    transition:all 0.2s ease;
   }
-  .btn-back:hover{
+  .btn-simular-top:hover{
+    background:var(--brass);
+    border-color:var(--brass);
+    color:var(--navy);
+  }
+
+  /* HERO SECTION */
+  .hero{
+    padding:64px 0 80px;
+    background:var(--navy);
+  }
+  .hero-stats{
+    display:flex;
+    gap:48px;
+    margin-bottom:36px;
+  }
+  .stat-item h3{
+    font-family:'Fraunces', serif;
+    font-size:2rem;
+    color:var(--ivory);
+    line-height:1.1;
+  }
+  .stat-item p{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.75rem;
+    color:var(--brass-light);
+    text-transform:lowercase;
+    letter-spacing:0.02em;
+    margin-top:4px;
+  }
+  .hero h1{
+    font-family:'Fraunces', serif;
+    font-size:clamp(2.4rem, 4.8vw, 3.8rem);
+    font-weight:600;
+    line-height:1.15;
+    max-width:880px;
+    margin-bottom:24px;
+    color:var(--ivory);
+  }
+  .hero p.sub{
+    font-size:1.1rem;
+    color:rgba(246,243,236,0.78);
+    max-width:680px;
+    line-height:1.6;
+    margin-bottom:36px;
+  }
+  .hero-buttons{
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .btn-gold{
+    background:var(--brass);
+    color:var(--navy);
+    padding:14px 28px;
+    font-size:0.95rem;
+    font-weight:700;
+    border-radius:3px;
+    transition:all 0.2s ease;
+    display:inline-block;
+  }
+  .btn-gold:hover{
+    background:var(--brass-light);
+  }
+  .btn-outline{
+    border:1px solid rgba(246,243,236,0.35);
+    color:var(--ivory);
+    padding:14px 28px;
+    font-size:0.95rem;
+    font-weight:600;
+    border-radius:3px;
+    transition:all 0.2s ease;
+    display:inline-block;
+  }
+  .btn-outline:hover{
     background:rgba(246,243,236,0.08);
   }
 
-  /* HERO FORM */
-  .sim-section{
-    padding:48px 0 64px;
+  /* SEÇÃO DE SOLUÇÕES / ARQUITETURA (CREME) */
+  .architecture-section{
+    background:var(--ivory);
+    color:var(--navy);
+    padding:96px 0;
   }
-  .eyebrow{
+  .eyebrow-dark{
     font-family:'IBM Plex Mono', monospace;
-    font-size:0.72rem;
+    font-size:0.75rem;
     letter-spacing:0.14em;
     text-transform:uppercase;
-    color:var(--brass-light);
+    color:var(--brass);
     display:block;
-    margin-bottom:8px;
+    margin-bottom:12px;
   }
-  h1{
+  .architecture-section h2{
     font-family:'Fraunces', serif;
-    font-size:clamp(1.8rem, 3.5vw, 2.5rem);
+    font-size:clamp(2rem, 3.5vw, 2.8rem);
     font-weight:600;
     line-height:1.2;
-    margin-bottom:12px;
-    color:var(--ivory);
+    max-width:720px;
+    margin-bottom:56px;
+    color:var(--navy);
   }
-  p.lead{
-    color:rgba(246,243,236,0.78);
-    font-size:0.98rem;
+  .cards-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+    gap:24px;
+  }
+  .card-item{
+    background:var(--card-bg);
+    border:1px solid rgba(11,29,51,0.08);
+    border-radius:4px;
+    padding:32px 24px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.02);
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    transition:transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .card-item:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 24px rgba(0,0,0,0.06);
+  }
+  .card-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.7rem;
+    font-weight:600;
+    letter-spacing:0.1em;
+    color:var(--teal);
+    text-transform:uppercase;
+    margin-bottom:16px;
+    display:block;
+  }
+  .card-item h3{
+    font-family:'Fraunces', serif;
+    font-size:1.3rem;
+    color:var(--navy);
+    margin-bottom:12px;
+  }
+  .card-item p{
+    font-size:0.88rem;
+    color:#4A5568;
+    line-height:1.6;
+  }
+
+  /* PARCEIROS MULTIBANCO */
+  .partners-section{
+    background:var(--ivory);
+    color:var(--navy);
+    padding:0 0 80px;
+    border-top:1px solid rgba(11,29,51,0.08);
+    text-align:center;
+  }
+  .partners-title{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.75rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--brass);
+    margin:48px 0 12px;
+  }
+  .partners-sub{
+    font-size:0.95rem;
+    color:#4A5568;
+    margin-bottom:28px;
+  }
+  .partners-list{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:24px;
+    flex-wrap:wrap;
+    font-weight:700;
+    font-size:1.05rem;
+    color:var(--navy);
     margin-bottom:32px;
   }
+  .partners-list span.dot{
+    color:var(--brass-light);
+    font-size:0.8rem;
+  }
+  .badge-dark{
+    background:var(--navy);
+    color:var(--brass-light);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.75rem;
+    padding:8px 18px;
+    border-radius:2px;
+    display:inline-block;
+  }
 
-  /* CARD DO FORMULÁRIO */
-  .form-card{
+  /* REVIEWS GOOGLE (CARD ESCURO) */
+  .reviews-section{
+    background:var(--navy);
+    padding:80px 0;
+  }
+  .reviews-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+    gap:20px;
+    margin-bottom:32px;
+  }
+  .review-box{
     background:var(--navy-2);
-    border:1px solid var(--line);
+    border:1px solid rgba(246,243,236,0.1);
     border-radius:6px;
-    padding:36px 32px;
-    box-shadow:0 16px 40px rgba(0,0,0,0.35);
-    position:relative;
+    padding:28px 24px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
   }
-  .form-group{
-    margin-bottom:22px;
+  .review-stars{
+    color:#FFB800;
+    font-size:0.9rem;
+    margin-bottom:12px;
   }
-  .form-group label{
-    display:block;
-    font-size:0.88rem;
-    font-weight:600;
-    color:var(--ivory);
-    margin-bottom:8px;
+  .review-text{
+    font-size:0.92rem;
+    color:rgba(246,243,236,0.85);
+    font-style:italic;
+    margin-bottom:20px;
   }
-  .form-control{
-    width:100%;
-    padding:14px 16px;
-    background:#081627;
-    border:1px solid rgba(246,243,236,0.2);
-    border-radius:4px;
-    color:var(--ivory);
-    font-family:'Inter', sans-serif;
-    font-size:0.95rem;
-    outline:none;
-    transition:border-color 0.2s ease, box-shadow 0.2s ease;
+  .review-author{
+    display:flex;
+    align-items:center;
+    gap:12px;
   }
-  .form-control:focus{
-    border-color:var(--brass);
-    box-shadow:0 0 0 2px rgba(184,150,62,0.25);
-  }
-  select.form-control{
-    cursor:pointer;
-    appearance:none;
-    background-image:url("data:image/svg+xml;utf8,<svg fill='%23D9BE72' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
-    background-repeat:no-repeat;
-    background-position:right 12px center;
-    padding-right:40px;
-  }
-  select.form-control option{
-    background:var(--navy-2);
-    color:var(--ivory);
-    padding:10px;
-  }
-  
-  .btn-submit{
-    width:100%;
+  .avatar-initial{
+    width:36px;
+    height:36px;
     background:var(--brass);
     color:var(--navy);
-    border:none;
-    padding:16px 24px;
-    font-size:1rem;
     font-weight:700;
-    border-radius:3px;
-    cursor:pointer;
-    transition:background 0.2s ease, transform 0.15s ease;
-    margin-top:10px;
-    display:inline-flex;
+    border-radius:50%;
+    display:flex;
     align-items:center;
     justify-content:center;
-    gap:8px;
+    font-size:0.9rem;
   }
-  .btn-submit:hover{
-    background:var(--brass-light);
-    transform:translateY(-1px);
+  .author-info strong{
+    display:block;
+    font-size:0.88rem;
+    color:var(--ivory);
   }
-
-  .privacy-note{
+  .author-info span{
     font-size:0.75rem;
     color:rgba(246,243,236,0.5);
-    text-align:center;
+  }
+  .reviews-more{
     margin-top:16px;
   }
-
-  /* MENSAGEM DE SUCESSO */
-  .success-box {
-    display: none;
-    text-align: center;
-    padding: 30px 10px;
+  .reviews-more a{
+    color:var(--brass-light);
+    font-size:0.9rem;
+    text-decoration:underline;
+    transition:opacity 0.2s ease;
   }
-  .success-icon {
-    font-size: 2.8rem;
-    margin-bottom: 16px;
-    display: inline-block;
-  }
-  .success-title {
-    font-family: 'Fraunces', serif;
-    font-size: 1.6rem;
-    color: var(--brass-light);
-    margin-bottom: 12px;
-  }
-  .success-desc {
-    color: rgba(246, 243, 236, 0.85);
-    font-size: 0.98rem;
-    line-height: 1.6;
-    margin-bottom: 24px;
+  .reviews-more a:hover{
+    opacity:0.8;
   }
 
-  footer{
-    background:#071322;
-    color:rgba(246,243,236,0.5);
+  /* SOBRE DOUGLAS BEZERRA */
+  .profile-section{
+    background:#FFFFFF;
+    color:var(--navy);
+    padding:80px 0;
+  }
+  .profile-wrap{
+    display:flex;
+    align-items:center;
+    gap:48px;
+    flex-wrap:wrap;
+  }
+  .profile-img{
+    width:280px;
+    height:340px;
+    object-fit:cover;
+    border-radius:4px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.08);
+  }
+  .profile-content{
+    flex:1;
+    min-width:300px;
+  }
+  .profile-content h2{
+    font-family:'Fraunces', serif;
+    font-size:2.2rem;
+    margin-bottom:16px;
+  }
+  .profile-content p{
+    color:#4A5568;
+    font-size:1rem;
+    line-height:1.6;
+    margin-bottom:28px;
+  }
+
+  /* FAQ (CREME) */
+  .faq-section{
+    background:var(--ivory);
+    color:var(--navy);
+    padding:80px 0;
+    border-top:1px solid rgba(11,29,51,0.08);
+  }
+  .faq-section h2{
+    font-family:'Fraunces', serif;
+    font-size:2.2rem;
+    margin-bottom:40px;
+  }
+  .faq-list{
+    max-width:880px;
+  }
+  .faq-item{
+    border-bottom:1px solid rgba(11,29,51,0.12);
     padding:24px 0;
-    font-size:0.8rem;
-    border-top:1px solid var(--line);
+  }
+  .faq-item h3{
+    font-size:1.05rem;
+    font-weight:700;
+    margin-bottom:10px;
+    color:var(--navy);
+  }
+  .faq-item p{
+    color:#4A5568;
+    font-size:0.92rem;
+    line-height:1.6;
+  }
+
+  /* ARTIGOS E GUIAS */
+  .articles-section{
+    background:#FFFFFF;
+    color:var(--navy);
+    padding:80px 0;
+  }
+  .articles-section h2{
+    font-family:'Fraunces', serif;
+    font-size:2.2rem;
+    margin-bottom:8px;
+  }
+  .articles-section p.sub{
+    color:#718096;
+    font-size:0.98rem;
+    margin-bottom:48px;
+  }
+  .articles-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+    gap:24px;
+  }
+  .article-card{
+    background:var(--ivory);
+    border:1px solid rgba(11,29,51,0.06);
+    border-radius:4px;
+    padding:28px 20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+  }
+  .article-card h3{
+    font-family:'Fraunces', serif;
+    font-size:1.15rem;
+    color:var(--navy);
+    margin-bottom:10px;
+  }
+  .article-card p{
+    font-size:0.85rem;
+    color:#4A5568;
+    line-height:1.5;
+    margin-bottom:20px;
+  }
+  .article-card a.read-more{
+    font-size:0.82rem;
+    font-weight:700;
+    color:var(--teal);
+    text-decoration:underline;
+  }
+
+  /* CTA FINAL ESCURO */
+  .cta-final{
+    background:var(--navy);
+    padding:96px 0;
+    text-align:center;
+  }
+  .cta-final h2{
+    font-family:'Fraunces', serif;
+    font-size:2.4rem;
+    margin-bottom:16px;
+    color:var(--ivory);
+  }
+  .cta-final p{
+    color:rgba(246,243,236,0.8);
+    font-size:1.05rem;
+    max-width:600px;
+    margin:0 auto 36px;
+  }
+
+  /* WHATSAPP FLOAT */
+  .whatsapp-float{
+    position:fixed;
+    bottom:24px;
+    right:24px;
+    width:54px;
+    height:54px;
+    background:#10B981;
+    color:#fff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    z-index:999;
+    transition:transform 0.2s ease;
+  }
+  .whatsapp-float:hover{
+    transform:scale(1.08);
+  }
+
+  /* FOOTER */
+  footer{
+    background:var(--navy-3);
+    color:rgba(246,243,236,0.5);
+    padding:32px 0;
+    font-size:0.85rem;
+    border-top:1px solid rgba(246,243,236,0.1);
   }
   footer .wrap{
     display:flex;
     justify-content:space-between;
     align-items:center;
     flex-wrap:wrap;
-    gap:10px;
+    gap:16px;
   }
 
-  @media (max-width:560px){
-    .form-card{padding:24px 18px;}
-    .sim-section{padding:32px 0 48px;}
-    .brand img{height:42px;}
+  @media (max-width:768px){
+    .hero-stats{gap:24px; flex-wrap:wrap;}
+    .profile-wrap{flex-direction:column; text-align:center;}
+    .profile-img{width:100%; height:auto; max-width:280px;}
   }
 </style>
-
-<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/51784410.js"></script>
 </head>
 <body>
 
+<!-- HEADER -->
 <header class="top">
   <div class="wrap">
     <a href="index.html" class="brand">
       <img src="banner.jpeg" alt="Bezerra Strategic">
     </a>
-    <a href="index.html" class="btn-back">← Voltar ao site</a>
+    <a href="simulador.html" class="btn-simular-top">Simular agora</a>
   </div>
 </header>
 
-<main class="sim-section">
+<!-- HERO -->
+<section class="hero">
   <div class="wrap">
-    <span class="eyebrow">Atendimento Estratégico &amp; Estudo sob Medida</span>
-    <h1>Solicite seu estudo personalizado</h1>
-    <p class="lead">Preencha o formulário abaixo para entender as melhores opções de crédito, alavancagem, câmbio ou gestão patrimonial para o seu momento.</p>
+    
+    <div class="hero-stats">
+      <div class="stat-item">
+        <h3>R$54MM+</h3>
+        <p>sob gestão</p>
+      </div>
+      <div class="stat-item">
+        <h3>200+</h3>
+        <p>clientes atendidos</p>
+      </div>
+      <div class="stat-item">
+        <h3>15+</h3>
+        <p>anos de mercado</p>
+      </div>
+    </div>
 
-    <div class="form-card">
+    <h1>Alavancagem e proteção patrimonial para quem pensa em décadas, não em meses.</h1>
+    <p class="sub">Modelagem de crédito inteligente, consórcios estruturados e arquitetura financeira personalizada para investidores e empresas.</p>
+
+    <div class="hero-buttons">
+      <a href="simulador.html" class="btn-gold">Solicitar estudo personalizado</a>
+      <a href="https://wa.me/5547988307859?text=Ol%C3%A1%20Douglas!%20Vim%20pelo%20site%20da%20Bezerra%20Strategic." target="_blank" rel="noopener" class="btn-outline">Falar no WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ARQUITETURA FINANCEIRA (FUNDO CREME) -->
+<section class="architecture-section">
+  <div class="wrap">
+    <span class="eyebrow-dark">Soluções Patrimoniais</span>
+    <h2>Arquitetura financeira completa para cada momento do seu capital</h2>
+
+    <div class="cards-grid">
       
-      <!-- FORMULÁRIO -->
-      <form id="leadForm" onsubmit="enviarParaHubspot(event)">
+      <a href="simulador.html" class="card-item">
+        <div>
+          <span class="card-tag">01 • CRÉDITO &amp; AQUISIÇÃO</span>
+          <h3>Consórcios Estruturados</h3>
+          <p>Alavancagem preditiva de patrimônio imobiliário, veículos de alto padrão e frota com custo financeiro significativamente inferior ao financiamento.</p>
+        </div>
+      </a>
+
+      <a href="simulador.html" class="card-item">
+        <div>
+          <span class="card-tag">02 • LIQUIDEZ &amp; EXPANSÃO</span>
+          <h3>Financiamento e Home Equity</h3>
+          <p>Acesso a recursos com imóvel em garantia para alavancagem de negócios ou otimização do balanço patrimonial com taxas competitivas.</p>
+        </div>
+      </a>
+
+      <a href="simulador.html" class="card-item">
+        <div>
+          <span class="card-tag">03 • ESTRATÉGIA PATRIMONIAL</span>
+          <h3>Wealth Management</h3>
+          <p>Estratégia integrada de wealth conectando proteção, crescimento e sucessão para garantir controle absoluto sobre seus ativos.</p>
+        </div>
+      </a>
+
+      <a href="simulador.html" class="card-item">
+        <div>
+          <span class="card-tag">04 • PROTEÇÃO FAMILIAR</span>
+          <h3>Seguro de Vida Estruturado</h3>
+          <p>Proteção financeira com eficiência tributária, liquidez imediata para sucessão e blindagem em cenários imprevistos.</p>
+        </div>
+      </a>
+
+      <a href="simulador.html" class="card-item">
+        <div>
+          <span class="card-tag">05 • LONGO PRAZO</span>
+          <h3>Previdência Privada</h3>
+          <p>Planejamento de aposentadoria e sucessão com gestão ativa, incentivo fiscal (PGBL/VGBL) e liberdade de alocação.</p>
+        </div>
+      </a>
+
+      <a href="investimentos-no-exterior-offshore.html" class="card-item">
+        <div>
+          <span class="card-tag">06 • PROTEÇÃO CAMBIAL</span>
+          <h3>Investimentos no Exterior</h3>
+          <p>Alocação de capital off-shore e diversificação em moeda forte para proteger seu patrimônio do risco geopolítico e econômico local.</p>
+        </div>
+      </a>
+
+      <a href="simulador.html" class="card-item">
+        <div>
+          <span class="card-tag">07 • TRANSAÇÕES GLOBAIS</span>
+          <h3>Câmbio &amp; Remessas</h3>
+          <p>Soluções de câmbio eficientes para transferências internacionais, aportes ou operações corporativas com agilidade e cotação competitiva.</p>
+        </div>
+      </a>
+
+      <a href="simulador.html" class="card-item">
+        <div>
+          <span class="card-tag">08 • ATIVOS REAIS</span>
+          <h3>Real Estate</h3>
+          <p>Operações estruturadas no mercado imobiliário voltadas para valorização de capital e geração de renda passiva consistente.</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- PARCEIROS MULTIBANCO -->
+<section class="partners-section">
+  <div class="wrap">
+    <div class="partners-title">ARQUITETURA ABERTA &amp; MULTIBANCO</div>
+    <p class="partners-sub">Acesso e independência para operar com os principais bancos, seguradoras e plataformas do mercado</p>
+
+    <div class="partners-list">
+      <span>XP Inc.</span> <span class="dot">•</span>
+      <span>BTG Pactual</span> <span class="dot">•</span>
+      <span>Itaú</span> <span class="dot">•</span>
+      <span>Icatu Seguros</span> <span class="dot">•</span>
+      <span>MetLife</span> <span class="dot">•</span>
+      <span>Porto Seguro</span> <span class="dot">•</span>
+      <span>Bradesco</span> <span class="dot">•</span>
+      <span>Santander</span>
+    </div>
+
+    <span class="badge-dark">+ Principais bancos e seguradoras do país</span>
+  </div>
+</section>
+
+<!-- REVIEWS GOOGLE -->
+<section class="reviews-section">
+  <div class="wrap">
+    
+    <div class="reviews-grid">
+      <div class="review-box">
+        <div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Super profissional, um verdadeiro consultor!"</p>
+        </div>
+        <div class="review-author">
+          <div class="avatar-initial">H</div>
+          <div class="author-info">
+            <strong>Herodes Bezerra</strong>
+            <span>Avaliação via Google</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-box">
+        <div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Pode confiar, melhor profissional que eu já consultei."</p>
+        </div>
+        <div class="review-author">
+          <div class="avatar-initial">V</div>
+          <div class="author-info">
+            <strong>Vanessa Rocha</strong>
+            <span>Avaliação via Google</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-box">
+        <div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Profissional super comprometido e de grande excelência no que faz."</p>
+        </div>
+        <div class="review-author">
+          <div class="avatar-initial">J</div>
+          <div class="author-info">
+            <strong>Juliana Alves</strong>
+            <span>Avaliação via Google</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-box">
+        <div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Muito bom, confiável e tem muita opção de produtos."</p>
+        </div>
+        <div class="review-author">
+          <div class="avatar-initial">D</div>
+          <div class="author-info">
+            <strong>David William</strong>
+            <span>Avaliação via Google</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews-more">
+      <a href="https://g.page/r/CaV8w1BWYfd2EBM/review" target="_blank" rel="noopener">Ver todas as avaliações no Google →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- SOBRE DOUGLAS BEZERRA -->
+<section class="profile-section">
+  <div class="wrap">
+    <div class="profile-wrap">
+      <img src="banner.jpeg" alt="Douglas Bezerra" class="profile-img">
+      
+      <div class="profile-content">
+        <span class="eyebrow-dark">PERSONAL BANKER &amp; ESTRATEGISTA PATRIMONIAL</span>
+        <h2>Douglas Bezerra</h2>
+        <p>Com mais de 15 anos de atuação no mercado financeiro, ajudo famílias e empresários a estruturar soluções inteligentes de crédito, consórcio e planejamento de ativos, garantindo segurança e eficiência de capital.</p>
         
-        <div class="form-group">
-          <label for="firstname">Nome Completo</label>
-          <input type="text" id="firstname" name="firstname" class="form-control" placeholder="Seu nome" required>
-        </div>
+        <a href="simulador.html" class="btn-gold" style="background:var(--navy); color:var(--ivory);">Agendar conversa estratégica</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <div class="form-group">
-          <label for="phone">WhatsApp / Telefone com DDD</label>
-          <input type="tel" id="phone" name="phone" class="form-control" placeholder="(47) 99999-9999" maxlength="15" oninput="mascaraTelefone(this)" required>
-        </div>
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="wrap">
+    <span class="eyebrow-dark">DÚVIDAS FREQUENTES</span>
+    <h2>Perguntas frequentes</h2>
 
-        <div class="form-group">
-          <label for="email">E-mail Corporativo ou Pessoal</label>
-          <input type="email" id="email" name="email" class="form-control" placeholder="seuemail@dominio.com" required>
-        </div>
+    <div class="faq-list">
+      
+      <div class="faq-item">
+        <h3>Consórcio vale a pena ou é melhor financiar?</h3>
+        <p>Depende do objetivo. O consórcio tem juros menores que o financiamento, mas exige planejamento de prazo, já que a contemplação pode não ser imediata. Para quem não tem pressa e quer economizar no custo total, costuma ser mais vantajoso.</p>
+      </div>
 
-        <div class="form-group">
-          <label for="objetivo_principal">Objetivo Principal</label>
-          <select id="objetivo_principal" name="objetivo_principal" class="form-control" required>
-            <option value="" disabled selected>Selecione uma opção...</option>
-            <option value="Consórcio Imobiliário / Aquisição de Imóvel">Consórcio Imobiliário / Aquisição de Imóvel</option>
-            <option value="Consórcio de Veículos / Frota / Pesados">Consórcio de Veículos / Frota / Pesados</option>
-            <option value="Home Equity / Crédito com Garantia Imobiliária">Home Equity / Crédito com Garantia Imobiliária</option>
-            <option value="Alavancagem Empresarial & Capital de Giro">Alavancagem Empresarial &amp; Capital de Giro</option>
-            <option value="Wealth Management & Gestão Patrimonial">Wealth Management &amp; Gestão Patrimonial</option>
-            <option value="Seguro de Vida Estruturado & Sucessão">Seguro de Vida Estruturado &amp; Sucessão</option>
-            <option value="Investimentos no Exterior, Off-shore & Câmbio">Investimentos no Exterior, Off-shore &amp; Câmbio</option>
-            <option value="Outras Soluções Financeiras Personalizadas">Outras Soluções Financeiras Personalizadas</option>
-          </select>
-        </div>
+      <div class="faq-item">
+        <h3>Preciso ter um patrimônio alto para contratar planejamento patrimonial?</h3>
+        <p>Não necessariamente. Planejamento patrimonial é útil tanto para quem está começando a construir patrimônio quanto para quem já tem ativos consolidados e quer proteção, sucessão ou eficiência fiscal.</p>
+      </div>
 
-        <div class="form-group">
-          <label for="valor_desejado">Valor do Crédito, Aporte ou Patrimônio Desejado</label>
-          <select id="valor_desejado" name="valor_desejado" class="form-control" required>
-            <option value="" disabled selected>Selecione a faixa de valor...</option>
-            <option value="Até R$ 200.000">Até R$ 200.000</option>
-            <option value="R$ 200.000 a R$ 500.000">R$ 200.000 a R$ 500.000</option>
-            <option value="R$ 500.000 a R$ 1.000.000">R$ 500.000 a R$ 1.000.000</option>
-            <option value="R$ 1.000.000 a R$ 3.000.000">R$ 1.000.000 a R$ 3.000.000</option>
-            <option value="Acima de R$ 3.000.000">Acima de R$ 3.000.000</option>
-          </select>
-        </div>
+      <div class="faq-item">
+        <h3>Como funciona a alavancagem de crédito para empresas?</h3>
+        <p>É o uso estratégico de linhas de crédito para financiar crescimento ou capital de giro sem comprometer o caixa da empresa, otimizando o custo financeiro e o retorno sobre o capital investido.</p>
+      </div>
 
-        <button type="submit" id="btnSubmit" class="btn-submit">
-          📊 SOLICITAR ESTUDO PERSONALIZADO
-        </button>
-
-        <p class="privacy-note">Seus dados estão seguros e serão utilizados exclusivamente para a elaboração do diagnóstico financeiro.</p>
-      </form>
-
-      <!-- TELA DE AGRADECIMENTO / CONFIRMAÇÃO -->
-      <div id="successBox" class="success-box">
-        <span class="success-icon">✨</span>
-        <h2 class="success-title">Solicitação enviada com sucesso!</h2>
-        <p class="success-desc">
-          Obrigado pelo interesse. Analisaremos suas informações estratégicas e nossa equipe entrará em contato em breve para apresentar o diagnóstico personalizado.
-        </p>
-        <a href="index.html" class="btn-back" style="display:inline-block; padding:10px 24px;">Voltar ao site</a>
+      <div class="faq-item">
+        <h3>Quanto custa fazer um estudo personalizado com a Bezerra Strategic?</h3>
+        <p>O estudo inicial é gratuito e sem compromisso — o objetivo é entender seu momento e mapear as melhores soluções.</p>
       </div>
 
     </div>
   </div>
-</main>
+</section>
 
+<!-- ARTIGOS E GUIAS ESTRATÉGICOS -->
+<section class="articles-section">
+  <div class="wrap">
+    <span class="eyebrow-dark">APRENDA MAIS</span>
+    <h2>Artigos e guias estratégicos</h2>
+    <p class="sub">Conteúdo aprofundado sobre crédito, proteção patrimonial e investimentos globais.</p>
+
+    <div class="articles-grid">
+      
+      <div class="article-card">
+        <div>
+          <span class="card-tag">01 • CONSÓRCIO &amp; CRÉDITO</span>
+          <h3>Consórcio Vale a Pena em 2026? Guia Completo</h3>
+          <p>Consórcio ou financiamento: entenda quando cada estratégia compensa mais e como usar lances para acelerar a contemplação.</p>
+        </div>
+        <a href="simulador.html" class="read-more">Ler artigo →</a>
+      </div>
+
+      <div class="article-card">
+        <div>
+          <span class="card-tag">02 • LIQUIDEZ IMOBILIÁRIA</span>
+          <h3>Home Equity: Crédito de Baixo Custo com Imóvel</h3>
+          <p>Como usar seu imóvel quitado para obter liquidez sem precisar vender o bem, com os menores juros do mercado.</p>
+        </div>
+        <a href="simulador.html" class="read-more">Ler artigo →</a>
+      </div>
+
+      <div class="article-card">
+        <div>
+          <span class="card-tag">03 • CRÉDITO CORPORATIVO</span>
+          <h3>Alavancagem de Crédito para Empresas</h3>
+          <p>Como crescer e expandir operações usando crédito estratégico sem comprometer o capital de giro do seu negócio.</p>
+        </div>
+        <a href="simulador.html" class="read-more">Ler artigo →</a>
+      </div>
+
+      <div class="article-card">
+        <div>
+          <span class="card-tag">04 • GESTÃO DE FORTUNAS</span>
+          <h3>Wealth Management: O Guia Definitivo</h3>
+          <p>Entenda como funciona a gestão patrimonial integrada conectando ativos, eficiência fiscal e sucessão familiar.</p>
+        </div>
+        <a href="simulador.html" class="read-more">Ler artigo →</a>
+      </div>
+
+      <div class="article-card">
+        <div>
+          <span class="card-tag">05 • PROTEÇÃO &amp; LIQUIDEZ</span>
+          <h3>Seguro de Vida Estruturado e Sucessão</h3>
+          <p>Como garantir liquidez imediata isenta de impostos para cobrir custos de inventário e blindar a família.</p>
+        </div>
+        <a href="simulador.html" class="read-more">Ler artigo →</a>
+      </div>
+
+      <div class="article-card">
+        <div>
+          <span class="card-tag">06 • PLANEJAMENTO FAMILIAR</span>
+          <h3>Planejamento Sucessório e Holdings</h3>
+          <p>As principais ferramentas jurídicas e financeiras para organizar a transmissão do patrimônio sem conflitos.</p>
+        </div>
+        <a href="simulador.html" class="read-more">Ler artigo →</a>
+      </div>
+
+      <div class="article-card">
+        <div>
+          <span class="card-tag">07 • PROTEÇÃO CAMBIAL</span>
+          <h3>Investimentos no Exterior e Off-shore</h3>
+          <p>Como diversificar seu patrimônio em moeda forte e proteger seu capital contra riscos econômicos locais.</p>
+        </div>
+        <a href="investimentos-no-exterior-offshore.html" class="read-more">Ler artigo →</a>
+      </div>
+
+      <div class="article-card">
+        <div>
+          <span class="card-tag">08 • OPERAÇÕES GLOBAIS</span>
+          <h3>Câmbio e Remessas Internacionais</h3>
+          <p>Guia de eficiência cambial para reduzir spread e taxas em transferências corporativas e aportes no exterior.</p>
+        </div>
+        <a href="investimentos-no-exterior-offshore.html" class="read-more">Ler artigo →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL ESCURO -->
+<section class="cta-final">
+  <div class="wrap">
+    <h2>Pronto para estruturar sua estratégia patrimonial?</h2>
+    <p>Estudo inicial gratuito, sem compromisso. Entenda em minutos qual caminho faz mais sentido para o seu momento.</p>
+    <a href="simulador.html" class="btn-gold" style="padding:16px 36px; font-size:1rem;">Solicitar estudo personalizado</a>
+  </div>
+</section>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/5547988307859?text=Ol%C3%A1%20Douglas!%20Vim%20pelo%20site%20da%20Bezerra%20Strategic." target="_blank" rel="noopener" class="whatsapp-float" title="Falar no WhatsApp">
+  <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<!-- FOOTER -->
 <footer>
   <div class="wrap">
     <span>Douglas Bezerra — Personal Banker &amp; Estrategista Patrimonial</span>
     <span>Bezerra Strategic</span>
   </div>
 </footer>
-
-<script>
-function mascaraTelefone(input) {
-  let v = input.value.replace(/\D/g, "");
-  if (v.length > 11) v = v.substring(0, 11);
-  
-  if (v.length > 10) {
-    v = v.replace(/^(\d{2})(\d{5})(\d{4})$/, "($1) $2-$3");
-  } else if (v.length > 6) {
-    v = v.replace(/^(\d{2})(\d{4})(\d{0,4})$/, "($1) $2-$3");
-  } else if (v.length > 2) {
-    v = v.replace(/^(\d{2})(\d{0,5})$/, "($1) $2");
-  } else {
-    v = v.replace(/^(\d*)$/, "($1");
-  }
-  input.value = v;
-}
-
-async function enviarParaHubspot(event) {
-  event.preventDefault();
-
-  const btn = document.getElementById('btnSubmit');
-  btn.innerText = "ENVIANDO...";
-  btn.disabled = true;
-
-  const nome = document.getElementById('firstname').value;
-  const phone = document.getElementById('phone').value;
-  const email = document.getElementById('email').value;
-  const objetivo = document.getElementById('objetivo_principal').value;
-  const valor = document.getElementById('valor_desejado').value;
-
-  const portalId = "51784410";
-  const formGuid = "9463f943-26bd-43e4-a6f8-d4c94b20ad59";
-  const hubspotUrl = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formGuid}`;
-
-  const formData = {
-    fields: [
-      { name: "firstname", value: nome },
-      { name: "email", value: email },
-      { name: "phone", value: phone },
-      { name: "message", value: `Objetivo: ${objetivo} | Valor Desejado: ${valor}` }
-    ]
-  };
-
-  try {
-    await fetch(hubspotUrl, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData)
-    });
-  } catch (err) {
-    console.error("Erro no envio pro HubSpot:", err);
-  }
-
-  // Oculta o formulário e exibe a mensagem elegante de confirmação
-  document.getElementById('leadForm').style.display = 'none';
-  document.getElementById('successBox').style.display = 'block';
-}
-</script>
 
 </body>
 </html>
