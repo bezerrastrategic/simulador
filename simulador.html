@@ -106,6 +106,7 @@
     border-radius:6px;
     padding:36px 32px;
     box-shadow:0 16px 40px rgba(0,0,0,0.35);
+    position:relative;
   }
   .form-group{
     margin-bottom:22px;
@@ -176,6 +177,30 @@
     margin-top:16px;
   }
 
+  /* MENSAGEM DE SUCESSO */
+  .success-box {
+    display: none;
+    text-align: center;
+    padding: 30px 10px;
+  }
+  .success-icon {
+    font-size: 2.8rem;
+    margin-bottom: 16px;
+    display: inline-block;
+  }
+  .success-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.6rem;
+    color: var(--brass-light);
+    margin-bottom: 12px;
+  }
+  .success-desc {
+    color: rgba(246, 243, 236, 0.85);
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
   footer{
     background:#071322;
     color:rgba(246,243,236,0.5);
@@ -218,7 +243,9 @@
     <p class="lead">Preencha o formulário abaixo para entender as melhores opções de crédito, alavancagem, câmbio ou gestão patrimonial para o seu momento.</p>
 
     <div class="form-card">
-      <form id="leadForm" onsubmit="enviarParaHubspotEWhatsapp(event)">
+      
+      <!-- FORMULÁRIO -->
+      <form id="leadForm" onsubmit="enviarParaHubspot(event)">
         
         <div class="form-group">
           <label for="firstname">Nome Completo</label>
@@ -268,6 +295,17 @@
 
         <p class="privacy-note">Seus dados estão seguros e serão utilizados exclusivamente para a elaboração do diagnóstico financeiro.</p>
       </form>
+
+      <!-- TELA DE AGRADECIMENTO / CONFIRMAÇÃO -->
+      <div id="successBox" class="success-box">
+        <span class="success-icon">✨</span>
+        <h2 class="success-title">Solicitação enviada com sucesso!</h2>
+        <p class="success-desc">
+          Obrigado pelo interesse. Analisaremos suas informações estratégicas e nossa equipe entrará em contato em breve para apresentar o diagnóstico personalizado.
+        </p>
+        <a href="index.html" class="btn-back" style="display:inline-block; padding:10px 24px;">Voltar ao site</a>
+      </div>
+
     </div>
   </div>
 </main>
@@ -296,7 +334,7 @@ function mascaraTelefone(input) {
   input.value = v;
 }
 
-async function enviarParaHubspotEWhatsapp(event) {
+async function enviarParaHubspot(event) {
   event.preventDefault();
 
   const btn = document.getElementById('btnSubmit');
@@ -323,19 +361,18 @@ async function enviarParaHubspotEWhatsapp(event) {
   };
 
   try {
-    // Aguarda o HubSpot confirmar o recebimento do formulário antes de redirecionar
     await fetch(hubspotUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData)
     });
   } catch (err) {
-    console.error("Erro no HubSpot:", err);
+    console.error("Erro no envio pro HubSpot:", err);
   }
 
-  // Redireciona para o WhatsApp após a conclusão da chamada
-  const mensagem = `Olá Douglas! Solicitei um estudo pelo site.\n\n*Nome:* ${nome}\n*Objetivo:* ${objetivo}\n*Valor:* ${valor}\n*E-mail:* ${email}`;
-  window.location.href = `https://wa.me/5547988307859?text=${encodeURIComponent(mensagem)}`;
+  // Oculta o formulário e exibe a mensagem elegante de confirmação
+  document.getElementById('leadForm').style.display = 'none';
+  document.getElementById('successBox').style.display = 'block';
 }
 </script>
 
