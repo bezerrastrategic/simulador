@@ -121,10 +121,17 @@
     background:var(--navy);
     padding:18px 0;
   }
-  header.top .wrap{display:flex; align-items:center; justify-content:space-between;}
-  .brand{display:flex; align-items:center; gap:12px;}
-  .brand img{height:36px; width:auto; border-radius:4px;}
-  .brand span{font-family:'Fraunces', serif; color:var(--ivory); font-size:1.05rem; font-weight:600;}
+  header.top .wrap{display:flex; align-items:center; justify-content:space-between; gap:12px;}
+  .brand{display:flex; align-items:center; gap:12px; min-width:0;}
+  .brand img{height:36px; width:auto; border-radius:4px; flex-shrink:0;}
+  .brand span{font-family:'Fraunces', serif; color:var(--ivory); font-size:1.05rem; font-weight:600; white-space:nowrap;}
+  .header-cta{padding:10px 18px; font-size:0.85rem; flex-shrink:0; white-space:nowrap;}
+
+  @media (max-width:520px){
+    .header-cta{padding:8px 12px; font-size:0.78rem;}
+    .brand img{height:26px;}
+    .brand span{display:none;}
+  }
 
   /* HERO */
   .hero{
@@ -304,7 +311,7 @@
       <img src="https://bezerrastrategic.github.io/simulador/banner.jpeg" alt="Bezerra Strategic">
       <span>Bezerra Strategic</span>
     </div>
-    <a href="simulador.html" class="btn btn-outline" style="padding:10px 18px; font-size:0.85rem;">Simular agora</a>
+    <a href="simulador.html" class="btn btn-outline header-cta">Simular agora</a>
   </div>
 </header>
 
