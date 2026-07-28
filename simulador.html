@@ -1,169 +1,281 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bezerra Strategic | Estudo Personalizado</title>
+<title>Estudo Personalizado &amp; Simulador | Bezerra Strategic</title>
+<meta name="description" content="Solicite um estudo personalizado de crédito, consórcio, wealth management, câmbio ou planejamento patrimonial com a Bezerra Strategic.">
+
+<meta property="og:title" content="Estudo Personalizado &amp; Simulador | Bezerra Strategic">
+<meta property="og:description" content="Simule e receba um diagnóstico financeiro sob medida para o seu momento patrimonial ou empresarial.">
+<meta property="og:image" content="https://bezerrastrategic.github.io/simulador/banner.jpeg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bezerrastrategic.github.io/simulador/simulador.html">
+<meta property="og:locale" content="pt_BR">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
 <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background-color: #0b1724; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #ffffff; line-height: 1.6; }
-    
-    header { background-color: #08111c; border-bottom: 1px solid #1a2f44; padding: 15px 20px; text-align: center; position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; }
-    .brand-title { font-family: 'Garamond', 'Baskerville', serif; font-size: 18px; font-weight: bold; letter-spacing: 2px; color: #ffffff; }
-    .btn-back { color: #d4af37; text-decoration: none; font-size: 13px; font-weight: 500; }
-    .btn-back:hover { text-decoration: underline; }
+  :root{
+    --navy:#0B1D33;
+    --navy-2:#122841;
+    --ivory:#F6F3EC;
+    --brass:#B8963E;
+    --brass-light:#D9BE72;
+    --slate:#5C6B7A;
+    --teal:#1F4B43;
+    --line:rgba(246,243,236,0.14);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--navy);
+    color:var(--ivory);
+    font-family:'Inter', sans-serif;
+    line-height:1.6;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:680px; margin:0 auto; padding:0 24px; width:100%;}
 
-    .main-container { padding: 40px 20px; min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: radial-gradient(circle at top, #11253a 0%, #0b1724 100%); }
-    
-    .form-container { width: 100%; max-width: 480px; background: #0f1f33; border: 1px solid #1a3554; border-radius: 12px; padding: 30px 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); text-align: left; }
-    .form-title { font-family: 'Garamond', serif; font-size: 22px; color: #d4af37; margin-bottom: 8px; text-align: center; }
-    .form-subtitle { font-size: 13px; color: #a0aec0; text-align: center; margin-bottom: 25px; }
+  /* HEADER */
+  header.top{
+    background:var(--navy);
+    padding:20px 0;
+    border-bottom:1px solid var(--line);
+  }
+  header.top .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .brand img{
+    height:54px;
+    width:auto;
+    border-radius:4px;
+  }
+  .btn-back{
+    border:1px solid rgba(246,243,236,0.35);
+    color:var(--ivory);
+    padding:8px 16px;
+    font-size:0.85rem;
+    border-radius:2px;
+    transition:background 0.2s ease;
+  }
+  .btn-back:hover{
+    background:rgba(246,243,236,0.08);
+  }
 
-    .form-group { margin-bottom: 18px; }
-    .form-group label { display: block; font-size: 12px; color: #cbd5e1; margin-bottom: 6px; font-weight: 500; }
-    .form-group input, .form-group select { width: 100%; padding: 12px 14px; background-color: #0b1724; border: 1px solid #1a3554; border-radius: 6px; color: #ffffff; font-size: 14px; outline: none; }
-    .form-group input:focus, .form-group select:focus { border-color: #d4af37; }
-    
-    .btn-submit { width: 100%; padding: 15px 0; background: linear-gradient(135deg, #d4af37 0%, #aa8416 100%); border: 1px solid #b89324; border-radius: 6px; color: #0b1724; font-size: 15px; font-weight: bold; cursor: pointer; margin-top: 10px; box-shadow: 0 4px 10px rgba(212, 175, 55, 0.2); transition: all 0.2s ease; }
-    .btn-submit:hover { background: linear-gradient(135deg, #f1c40f 0%, #d4af37 100%); }
+  /* HERO FORM */
+  .sim-section{
+    padding:48px 0 64px;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--brass-light);
+    display:block;
+    margin-bottom:8px;
+  }
+  h1{
+    font-family:'Fraunces', serif;
+    font-size:clamp(1.8rem, 3.5vw, 2.5rem);
+    font-weight:600;
+    line-height:1.2;
+    margin-bottom:12px;
+    color:var(--ivory);
+  }
+  p.lead{
+    color:rgba(246,243,236,0.78);
+    font-size:0.98rem;
+    margin-bottom:32px;
+  }
 
-    footer { padding: 25px 20px; text-align: center; border-top: 1px solid #1a2f44; background-color: #08111c; }
-    .footer-name { font-family: 'Garamond', serif; font-size: 15px; color: #ffffff; }
-    .footer-partner { font-size: 11px; color: #718096; margin-top: 4px; }
+  /* CARD DO FORMULÁRIO */
+  .form-card{
+    background:var(--navy-2);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:36px 32px;
+    box-shadow:0 16px 40px rgba(0,0,0,0.35);
+  }
+  .form-group{
+    margin-bottom:22px;
+  }
+  .form-group label{
+    display:block;
+    font-size:0.88rem;
+    font-weight:600;
+    color:var(--ivory);
+    margin-bottom:8px;
+  }
+  .form-control{
+    width:100%;
+    padding:14px 16px;
+    background:#081627;
+    border:1px solid rgba(246,243,236,0.2);
+    border-radius:4px;
+    color:var(--ivory);
+    font-family:'Inter', sans-serif;
+    font-size:0.95rem;
+    outline:none;
+    transition:border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .form-control:focus{
+    border-color:var(--brass);
+    box-shadow:0 0 0 2px rgba(184,150,62,0.25);
+  }
+  select.form-control{
+    cursor:pointer;
+    appearance:none;
+    background-image:url("data:image/svg+xml;utf8,<svg fill='%23D9BE72' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat:no-repeat;
+    background-position:right 12px center;
+    padding-right:40px;
+  }
+  select.form-control option{
+    background:var(--navy-2);
+    color:var(--ivory);
+    padding:10px;
+  }
+  
+  .btn-submit{
+    width:100%;
+    background:var(--brass);
+    color:var(--navy);
+    border:none;
+    padding:16px 24px;
+    font-size:1rem;
+    font-weight:700;
+    border-radius:3px;
+    cursor:pointer;
+    transition:background 0.2s ease, transform 0.15s ease;
+    margin-top:10px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+  }
+  .btn-submit:hover{
+    background:var(--brass-light);
+    transform:translateY(-1px);
+  }
+
+  .privacy-note{
+    font-size:0.75rem;
+    color:rgba(246,243,236,0.5);
+    text-align:center;
+    margin-top:16px;
+  }
+
+  footer{
+    background:#071322;
+    color:rgba(246,243,236,0.5);
+    padding:24px 0;
+    font-size:0.8rem;
+    border-top:1px solid var(--line);
+  }
+  footer .wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  @media (max-width:560px){
+    .form-card{padding:24px 18px;}
+    .sim-section{padding:32px 0 48px;}
+    .brand img{height:42px;}
+  }
 </style>
 </head>
 <body>
 
-<header>
+<header class="top">
+  <div class="wrap">
+    <a href="index.html" class="brand">
+      <img src="banner.jpeg" alt="Bezerra Strategic">
+    </a>
     <a href="index.html" class="btn-back">← Voltar ao site</a>
-    <div class="brand-title">BEZERRA STRATEGIC</div>
-    <div style="width: 80px;"></div> <!-- Espaçador para centralizar a logo -->
+  </div>
 </header>
 
-<div class="main-container">
-    <div class="form-container">
-        <div class="form-title">Estudo Patrimonial Personalizado</div>
-        <div class="form-subtitle">Preencha os dados abaixo para receber uma simulação direcionada ao seu objetivo.</div>
+<main class="sim-section">
+  <div class="wrap">
+    <span class="eyebrow">Atendimento Estratégico &amp; Estudo sob Medida</span>
+    <h1>Solicite seu estudo personalizado</h1>
+    <p class="lead">Preencha o formulário abaixo para entender as melhores opções de crédito, alavancagem, câmbio ou gestão patrimonial para o seu momento.</p>
+
+    <div class="form-card">
+      <form action="https://formspree.io/f/seu-id-formspree" method="POST">
         
-        <form id="simuladorForm">
-            <div class="form-group">
-                <label for="nome">Nome Completo</label>
-                <input type="text" id="nome" placeholder="Digite seu nome" required>
-            </div>
+        <div class="form-group">
+          <label for="nome">Nome Completo</label>
+          <input type="text" id="nome" name="nome" class="form-control" placeholder="Seu nome" required>
+        </div>
 
-            <div class="form-group">
-                <label for="email">E-mail Profissional</label>
-                <input type="email" id="email" placeholder="seuemail@dominio.com" required>
-            </div>
+        <div class="form-group">
+          <label for="whatsapp">WhatsApp / Telefone com DDD</label>
+          <input type="tel" id="whatsapp" name="whatsapp" class="form-control" placeholder="(47) 99999-9999" required>
+        </div>
 
-            <div class="form-group">
-                <label for="telefone">WhatsApp / Telefone</label>
-                <input type="tel" id="telefone" placeholder="(47) 99999-9999" maxlength="15" oninput="mascaraTelefone(this)" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="objetivo">Objetivo Principal</label>
-                <select id="objetivo" required>
-                    <option value="Consórcio Imobiliário / Aquisição de Imóvel">Consórcio Imobiliário / Aquisição de Imóvel</option>
-                    <option value="Consórcio de Veículos / Frota / Pesados">Consórcio de Veículos / Frota / Pesados</option>
-                    <option value="Planejamento Financeiro & Gestão Patrimonial">Planejamento Financeiro & Gestão Patrimonial</option>
-                    <option value="Alavancagem Patrimonial & Capital de Giro">Alavancagem Patrimonial & Capital de Giro</option>
-                    <option value="Construção, Reforma e Investimentos">Construção, Reforma e Investimentos</option>
-                    <option value="Outras Soluções de Crédito Estratégico">Outras Soluções de Crédito Estratégico</option>
-                </select>
-            </div>
+        <div class="form-group">
+          <label for="email">E-mail Corporativo ou Pessoal</label>
+          <input type="email" id="email" name="email" class="form-control" placeholder="seuemail@dominio.com" required>
+        </div>
 
-            <div class="form-group">
-                <label for="valor">Valor do Crédito / Aporte Desejado</label>
-                <select id="valor" required>
-                    <option value="R$ 200.000 a R$ 500.000">R$ 200.000 a R$ 500.000</option>
-                    <option value="R$ 500.000 a R$ 1.000.000">R$ 500.000 a R$ 1.000.000</option>
-                    <option value="R$ 1.000.000 a R$ 3.000.000">R$ 1.000.000 a R$ 3.000.000</option>
-                    <option value="Acima de R$ 3.000.000">Acima de R$ 3.000.000</option>
-                </select>
-            </div>
+        <div class="form-group">
+          <label for="objetivo">Objetivo Principal</label>
+          <select id="objetivo" name="objetivo" class="form-control" required>
+            <option value="" disabled selected>Selecione uma opção...</option>
+            <option value="consorcio-imovel">Consórcio Imobiliário / Aquisição de Imóvel</option>
+            <option value="consorcio-auto">Consórcio de Veículos / Frota / Pesados</option>
+            <option value="home-equity">Home Equity / Crédito com Garantia Imobiliária</option>
+            <option value="alavancagem-pj">Alavancagem Empresarial &amp; Capital de Giro</option>
+            <option value="wealth-management">Wealth Management &amp; Gestão Patrimonial</option>
+            <option value="seguro-vida">Seguro de Vida Estruturado &amp; Sucessão</option>
+            <option value="offshore-cambio">Investimentos no Exterior, Off-shore &amp; Câmbio</option>
+            <option value="outros">Outras Soluções Financeiras Personalizadas</option>
+          </select>
+        </div>
 
-            <button type="button" class="btn-submit" id="btnEnviar" onclick="enviarSimulacaoEHubspot()">📊 SOLICITAR ESTUDO PERSONALIZADO</button>
-        </form>
+        <div class="form-group">
+          <label for="valor">Valor do Crédito, Aporte ou Patrimônio Desejado</label>
+          <select id="valor" name="valor" class="form-control" required>
+            <option value="" disabled selected>Selecione a faixa de valor...</option>
+            <option value="ate-200k">Até R$ 200.000</option>
+            <option value="200k-500k">R$ 200.000 a R$ 500.000</option>
+            <option value="500k-1m">R$ 500.000 a R$ 1.000.000</option>
+            <option value="1m-3m">R$ 1.000.000 a R$ 3.000.000</option>
+            <option value="acima-3m">Acima de R$ 3.000.000</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-submit">
+          📊 SOLICITAR ESTUDO PERSONALIZADO
+        </button>
+
+        <p class="privacy-note">Seus dados estão seguros e serão utilizados exclusivamente para a elaboração do diagnóstico financeiro.</p>
+      </form>
     </div>
-</div>
+  </div>
+</main>
 
 <footer>
-    <div class="footer-name">Douglas Bezerra • Personal Banker</div>
-    <div class="footer-partner">Parceiro Autorizado Univalores • Bezerra Strategic</div>
+  <div class="wrap">
+    <span>Douglas Bezerra — Personal Banker &amp; Estrategista Patrimonial</span>
+    <span>Bezerra Strategic</span>
+  </div>
 </footer>
-
-<script>
-    function mascaraTelefone(input) {
-        let valor = input.value.replace(/\D/g, "");
-        if (valor.length > 11) valor = valor.slice(0, 11);
-
-        if (valor.length > 10) {
-            valor = valor.replace(/^(\d{2})(\d{5})(\d{4})$/, "($1) $2-$3");
-        } else if (valor.length > 6) {
-            valor = valor.replace(/^(\d{2})(\d{4,5})(\d{0,4})$/, "($1) $2-$3");
-        } else if (valor.length > 2) {
-            valor = valor.replace(/^(\d{2})(\d{0,5})$/, "($1) $2");
-        } else if (valor.length > 0) {
-            valor = valor.replace(/^(\d*)/, "($1");
-        }
-        input.value = valor;
-    }
-
-    function enviarSimulacaoEHubspot() {
-        const nomeCompleto = document.getElementById('nome').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const telefone = document.getElementById('telefone').value.trim();
-        const objetivo = document.getElementById('objetivo').value;
-        const valor = document.getElementById('valor').value;
-
-        if (!nomeCompleto || !email || !telefone) {
-            alert('Por favor, preencha o seu nome, e-mail e telefone para continuar.');
-            return;
-        }
-
-        const btn = document.getElementById('btnEnviar');
-        btn.innerText = "ENVIANDO DADOS...";
-        btn.disabled = true;
-
-        const partesNome = nomeCompleto.split(" ");
-        const primeironome = partesNome[0];
-        const sobrenome = partesNome.slice(1).join(" ") || ".";
-
-        const portalId = "51784410"; 
-        const formId = "9463f943-26bd-43e4-a6f8-d4c94b20ad59"; 
-        const endpointHubspot = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`;
-
-        const payloadHubspot = {
-            fields: [
-                { name: "firstname", value: primeironome },
-                { name: "lastname", value: sobrenome },
-                { name: "email", value: email },
-                { name: "phone", value: telefone },
-                { name: "mobilephone", value: telefone },
-                { name: "message", value: `Simulação Bezerra Strategic:\n- Telefone: ${telefone}\n- Objetivo: ${objetivo}\n- Valor do Crédito/Aporte: ${valor}` }
-            ]
-        };
-
-        fetch(endpointHubspot, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payloadHubspot)
-        }).then(() => {
-            redirecionarParaWhatsapp();
-        }).catch(err => {
-            console.error("Erro ao enviar ao HubSpot:", err);
-            redirecionarParaWhatsapp();
-        });
-    }
-
-    function redirecionarParaWhatsapp() {
-        const numeroWhatsapp = "5547988307859"; 
-        const mensagem = encodeURIComponent("Olá! Preenchi o formulário no site da Bezerra Strategic e gostaria de receber o estudo personalizado.");
-        
-        window.location.href = `https://api.whatsapp.com/send?phone=${numeroWhatsapp}&text=${mensagem}`;
-    }
-</script>
 
 </body>
 </html>
