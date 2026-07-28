@@ -216,16 +216,16 @@
     <p class="lead">Preencha o formulário abaixo para entender as melhores opções de crédito, alavancagem, câmbio ou gestão patrimonial para o seu momento.</p>
 
     <div class="form-card">
-      <form action="https://formspree.io/f/seu-id-formspree" method="POST">
+      <form id="leadForm" onsubmit="enviarLead(event)">
         
         <div class="form-group">
-          <label for="nome">Nome Completo</label>
-          <input type="text" id="nome" name="nome" class="form-control" placeholder="Seu nome" required>
+          <label for="firstname">Nome Completo</label>
+          <input type="text" id="firstname" name="firstname" class="form-control" placeholder="Seu nome" required>
         </div>
 
         <div class="form-group">
-          <label for="whatsapp">WhatsApp / Telefone com DDD</label>
-          <input type="tel" id="whatsapp" name="whatsapp" class="form-control" placeholder="(47) 99999-9999" required>
+          <label for="phone">WhatsApp / Telefone com DDD</label>
+          <input type="tel" id="phone" name="phone" class="form-control" placeholder="(47) 99999-9999" required>
         </div>
 
         <div class="form-group">
@@ -234,29 +234,29 @@
         </div>
 
         <div class="form-group">
-          <label for="objetivo">Objetivo Principal</label>
-          <select id="objetivo" name="objetivo" class="form-control" required>
+          <label for="objetivo_principal">Objetivo Principal</label>
+          <select id="objetivo_principal" name="objetivo_principal" class="form-control" required>
             <option value="" disabled selected>Selecione uma opção...</option>
-            <option value="consorcio-imovel">Consórcio Imobiliário / Aquisição de Imóvel</option>
-            <option value="consorcio-auto">Consórcio de Veículos / Frota / Pesados</option>
-            <option value="home-equity">Home Equity / Crédito com Garantia Imobiliária</option>
-            <option value="alavancagem-pj">Alavancagem Empresarial &amp; Capital de Giro</option>
-            <option value="wealth-management">Wealth Management &amp; Gestão Patrimonial</option>
-            <option value="seguro-vida">Seguro de Vida Estruturado &amp; Sucessão</option>
-            <option value="offshore-cambio">Investimentos no Exterior, Off-shore &amp; Câmbio</option>
-            <option value="outros">Outras Soluções Financeiras Personalizadas</option>
+            <option value="Consórcio Imobiliário / Aquisição de Imóvel">Consórcio Imobiliário / Aquisição de Imóvel</option>
+            <option value="Consórcio de Veículos / Frota / Pesados">Consórcio de Veículos / Frota / Pesados</option>
+            <option value="Home Equity / Crédito com Garantia Imobiliária">Home Equity / Crédito com Garantia Imobiliária</option>
+            <option value="Alavancagem Empresarial & Capital de Giro">Alavancagem Empresarial &amp; Capital de Giro</option>
+            <option value="Wealth Management & Gestão Patrimonial">Wealth Management &amp; Gestão Patrimonial</option>
+            <option value="Seguro de Vida Estruturado & Sucessão">Seguro de Vida Estruturado &amp; Sucessão</option>
+            <option value="Investimentos no Exterior, Off-shore & Câmbio">Investimentos no Exterior, Off-shore &amp; Câmbio</option>
+            <option value="Outras Soluções Financeiras Personalizadas">Outras Soluções Financeiras Personalizadas</option>
           </select>
         </div>
 
         <div class="form-group">
-          <label for="valor">Valor do Crédito, Aporte ou Patrimônio Desejado</label>
-          <select id="valor" name="valor" class="form-control" required>
+          <label for="valor_desejado">Valor do Crédito, Aporte ou Patrimônio Desejado</label>
+          <select id="valor_desejado" name="valor_desejado" class="form-control" required>
             <option value="" disabled selected>Selecione a faixa de valor...</option>
-            <option value="ate-200k">Até R$ 200.000</option>
-            <option value="200k-500k">R$ 200.000 a R$ 500.000</option>
-            <option value="500k-1m">R$ 500.000 a R$ 1.000.000</option>
-            <option value="1m-3m">R$ 1.000.000 a R$ 3.000.000</option>
-            <option value="acima-3m">Acima de R$ 3.000.000</option>
+            <option value="Até R$ 200.000">Até R$ 200.000</option>
+            <option value="R$ 200.000 a R$ 500.000">R$ 200.000 a R$ 500.000</option>
+            <option value="R$ 500.000 a R$ 1.000.000">R$ 500.000 a R$ 1.000.000</option>
+            <option value="R$ 1.000.000 a R$ 3.000.000">R$ 1.000.000 a R$ 3.000.000</option>
+            <option value="Acima de R$ 3.000.000">Acima de R$ 3.000.000</option>
           </select>
         </div>
 
@@ -276,6 +276,30 @@
     <span>Bezerra Strategic</span>
   </div>
 </footer>
+
+<script>
+function enviarLead(event) {
+  event.preventDefault();
+  
+  const nome = document.getElementById('firstname').value;
+  const phone = document.getElementById('phone').value;
+  const email = document.getElementById('email').value;
+  const objetivo = document.getElementById('objetivo_principal').value;
+  const valor = document.getElementById('valor_desejado').value;
+
+  // Monta texto estruturado para abertura do WhatsApp
+  const mensagem = `Olá Douglas! Solicitei um estudo pelo site.\n\n*Nome:* ${nome}\n*Objetivo:* ${objetivo}\n*Valor:* ${valor}\n*E-mail:* ${email}`;
+  const urlWa = `https://wa.me/5547988307859?text=${encodeURIComponent(mensagem)}`;
+
+  // Se houver o objeto do HubSpot rodando na página, envia o formulário no background
+  if (window._hsq) {
+    window._hsq.push(["contentType", "landing-page"]);
+  }
+
+  // Redireciona o cliente para o seu WhatsApp
+  window.open(urlWa, '_blank');
+}
+</script>
 
 </body>
 </html>
