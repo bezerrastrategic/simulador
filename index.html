@@ -60,81 +60,108 @@
     width:auto;
     border-radius:4px;
   }
-  .btn-simular-top{
-    border:1px solid rgba(246,243,236,0.35);
-    color:var(--ivory);
-    padding:10px 22px;
-    font-size:0.88rem;
-    font-weight:600;
-    border-radius:3px;
-    transition:all 0.2s ease;
-  }
-  .btn-simular-top:hover{
+  .btn-gold{
     background:var(--brass);
-    border-color:var(--brass);
     color:var(--navy);
+    padding:10px 20px;
+    font-size:0.88rem;
+    font-weight:700;
+    border-radius:3px;
+    transition:background 0.2s ease, transform 0.15s ease;
+    display:inline-block;
+  }
+  .btn-gold:hover{
+    background:var(--brass-light);
+    transform:translateY(-1px);
   }
 
-  /* HERO SECTION (ORIGINAL) */
+  /* HERO SECTION */
   .hero{
-    padding:64px 0 60px;
+    padding:80px 0 60px;
+    text-align:center;
     background:radial-gradient(circle at top, #142d4a 0%, var(--navy) 70%);
   }
-  .hero-stats{
-    display:flex;
-    gap:40px;
-    margin-bottom:32px;
-  }
-  .stat-item h3{
-    font-family:'Fraunces', serif;
-    font-size:1.8rem;
-    color:var(--brass-light);
-    line-height:1.1;
-  }
-  .stat-item p{
+  .eyebrow{
     font-family:'IBM Plex Mono', monospace;
     font-size:0.75rem;
-    color:rgba(246,243,236,0.65);
-    text-transform:lowercase;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--brass-light);
+    display:block;
+    margin-bottom:12px;
   }
   .hero h1{
     font-family:'Fraunces', serif;
-    font-size:clamp(2.2rem, 4.5vw, 3.8rem);
+    font-size:clamp(2.2rem, 5vw, 3.6rem);
     font-weight:600;
     line-height:1.15;
-    max-width:850px;
-    margin-bottom:24px;
+    max-width:900px;
+    margin:0 auto 20px;
     color:var(--ivory);
   }
   .hero p.sub{
     font-size:1.1rem;
-    color:rgba(246,243,236,0.78);
-    max-width:680px;
-    line-height:1.6;
+    color:rgba(246,243,236,0.8);
+    max-width:720px;
+    margin:0 auto 36px;
+  }
+  .hero-stats{
+    display:flex;
+    justify-content:center;
+    gap:48px;
+    margin-top:40px;
+    padding-top:32px;
+    border-top:1px solid var(--line);
+    flex-wrap:wrap;
+  }
+  .stat-item h3{
+    font-family:'Fraunces', serif;
+    font-size:2rem;
+    color:var(--brass-light);
+  }
+  .stat-item p{
+    font-size:0.85rem;
+    color:rgba(246,243,236,0.65);
+    text-transform:uppercase;
+    letter-spacing:0.05em;
   }
 
-  /* SEÇÃO PILARES DE ATUAÇÃO / ABAS CLICÁVEIS */
+  /* SEÇÃO PILARES DE ATUAÇÃO */
   .pillars-section{
-    padding:60px 0 80px;
+    padding:80px 0;
+    background:var(--navy-3);
+  }
+  .section-header{
+    text-align:center;
+    margin-bottom:56px;
+  }
+  .section-header h2{
+    font-family:'Fraunces', serif;
+    font-size:2.2rem;
+    color:var(--ivory);
+    margin-bottom:12px;
+  }
+  .section-header p{
+    color:rgba(246,243,236,0.7);
+    max-width:600px;
+    margin:0 auto;
   }
   .pillars-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
     gap:24px;
   }
   .pillar-card{
     background:var(--navy-2);
     border:1px solid var(--line);
     border-radius:6px;
-    padding:32px 28px;
+    padding:32px 24px;
     display:block;
-    transition:transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-    cursor:pointer;
+    transition:transform 0.2s ease, border-color 0.2s ease;
   }
   .pillar-card:hover{
     transform:translateY(-4px);
     border-color:var(--brass);
-    box-shadow:0 12px 30px rgba(0,0,0,0.3);
   }
   .pillar-icon{
     font-size:1.8rem;
@@ -143,62 +170,86 @@
   }
   .pillar-card h3{
     font-family:'Fraunces', serif;
-    font-size:1.35rem;
+    font-size:1.25rem;
     color:var(--brass-light);
-    margin-bottom:12px;
+    margin-bottom:10px;
   }
   .pillar-card p{
-    font-size:0.92rem;
+    font-size:0.9rem;
     color:rgba(246,243,236,0.75);
-    line-height:1.55;
+    line-height:1.5;
   }
 
   /* SEÇÃO AVALIAÇÕES GOOGLE */
   .reviews-section{
-    padding:60px 0 80px;
+    padding:80px 0;
+    background:var(--navy);
     border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
   }
   .reviews-card{
     background:var(--navy-2);
     border:1px solid var(--line);
     border-radius:8px;
-    padding:40px 32px;
+    padding:48px 32px;
     text-align:center;
     max-width:800px;
     margin:0 auto;
+    box-shadow:0 16px 40px rgba(0,0,0,0.3);
   }
   .stars{
     color:#FFB800;
-    font-size:1.4rem;
+    font-size:1.5rem;
     letter-spacing:4px;
-    margin-bottom:10px;
+    margin-bottom:12px;
   }
   .reviews-card h3{
     font-family:'Fraunces', serif;
-    font-size:1.7rem;
+    font-size:1.8rem;
     color:var(--ivory);
     margin-bottom:12px;
   }
   .reviews-card p{
     color:rgba(246,243,236,0.8);
-    font-size:0.95rem;
-    margin-bottom:24px;
+    font-size:0.98rem;
+    margin-bottom:28px;
+    max-width:600px;
+    margin-left:auto;
+    margin-right:auto;
   }
   .btn-google{
     background:rgba(184,150,62,0.12);
     border:1px solid var(--brass);
     color:var(--brass-light);
-    padding:12px 24px;
+    padding:14px 28px;
     font-weight:600;
-    font-size:0.9rem;
+    font-size:0.95rem;
     border-radius:4px;
     display:inline-flex;
     align-items:center;
-    gap:8px;
-    transition:background 0.2s ease;
+    gap:10px;
+    transition:background 0.2s ease, transform 0.2s ease;
   }
   .btn-google:hover{
     background:rgba(184,150,62,0.25);
+    transform:translateY(-2px);
+  }
+
+  /* CTA FINAL */
+  .cta-section{
+    padding:80px 0;
+    text-align:center;
+    background:radial-gradient(circle at bottom, #122841 0%, var(--navy) 70%);
+  }
+  .cta-section h2{
+    font-family:'Fraunces', serif;
+    font-size:2.2rem;
+    margin-bottom:16px;
+  }
+  .cta-section p{
+    color:rgba(246,243,236,0.8);
+    max-width:600px;
+    margin:0 auto 32px;
   }
 
   /* BOTÃO FLUTUANTE WHATSAPP */
@@ -239,11 +290,12 @@
   }
   footer a:hover{
     color:var(--brass-light);
+    text-decoration:underline;
   }
 
   @media (max-width:768px){
-    .hero-stats{gap:20px; flex-wrap:wrap;}
     .hero h1{font-size:2rem;}
+    .hero-stats{gap:24px;}
     footer .wrap{flex-direction:column; text-align:center;}
   }
 </style>
@@ -256,37 +308,46 @@
     <a href="index.html" class="brand">
       <img src="banner.jpeg" alt="Bezerra Strategic">
     </a>
-    <a href="simulador.html" class="btn-simular-top">Simular agora</a>
+    <div class="nav-actions">
+      <a href="simulador.html" class="btn-gold">SOLICITAR ESTUDO</a>
+    </div>
   </div>
 </header>
 
 <!-- HERO -->
 <section class="hero">
   <div class="wrap">
+    <span class="eyebrow">Personal Banking &amp; Estratégia Patrimonial</span>
+    <h1>Soluções Financeiras de Alta Complexidade Sob Medida</h1>
+    <p class="sub">Estruturação de consórcios, alavancagem de crédito, inteligência em câmbio, operações imobiliárias e gestão patrimonial para famílias e empresas.</p>
     
+    <a href="simulador.html" class="btn-gold" style="padding:16px 36px; font-size:1rem;">📊 FAZER SIMULAÇÃO PERSONALIZADA</a>
+
     <div class="hero-stats">
       <div class="stat-item">
-        <h3>R$54MM+</h3>
-        <p>sob gestão</p>
+        <h3>+R$ 54MM</h3>
+        <p>Sob Gestão &amp; Consultoria</p>
       </div>
       <div class="stat-item">
-        <h3>200+</h3>
-        <p>clientes atendidos</p>
+        <h3>+200</h3>
+        <p>Clientes Atendidos</p>
       </div>
       <div class="stat-item">
-        <h3>15+</h3>
-        <p>anos de mercado</p>
+        <h3>+15 Anos</h3>
+        <p>De Expertise de Mercado</p>
       </div>
     </div>
-
-    <h1>Alavancagem e proteção patrimonial para quem pensa em décadas, não em meses.</h1>
-    <p class="sub">Modelagem de crédito inteligente, consórcios estruturados e arquitetura financeira personalizada para investidores e empresas.</p>
   </div>
 </section>
 
-<!-- PILARES DE ATUAÇÃO / ABAS CLICÁVEIS -->
+<!-- SEÇÃO PILARES DE ATUAÇÃO -->
 <section class="pillars-section">
   <div class="wrap">
+    <div class="section-header">
+      <h2>Pilares de Atuação Estratégica</h2>
+      <p>Um ecossistema completo de soluções financeiras integradas para otimizar sua estrutura de capital e proteção familiar.</p>
+    </div>
+
     <div class="pillars-grid">
       
       <a href="simulador.html" class="pillar-card">
@@ -335,116 +396,29 @@
     <div class="reviews-card">
       <div class="stars">★★★★★</div>
       <h3>Reputação &amp; Compromisso com o Cliente</h3>
-      <p>Veja os depoimentos de quem já transformou seu planejamento financeiro e patrimonial com a Bezerra Strategic.</p>
+      <p>A confiança dos nossos clientes é o nosso maior ativo. Veja os depoimentos de quem já transformou seu planejamento financeiro e patrimonial com a Bezerra Strategic.</p>
       
       <a href="https://g.page/r/CaV8w1BWYfd2EBM/review" target="_blank" rel="noopener" class="btn-google">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.545,10.239v3.821h5.445c-0.712,2.315-2.647,3.972-5.445,3.972c-3.332,0-6.033-2.701-6.033-6.032s2.701-6.032,6.033-6.032c1.498,0,2.866,0.549,3.921,1.453l2.814-2.814C17.503,2.988,15.139,2,12.545,2C7.021,2,2.543,6.477,2.543,12s4.478,10,10.002,10c8.396,0,10.249-7.85,9.426-11.761H12.545z"/></svg>
-        VER AVALIAÇÕES NO GOOGLE
+        CONFERIR AVALIAÇÕES OU DEIXAR SEU DEPOIMENTO NO GOOGLE
       </a>
     </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-section">
+  <div class="wrap">
+    <h2>Pronto para estruturar seu patrimônio com inteligência?</h2>
+    <p>Solicite um estudo personalizado sem compromisso e receba uma análise técnica sob medida para seus objetivos.</p>
+    <a href="simulador.html" class="btn-gold" style="padding:16px 36px; font-size:1rem;">SOLICITAR ESTUDO PERSONALIZADO</a>
   </div>
 </section>
 
 <!-- BOTÃO FLUTUANTE WHATSAPP -->
 <a href="https://wa.me/5547988307859?text=Ol%C3%A1%20Douglas!%20Vim%20pelo%20site%20da%20Bezerra%20Strategic." target="_blank" rel="noopener" class="whatsapp-float" title="Falar no WhatsApp">
-  <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></style>
-</head>
-<body>
-
-<!-- HEADER -->
-<header class="top">
-  <div class="wrap">
-    <a href="index.html" class="brand">
-      <img src="banner.jpeg" alt="Bezerra Strategic">
-    </a>
-    <a href="simulador.html" class="btn-simular-top">Simular agora</a>
-  </div>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="wrap">
-    
-    <div class="hero-stats">
-      <div class="stat-item">
-        <h3>R$54MM+</h3>
-        <p>sob gestão</p>
-      </div>
-      <div class="stat-item">
-        <h3>200+</h3>
-        <p>clientes atendidos</p>
-      </div>
-      <div class="stat-item">
-        <h3>15+</h3>
-        <p>anos de mercado</p>
-      </div>
-    </div>
-
-    <h1>Alavancagem e proteção patrimonial para quem pensa em décadas, não em meses.</h1>
-    <p class="sub">Modelagem de crédito inteligente, consórcios estruturados e arquitetura financeira personalizada para investidores e empresas.</p>
-  </div>
-</section>
-
-<!-- PILARES DE ATUAÇÃO / ABAS CLICÁVEIS -->
-<section class="pillars-section">
-  <div class="wrap">
-    <div class="pillars-grid">
-      
-      <a href="simulador.html" class="pillar-card">
-        <span class="pillar-icon">🏛️</span>
-        <h3>Consórcio Estruturado</h3>
-        <p>Estratégias avançadas de alavancagem imobiliária, frotas, máquinas e aquisição planejada de ativos com baixíssimo custo financeiro.</p>
-      </a>
-
-      <a href="simulador.html" class="pillar-card">
-        <span class="pillar-icon">🏡</span>
-        <h3>Real Estate &amp; Home Equity</h3>
-        <p>Acesso a crédito com garantia imobiliária com as melhores taxas do mercado para expansão de capital de giro ou novas aquisições.</p>
-      </a>
-
-      <a href="simulador.html" class="pillar-card">
-        <span class="pillar-icon">📈</span>
-        <h3>Alavancagem &amp; Crédito PJ</h3>
-        <p>Linhas de crédito corporativo sob medida para liquidez empresarial, refinanciamento de passivos e expansão estratégica de negócios.</p>
-      </a>
-
-      <a href="simulador.html" class="pillar-card">
-        <span class="pillar-icon">⚖️</span>
-        <h3>Wealth Management</h3>
-        <p>Gestão integrada do patrimônio, focada na preservação de capital, otimização de liquidez e inteligência de alocação de recursos.</p>
-      </a>
-
-      <a href="investimentos-no-exterior-offshore.html" class="pillar-card">
-        <span class="pillar-icon">🌐</span>
-        <h3>Câmbio &amp; Off-Shore</h3>
-        <p>Operações de câmbio comercial e financeiro, estruturação de contas no exterior e remessas internacionais protegidas.</p>
-      </a>
-
-      <a href="simulador.html" class="pillar-card">
-        <span class="pillar-icon">🛡️</span>
-        <h3>Sucessão &amp; Seguro de Vida</h3>
-        <p>Planejamento sucessório estratégico via seguros estruturados para garantir liquidez imediata e proteção patrimonial familiar.</p>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<!-- SEÇÃO AVALIAÇÕES GOOGLE -->
-<section class="reviews-section">
-  <div class="wrap">
-    <div class="reviews-card">
-      <div class="stars">★★★★★</div>
-      <h3>Reputação &amp; Compromisso com o Cliente</h3>
-      <p>Veja os depoimentos de quem já transformou seu planejamento financeiro e patrimonial com a Bezerra Strategic.</p>
-      
-      <a href="https://g.page/r/CaV8w1BWYfd2EBM/review" target="_blank" rel="noopener" class="btn-google">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.545,10.239v3.821h5.445c-0.712,2.315-2.647,3.972-5.445,3.972c-3.332,0-6.033-2.701-6.033-6.032s2.701-6.032,6.033-6.032c1.498,0,2.866,0.549,3.921,1.453l2.814-2.814C17.503,2.988,15.139,2,12.545,2C7.021,2,2.543,6.477,2.543,12s4.478,10,10.002,10c8.396,0,10.249-7.85,9.426-11.761H12.545z"/></svg>
-        VER AVALIAÇÕES NO GOOGLE
-      </a>
-    </div>
-  </div>
-</section>
+  <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
 
 <!-- FOOTER -->
 <footer>
