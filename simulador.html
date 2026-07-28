@@ -216,7 +216,7 @@
     <p class="lead">Preencha o formulário abaixo para entender as melhores opções de crédito, alavancagem, câmbio ou gestão patrimonial para o seu momento.</p>
 
     <div class="form-card">
-      <form id="leadForm" onsubmit="enviarLead(event)">
+      <form id="leadForm" onsubmit="enviarHubspotEWhatsapp(event)">
         
         <div class="form-group">
           <label for="firstname">Nome Completo</label>
@@ -260,7 +260,7 @@
           </select>
         </div>
 
-        <button type="submit" class="btn-submit">
+        <button type="submit" id="btnSubmit" class="btn-submit">
           📊 SOLICITAR ESTUDO PERSONALIZADO
         </button>
 
@@ -278,26 +278,55 @@
 </footer>
 
 <script>
-function enviarLead(event) {
+function enviarHubspotEWhatsapp(event) {
   event.preventDefault();
   
-  const nome = document.getElementById('firstname').value;
+  const portalId = "51784410"; 
+  const formGuid = "9463f943-26bd-43e4-a6f8-d4c94b20ad59"; 
+
+  const firstname = document.getElementById('firstname').value;
   const phone = document.getElementById('phone').value;
   const email = document.getElementById('email').value;
   const objetivo = document.getElementById('objetivo_principal').value;
   const valor = document.getElementById('valor_desejado').value;
 
-  // Monta texto estruturado para abertura do WhatsApp
+  const btn = document.getElementById('btnSubmit');
+  btn.innerText = "ENVIANDO...";
+  btn.disabled = true;
+
+  // API oficial de envios do HubSpot
+  const hubspotUrl = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formGuid}`;
+
+  const payload = {
+    fields: [
+      { name: "firstname", value: firstname },
+      { name: "phone", value: phone },
+      { name: "email", value: email },
+      { name: "message", value: `Objetivo: ${objetivo} | Valor desejado: ${valor}` }
+    ],
+    context: {
+      pageUri: window.location.href,
+      pageName: document.title
+    }
+  };
+
+  // Envia os dados para o CRM no background
+  fetch(hubspotUrl, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
+  }).then(() => {
+    redirecionarWhatsapp(firstname, objetivo, valor, email);
+  }).catch((err) => {
+    console.error("Erro ao registrar no HubSpot:", err);
+    redirecionarWhatsapp(firstname, objetivo, valor, email);
+  });
+}
+
+function redirecionarWhatsapp(nome, objetivo, valor, email) {
   const mensagem = `Olá Douglas! Solicitei um estudo pelo site.\n\n*Nome:* ${nome}\n*Objetivo:* ${objetivo}\n*Valor:* ${valor}\n*E-mail:* ${email}`;
   const urlWa = `https://wa.me/5547988307859?text=${encodeURIComponent(mensagem)}`;
-
-  // Se houver o objeto do HubSpot rodando na página, envia o formulário no background
-  if (window._hsq) {
-    window._hsq.push(["contentType", "landing-page"]);
-  }
-
-  // Redireciona o cliente para o seu WhatsApp
-  window.open(urlWa, '_blank');
+  window.location.href = urlWa;
 }
 </script>
 
