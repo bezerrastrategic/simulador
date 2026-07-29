@@ -8,7 +8,7 @@
 
 <meta property="og:title" content="Bezerra Strategic | Planejamento e Soluções Patrimoniais Global">
 <meta property="og:description" content="Soluções completas em câmbio, real estate, crédito, consórcio e wealth management para proteger e multiplicar seu patrimônio.">
-<meta property="og:image" content="https://bezerrastrategic.github.io/simulador/banner.jpeg">
+<meta property="og:image" content="https://bezerrastrategic.github.io/simulador/banner.jpg">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bezerrastrategic.github.io/simulador/">
 <meta property="og:locale" content="pt_BR">
@@ -24,7 +24,7 @@
   "name": "Bezerra Strategic",
   "description": "Planejamento patrimonial, wealth management, consórcios estruturados e alavancagem de crédito para investidores e empresas.",
   "url": "https://bezerrastrategic.github.io/simulador/",
-  "image": "https://bezerrastrategic.github.io/simulador/banner.jpeg",
+  "image": "https://bezerrastrategic.github.io/simulador/banner.jpg",
   "founder": {
     "@type": "Person",
     "name": "Douglas Bezerra",
@@ -76,11 +76,12 @@
     color:var(--brass);
   }
 
-  /* HEADER COM BANNER CENTRALIZADO E EXPANDIDO */
+  /* HEADER COM BANNER INTEGRADO E SEM CORTES */
   header.top{
     background:var(--navy);
-    padding:20px 0;
+    padding:32px 0 20px 0;
     border-bottom:1px solid var(--line);
+    text-align:center;
   }
   header.top .banner-wrap{
     max-width:1080px;
@@ -91,26 +92,27 @@
     align-items:center;
   }
   .brand-banner{
-    display:block;
+    display:inline-block;
     width:100%;
-    text-align:center;
+    max-width:680px;
   }
   .brand-banner img{
     width:100%;
-    max-width:960px;
     height:auto;
+    display:block;
     margin:0 auto;
-    border-radius:6px;
-    box-shadow:0 8px 24px rgba(0,0,0,0.35);
+    border-radius:0;
+    box-shadow:none;
     transition:transform 0.2s ease;
   }
   .brand-banner img:hover{
-    transform:scale(1.005);
+    transform:scale(1.01);
   }
 
   @media (max-width:520px){
-    header.top{padding:14px 0;}
+    header.top{padding:20px 0 10px 0;}
     header.top .banner-wrap{padding:0 16px;}
+    .brand-banner{max-width:100%;}
   }
 
   /* HERO */
@@ -386,7 +388,7 @@
 <header class="top">
   <div class="banner-wrap">
     <a href="index.html" class="brand-banner" title="Bezerra Strategic">
-      <img src="banner.jpeg" alt="Bezerra Strategic - Consórcios, Crédito e Planejamento">
+      <img src="banner.jpg?v=2" alt="Bezerra Strategic - Consórcios, Crédito e Planejamento">
     </a>
   </div>
 </header>
