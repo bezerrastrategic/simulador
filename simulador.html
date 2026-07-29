@@ -30,31 +30,54 @@
   a{color:inherit; text-decoration:none;}
   .wrap{max-width:800px; margin:0 auto; padding:0 24px;}
 
+  /* =========================================================
+     CABEÇALHO COM BANNER EM DESTAQUE TOTAL
+     ========================================================= */
   header.top{
     background:var(--navy);
-    padding:20px 0;
+    padding:16px 0;
     border-bottom:1px solid var(--line);
+    text-align:center;
   }
-  header.top .wrap{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+  header.top .banner-wrap{
     max-width:1080px;
+    margin:0 auto;
+    padding:0 16px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
   }
-  .brand img{height:50px; width:auto; border-radius:4px;}
-  .btn-voltar{
-    border:1px solid rgba(246,243,236,0.35);
-    color:var(--ivory);
-    padding:8px 18px;
-    font-size:0.85rem;
-    border-radius:3px;
-    transition:background 0.2s ease;
+  .brand-banner{
+    display:block;
+    width:100%;
   }
-  .btn-voltar:hover{background:rgba(246,243,236,0.08);}
+  .brand-banner img{
+    width:100%;
+    max-width:980px; /* Garante presença marcante sem esticar além da conta */
+    height:auto;
+    border-radius:6px;
+    box-shadow:0 8px 24px rgba(0,0,0,0.3);
+    transition:transform 0.2s ease;
+  }
+  .brand-banner img:hover{
+    transform:scale(1.005);
+  }
 
-  .simulador-container{padding:60px 0 80px;}
+  .btn-voltar-subtil{
+    color:rgba(246,243,236,0.6);
+    font-size:0.8rem;
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+    transition:color 0.2s ease;
+  }
+  .btn-voltar-subtil:hover{
+    color:var(--brass-light);
+  }
+
+  .simulador-container{padding:40px 0 80px;}
   
-  /* CARD COM FUNDO CLARO (TOM MARFIM DO SEU SITE) */
+  /* CARD COM FUNDO MARFIM (LEITURA PERFEITA DO HUBSPOT) */
   .simulador-card{
     background:var(--ivory);
     border:1px solid rgba(184,150,62,0.3);
@@ -75,7 +98,7 @@
     margin-bottom:32px;
   }
 
-  /* AJUSTE PARA OS CAMPOS DO HUBSPOT FICAREM LINDOS NO FUNDO CLARO */
+  /* ESTILOS PARA OS CAMPOS DO HUBSPOT NO CARD CLARO */
   .hs-form-frame label,
   .hs-form-frame .hs-fieldlabel {
     color: var(--navy) !important;
@@ -103,17 +126,20 @@
 
   @media(max-width:600px){
     .simulador-card{padding:24px 16px;}
+    .simulador-container{padding:24px 0 60px;}
   }
 </style>
 </head>
 <body>
 
 <header class="top">
-  <div class="wrap">
-    <a href="index.html" class="brand">
-      <img src="banner.jpeg" alt="Bezerra Strategic">
+  <div class="banner-wrap">
+    <!-- Banner Principal Ocupando Destaque no Topo -->
+    <a href="index.html" class="brand-banner" title="Voltar para a página inicial">
+      <img src="banner.jpeg" alt="Bezerra Strategic - Consórcios, Crédito e Planejamento">
     </a>
-    <a href="index.html" class="btn-voltar">← Voltar ao site</a>
+    <!-- Link sutil de retorno mantido abaixo da imagem -->
+    <a href="index.html" class="btn-voltar-subtil">← Voltar ao site principal</a>
   </div>
 </header>
 
@@ -122,7 +148,7 @@
     <h1>Estudo Patrimonial Personalizado</h1>
     <p class="sub">Preencha os dados abaixo para alinharmos a melhor estratégia de crédito, consórcio ou alavancagem para o seu momento.</p>
 
-    <!-- INCORPORAÇÃO NATIVA DO HUBSPOT -->
+    <!-- FORMULÁRIO HUBSPOT INTEGRADO -->
     <script src="https://js.hsforms.net/forms/embed/51784410.js" defer></script>
     <div class="hs-form-frame" data-region="na1" data-form-id="9463f943-26bd-43e4-a6f8-d4c94b20ad59" data-portal-id="51784410"></div>
 
