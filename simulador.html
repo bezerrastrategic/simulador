@@ -31,11 +31,11 @@
   .wrap{max-width:800px; margin:0 auto; padding:0 24px;}
 
   /* =========================================================
-     CABEÇALHO COM BANNER EM DESTAQUE TOTAL
+     CABEÇALHO COM BANNER INTEGRADO E SEM CORTES
      ========================================================= */
   header.top{
     background:var(--navy);
-    padding:16px 0;
+    padding:32px 0 20px 0;
     border-bottom:1px solid var(--line);
     text-align:center;
   }
@@ -46,22 +46,24 @@
     display:flex;
     flex-direction:column;
     align-items:center;
-    gap:12px;
+    gap:16px;
   }
   .brand-banner{
-    display:block;
+    display:inline-block;
     width:100%;
+    max-width:680px;
   }
   .brand-banner img{
     width:100%;
-    max-width:980px; /* Garante presença marcante sem esticar além da conta */
     height:auto;
-    border-radius:6px;
-    box-shadow:0 8px 24px rgba(0,0,0,0.3);
+    display:block;
+    margin:0 auto;
+    border-radius:0;
+    box-shadow:none;
     transition:transform 0.2s ease;
   }
   .brand-banner img:hover{
-    transform:scale(1.005);
+    transform:scale(1.01);
   }
 
   .btn-voltar-subtil{
@@ -125,6 +127,8 @@
   }
 
   @media(max-width:600px){
+    header.top{padding:20px 0 10px 0;}
+    .brand-banner{max-width:100%;}
     .simulador-card{padding:24px 16px;}
     .simulador-container{padding:24px 0 60px;}
   }
@@ -134,9 +138,9 @@
 
 <header class="top">
   <div class="banner-wrap">
-    <!-- Banner Principal Ocupando Destaque no Topo -->
+    <!-- Banner Principal Integrado -->
     <a href="index.html" class="brand-banner" title="Voltar para a página inicial">
-      <img src="banner.jpeg" alt="Bezerra Strategic - Consórcios, Crédito e Planejamento">
+      <img src="banner.jpg?v=2" alt="Bezerra Strategic - Consórcios, Crédito e Planejamento">
     </a>
     <!-- Link sutil de retorno mantido abaixo da imagem -->
     <a href="index.html" class="btn-voltar-subtil">← Voltar ao site principal</a>
