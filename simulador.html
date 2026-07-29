@@ -73,31 +73,21 @@
   }
 
   /* =========================================================
-     ESTILIZAÇÃO PERSONALIZADA DO FORMULÁRIO DO HUBSPOT
+     ESTILIZAÇÃO FORÇADA PARA O FORMULÁRIO SEM IFRAME
      ========================================================= */
-  .hs-form-frame,
-  .hs-form,
-  .hs-form iframe {
-    width: 100% !important;
-  }
-
-  /* Rótulos e Labels */
-  .hs-form label, 
-  .hs-fieldlabel {
+  #hubspot-form-container label {
     color: var(--brass-light) !important;
     font-size: 0.85rem !important;
     font-weight: 600 !important;
     margin-bottom: 7px !important;
     display: block !important;
-    font-family: 'Inter', sans-serif !important;
   }
 
-  /* Campos de texto, e-mail, telefone e selects */
-  .hs-form input[type="text"],
-  .hs-form input[type="email"],
-  .hs-form input[type="tel"],
-  .hs-form select,
-  .hs-form textarea {
+  #hubspot-form-container input[type="text"],
+  #hubspot-form-container input[type="email"],
+  #hubspot-form-container input[type="tel"],
+  #hubspot-form-container select,
+  #hubspot-form-container textarea {
     width: 100% !important;
     padding: 13px 15px !important;
     background: rgba(255, 255, 255, 0.06) !important;
@@ -110,24 +100,17 @@
     box-sizing: border-box !important;
   }
 
-  .hs-form input::placeholder {
+  #hubspot-form-container input::placeholder {
     color: rgba(246, 243, 236, 0.4) !important;
   }
 
-  .hs-form input:focus, 
-  .hs-form select:focus {
-    border-color: var(--brass) !important;
-  }
-
-  /* Opções internas do Select */
-  .hs-form select option {
+  #hubspot-form-container select option {
     background-color: var(--navy-2) !important;
     color: var(--ivory) !important;
   }
 
-  /* Botão de envio */
-  .hs-form .hs-button,
-  .hs-form input[type="submit"] {
+  #hubspot-form-container input[type="submit"],
+  #hubspot-form-container .hs-button {
     width: 100% !important;
     padding: 16px 0 !important;
     background: var(--brass) !important;
@@ -140,21 +123,18 @@
     cursor: pointer !important;
     margin-top: 12px !important;
     transition: background 0.2s ease !important;
-    font-family: 'Inter', sans-serif !important;
   }
 
-  .hs-form .hs-button:hover,
-  .hs-form input[type="submit"]:hover {
+  #hubspot-form-container input[type="submit"]:hover,
+  #hubspot-form-container .hs-button:hover {
     background: var(--brass-light) !important;
   }
 
-  /* Mensagem de agradecimento/sucesso do HubSpot */
-  .submitted-message {
+  #hubspot-form-container .submitted-message {
     color: var(--ivory) !important;
     font-size: 1.1rem !important;
     text-align: center !important;
     padding: 20px 0 !important;
-    line-height: 1.6 !important;
   }
 
   footer{
@@ -187,10 +167,9 @@
     <h1>Estudo Patrimonial Personalizado</h1>
     <p class="sub">Preencha os dados abaixo para alinharmos a melhor estratégia de crédito, consórcio ou alavancagem para o seu momento.</p>
 
-    <!-- FORMULÁRIO INCORPORADO DO HUBSPOT -->
-    <script src="https://js.hsforms.net/forms/embed/51784410.js" defer></script>
-    <div class="hs-form-frame" data-region="na1" data-form-id="9463f943-26bd-43e4-a6f8-d4c94b20ad59" data-portal-id="51784410"></div>
-    
+    <!-- ÁREA ONDE O FORMULÁRIO SERÁ RENDERIZADO -->
+    <div id="hubspot-form-container"></div>
+
   </div>
 </main>
 
@@ -199,6 +178,17 @@
     <span>Bezerra Strategic © Todos os direitos reservados.</span>
   </div>
 </footer>
+
+<!-- SCRIPT INTELIGENTE DO HUBSPOT (SEM IFRAME ISOLADO) -->
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+<script>
+  hbspt.forms.create({
+    region: "na1",
+    portalId: "51784410",
+    formId: "9463f943-26bd-43e4-a6f8-d4c94b20ad59",
+    target: "#hubspot-form-container"
+  });
+</script>
 
 </body>
 </html>
