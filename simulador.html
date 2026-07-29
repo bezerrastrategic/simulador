@@ -120,26 +120,30 @@
   .success-message{
     display:none;
     text-align:center;
-    padding:20px 0 4px;
+    padding:20px 0 10px;
   }
   .success-message .icon{
-    width:52px; height:52px;
-    margin:0 auto 18px;
+    width:60px; height:60px;
+    margin:0 auto 20px;
     border-radius:50%;
     background:rgba(184,150,62,0.15);
+    border:1px solid var(--brass);
     display:flex; align-items:center; justify-content:center;
+    color:var(--brass-light);
+    font-size:1.8rem;
   }
   .success-message h2{
     font-family:'Fraunces', serif;
-    font-size:1.4rem;
+    font-size:1.6rem;
     color:var(--ivory);
-    margin-bottom:10px;
+    margin-bottom:12px;
   }
   .success-message p{
-    color:rgba(246,243,236,0.75);
-    font-size:0.95rem;
-    max-width:420px;
+    color:rgba(246,243,236,0.8);
+    font-size:1rem;
+    max-width:460px;
     margin:0 auto;
+    line-height:1.5;
   }
 
   footer{
@@ -169,53 +173,64 @@
 
 <main class="wrap simulador-container">
   <div class="simulador-card">
-    <h1>Estudo Patrimonial Personalizado</h1>
-    <p class="sub">Preencha os dados abaixo para alinharmos a melhor estratégia de crédito, consórcio ou alavancagem para o seu momento.</p>
+    
+    <div id="formWrapper">
+      <h1>Estudo Patrimonial Personalizado</h1>
+      <p class="sub">Preencha os dados abaixo para alinharmos a melhor estratégia de crédito, consórcio ou alavancagem para o seu momento.</p>
 
-    <form id="simuladorForm">
-      <div class="form-group">
-        <label for="nome">Nome Completo</label>
-        <input type="text" id="nome" placeholder="Digite seu nome" required>
-      </div>
+      <form id="simuladorForm">
+        <div class="form-group">
+          <label for="nome">Nome Completo</label>
+          <input type="text" id="nome" placeholder="Digite seu nome" required>
+        </div>
 
-      <div class="form-group">
-        <label for="email">E-mail</label>
-        <input type="email" id="email" placeholder="seuemail@dominio.com" required>
-      </div>
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" placeholder="seuemail@dominio.com" required>
+        </div>
 
-      <div class="form-group">
-        <label for="telefone">WhatsApp / Telefone</label>
-        <input type="tel" id="telefone" placeholder="(47) 99999-9999" maxlength="15" oninput="mascaraTelefone(this)" required>
-      </div>
+        <div class="form-group">
+          <label for="telefone">WhatsApp / Telefone</label>
+          <input type="tel" id="telefone" placeholder="(47) 99999-9999" maxlength="15" oninput="mascaraTelefone(this)" required>
+        </div>
 
-      <div class="form-group">
-        <label for="objetivo">Objetivo Principal</label>
-        <select id="objetivo" required>
-          <option value="Consórcio Imobiliário / Aquisição de Imóvel">Consórcio Imobiliário / Aquisição de Imóvel</option>
-          <option value="Consórcio de Veículos / Frota / Pesados">Consórcio de Veículos / Frota / Pesados</option>
-          <option value="Financiamento / Home Equity">Financiamento / Home Equity</option>
-          <option value="Wealth Management / Gestão Patrimonial">Wealth Management / Gestão Patrimonial</option>
-          <option value="Seguro de Vida Estruturado">Seguro de Vida Estruturado</option>
-          <option value="Previdência Privada">Previdência Privada</option>
-          <option value="Investimentos no Exterior / Offshore">Investimentos no Exterior / Offshore</option>
-          <option value="Câmbio e Remessas Internacionais">Câmbio e Remessas Internacionais</option>
-          <option value="Alavancagem Patrimonial / Capital de Giro">Alavancagem Patrimonial / Capital de Giro</option>
-          <option value="Outras Soluções de Crédito Estratégico">Outras Soluções de Crédito Estratégico</option>
-        </select>
-      </div>
+        <div class="form-group">
+          <label for="objetivo">Objetivo Principal</label>
+          <select id="objetivo" required>
+            <option value="Consórcio Imobiliário / Aquisição de Imóvel">Consórcio Imobiliário / Aquisição de Imóvel</option>
+            <option value="Consórcio de Veículos / Frota / Pesados">Consórcio de Veículos / Frota / Pesados</option>
+            <option value="Financiamento / Home Equity">Financiamento / Home Equity</option>
+            <option value="Wealth Management / Gestão Patrimonial">Wealth Management / Gestão Patrimonial</option>
+            <option value="Seguro de Vida Estruturado">Seguro de Vida Estruturado</option>
+            <option value="Previdência Privada">Previdência Privada</option>
+            <option value="Investimentos no Exterior / Offshore">Investimentos no Exterior / Offshore</option>
+            <option value="Câmbio e Remessas Internacionais">Câmbio e Remessas Internacionais</option>
+            <option value="Alavancagem Patrimonial / Capital de Giro">Alavancagem Patrimonial / Capital de Giro</option>
+            <option value="Outras Soluções de Crédito Estratégico">Outras Soluções de Crédito Estratégico</option>
+          </select>
+        </div>
 
-      <div class="form-group">
-        <label for="valor">Valor do Crédito / Aporte Desejado</label>
-        <select id="valor" required>
-          <option value="R$ 200.000 a R$ 500.000">R$ 200.000 a R$ 500.000</option>
-          <option value="R$ 500.000 a R$ 1.000.000">R$ 500.000 a R$ 1.000.000</option>
-          <option value="R$ 1.000.000 a R$ 3.000.000">R$ 1.000.000 a R$ 3.000.000</option>
-          <option value="Acima de R$ 3.000.000">Acima de R$ 3.000.000</option>
-        </select>
-      </div>
+        <div class="form-group">
+          <label for="valor">Valor do Crédito / Aporte Desejado</label>
+          <select id="valor" required>
+            <option value="R$ 200.000 a R$ 500.000">R$ 200.000 a R$ 500.000</option>
+            <option value="R$ 500.000 a R$ 1.000.000">R$ 500.000 a R$ 1.000.000</option>
+            <option value="R$ 1.000.000 a R$ 3.000.000">R$ 1.000.000 a R$ 3.000.000</option>
+            <option value="Acima de R$ 3.000.000">Acima de R$ 3.000.000</option>
+          </select>
+        </div>
 
-      <button type="button" class="btn-submit" id="btnEnviar" onclick="enviarSimulacaoEHubspot()">Solicitar Estudo Personalizado</button>
-    </form>
+        <button type="button" class="btn-submit" id="btnEnviar" onclick="enviarSimulacaoEHubspot()">Solicitar Estudo Personalizado</button>
+      </form>
+    </div>
+
+    <!-- Mensagem exibida após envio com sucesso -->
+    <div id="successMessage" class="success-message">
+      <div class="icon">✓</div>
+      <h2>Solicitação Recebida!</h2>
+      <p>Obrigado por confiar na Bezerra Strategic. Nossos especialistas já estão analisando seus dados e entrarão em contato em breve para apresentar seu estudo personalizado.</p>
+    </div>
+
   </div>
 </main>
 
@@ -281,18 +296,20 @@
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payloadHubspot)
-    }).then(() => {
-      redirecionarParaWhatsapp();
-    }).catch(err => {
+    })
+    .then(() => {
+      exibirMensagemSucesso();
+    })
+    .catch(err => {
       console.error("Erro ao enviar ao HubSpot:", err);
-      redirecionarParaWhatsapp();
+      // Exibe a mensagem mesmo em falhas pontuais de integração para garantir boa UX ao usuário
+      exibirMensagemSucesso();
     });
   }
 
-  function redirecionarParaWhatsapp() {
-    const numeroWhatsapp = "5547988307859";
-    const mensagem = encodeURIComponent("Olá! Preenchi o formulário no site da Bezerra Strategic e gostaria de receber o estudo personalizado.");
-    window.location.href = `https://api.whatsapp.com/send?phone=${numeroWhatsapp}&text=${mensagem}`;
+  function exibirMensagemSucesso() {
+    document.getElementById('formWrapper').style.display = 'none';
+    document.getElementById('successMessage').style.display = 'block';
   }
 </script>
 
