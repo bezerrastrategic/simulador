@@ -53,92 +53,43 @@
   .btn-voltar:hover{background:rgba(246,243,236,0.08);}
 
   .simulador-container{padding:60px 0 80px;}
+  
+  /* CARD COM FUNDO CLARO (TOM MARFIM DO SEU SITE) */
   .simulador-card{
-    background:var(--navy-2);
-    border:1px solid var(--line);
+    background:var(--ivory);
+    border:1px solid rgba(184,150,62,0.3);
     border-radius:8px;
     padding:40px 32px;
     box-shadow:0 16px 40px rgba(0,0,0,0.4);
+    color:var(--navy);
   }
   .simulador-card h1{
     font-family:'Fraunces', serif;
     font-size:clamp(1.8rem, 3.5vw, 2.4rem);
-    color:var(--ivory);
+    color:var(--navy);
     margin-bottom:12px;
   }
   .simulador-card p.sub{
-    color:rgba(246,243,236,0.75);
+    color:var(--slate);
     font-size:0.98rem;
     margin-bottom:32px;
   }
 
-  /* =========================================================
-     SOLUÇÃO DEFINITIVA DE COR PARA O HUBSPOT (FORÇA TEXTO CLARO)
-     ========================================================= */
-  
-  /* Rótulos de campos, textos descritivos e ajuda */
+  /* AJUSTE PARA OS CAMPOS DO HUBSPOT FICAREM LINDOS NO FUNDO CLARO */
   .hs-form-frame label,
-  .hs-form-frame .hs-fieldlabel,
-  .hs-form-frame .hs-richtext,
-  .hs-form-frame .hs-mainfont,
-  .hs-form-frame p,
-  .hs-form-frame span {
-    color: var(--brass-light) !important;
-    font-family: 'Inter', sans-serif !important;
-    font-size: 0.9rem !important;
+  .hs-form-frame .hs-fieldlabel {
+    color: var(--navy) !important;
     font-weight: 600 !important;
   }
 
-  /* Campos de digitação e caixas de seleção */
   .hs-form-frame input[type="text"],
   .hs-form-frame input[type="email"],
   .hs-form-frame input[type="tel"],
-  .hs-form-frame select,
-  .hs-form-frame textarea {
-    background-color: rgba(255, 255, 255, 0.08) !important;
-    border: 1px solid rgba(217, 190, 114, 0.4) !important;
-    color: #FFFFFF !important;
-    border-radius: 4px !important;
-    padding: 12px 14px !important;
-    font-size: 0.95rem !important;
-    outline: none !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  /* Opções internas dos selects */
-  .hs-form-frame select option {
-    background-color: var(--navy-2) !important;
-    color: #FFFFFF !important;
-  }
-
-  /* Botão de Envio Dourado */
-  .hs-form-frame input[type="submit"],
-  .hs-form-frame .hs-button {
-    background-color: var(--brass) !important;
+  .hs-form-frame select {
+    background-color: #FFFFFF !important;
+    border: 1px solid #CBD5E1 !important;
     color: var(--navy) !important;
-    border: none !important;
-    font-weight: 700 !important;
-    text-transform: uppercase !important;
-    padding: 16px 0 !important;
     border-radius: 4px !important;
-    width: 100% !important;
-    cursor: pointer !important;
-    font-size: 1rem !important;
-    margin-top: 10px !important;
-  }
-
-  .hs-form-frame input[type="submit"]:hover,
-  .hs-form-frame .hs-button:hover {
-    background-color: var(--brass-light) !important;
-  }
-
-  /* Mensagem de confirmação após envio */
-  .hs-form-frame .submitted-message {
-    color: var(--ivory) !important;
-    font-size: 1.1rem !important;
-    text-align: center !important;
-    padding: 20px 0 !important;
   }
 
   footer{
@@ -171,7 +122,7 @@
     <h1>Estudo Patrimonial Personalizado</h1>
     <p class="sub">Preencha os dados abaixo para alinharmos a melhor estratégia de crédito, consórcio ou alavancagem para o seu momento.</p>
 
-    <!-- INCORPORAÇÃO NATIVA DO HUBSPOT (GARANTE 100% DAS LEADS NO CRM) -->
+    <!-- INCORPORAÇÃO NATIVA DO HUBSPOT -->
     <script src="https://js.hsforms.net/forms/embed/51784410.js" defer></script>
     <div class="hs-form-frame" data-region="na1" data-form-id="9463f943-26bd-43e4-a6f8-d4c94b20ad59" data-portal-id="51784410"></div>
 
