@@ -76,50 +76,41 @@
     color:var(--brass);
   }
 
-  /* HEADER OTIMIZADO */
+  /* HEADER COM BANNER CENTRALIZADO E EXPANDIDO */
   header.top{
     background:var(--navy);
-    padding:16px 0;
+    padding:20px 0;
     border-bottom:1px solid var(--line);
-    position:sticky;
-    top:0;
-    z-index:100;
   }
-  header.top .wrap{
-    display:flex; 
-    align-items:center; 
-    justify-content:space-between; 
-    gap:20px;
+  header.top .banner-wrap{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 24px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
   }
-  .brand{
-    display:flex; 
-    align-items:center; 
-    text-decoration:none;
+  .brand-banner{
+    display:block;
+    width:100%;
+    text-align:center;
   }
-  .brand img{
-    height:55px;
-    width:auto;
-    object-fit:contain;
-    border-radius:4px;
-    transition:opacity 0.2s ease;
+  .brand-banner img{
+    width:100%;
+    max-width:960px; /* Garante que no notebook a imagem fique bem ampla e legível */
+    height:auto;
+    margin:0 auto;
+    border-radius:6px;
+    box-shadow:0 8px 24px rgba(0,0,0,0.35);
+    transition:transform 0.2s ease;
   }
-  .brand img:hover{
-    opacity:0.9;
-  }
-  .btn.header-cta{
-    padding:10px 20px; 
-    font-size:0.88rem; 
-    flex-shrink:0; 
-    white-space:nowrap;
+  .brand-banner img:hover{
+    transform:scale(1.005);
   }
 
-  @media (max-width:768px){
-    .brand img{height:45px;}
-  }
   @media (max-width:520px){
-    header.top{padding:12px 0;}
-    .brand img{height:38px;}
-    .btn.header-cta{padding:8px 14px; font-size:0.78rem;}
+    header.top{padding:14px 0;}
+    header.top .banner-wrap{padding:0 16px;}
   }
 
   /* HERO */
@@ -402,11 +393,10 @@
 <body>
 
 <header class="top">
-  <div class="wrap">
-    <a href="index.html" class="brand">
-      <img src="banner.jpeg" alt="Bezerra Strategic">
+  <div class="banner-wrap">
+    <a href="index.html" class="brand-banner" title="Bezerra Strategic">
+      <img src="banner.jpeg" alt="Bezerra Strategic - Consórcios, Crédito e Planejamento">
     </a>
-    <a href="simulador.html" class="btn btn-outline header-cta">Simular agora</a>
   </div>
 </header>
 
