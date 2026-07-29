@@ -52,9 +52,7 @@
   }
   .btn-voltar:hover{background:rgba(246,243,236,0.08);}
 
-  .simulador-container{
-    padding:60px 0 80px;
-  }
+  .simulador-container{padding:60px 0 80px;}
   .simulador-card{
     background:var(--navy-2);
     border:1px solid var(--line);
@@ -74,82 +72,74 @@
     margin-bottom:32px;
   }
 
-  /* Ajustes visuais finos para o formulário do HubSpot (embed clássico, renderizado inline) */
-  #hubspotForm form{
-    max-width:100%;
+  .form-group{margin-bottom:20px;}
+  .form-group label{
+    display:block;
+    font-size:0.85rem;
+    color:var(--brass-light);
+    font-weight:600;
+    margin-bottom:7px;
   }
-  #hubspotForm .hs-richtext{
-    display:none !important;
+  .form-group input, .form-group select{
+    width:100%;
+    padding:13px 15px;
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(217,190,114,0.35);
+    border-radius:4px;
+    color:var(--ivory);
+    font-size:0.95rem;
+    font-family:'Inter', sans-serif;
+    outline:none;
   }
-  #hubspotForm .hs-form-field{
-    margin-bottom:18px !important;
+  .form-group select{
+    -webkit-appearance:none; appearance:none;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'><path d='M1 1l6 6 6-6' stroke='%23D9BE72' stroke-width='2' fill='none' fill-rule='evenodd'/></svg>");
+    background-repeat:no-repeat;
+    background-position:right 16px center;
   }
-  #hubspotForm label{
-    display:block !important;
-    color:var(--ivory) !important;
-    font-family:'Inter', sans-serif !important;
-    font-weight:600 !important;
-    font-size:0.88rem !important;
-    margin-bottom:6px !important;
-  }
-  #hubspotForm label span.hs-form-required{
-    color:var(--brass-light) !important;
-  }
-  #hubspotForm .hs-input{
-    width:100% !important;
-    background:rgba(255,255,255,0.06) !important;
-    border:1px solid rgba(246,243,236,0.2) !important;
-    color:#fff !important;
-    border-radius:4px !important;
-    padding:12px 16px !important;
-    font-family:'Inter', sans-serif !important;
-    font-size:0.95rem !important;
-  }
-  #hubspotForm select.hs-input{
-    -webkit-appearance:none;
-    appearance:none;
-  }
-  #hubspotForm .hs-input:focus{
-    border-color:var(--brass) !important;
-    outline:none !important;
-  }
-  #hubspotForm .hs-error-msgs label{
-    color:#f2a5a5 !important;
-    font-weight:400 !important;
-    font-size:0.8rem !important;
-  }
-  #hubspotForm .hs-form-booleancheckbox label,
-  #hubspotForm .hs-form-checkbox label{
-    display:flex !important;
-    align-items:flex-start;
-    gap:8px;
-    font-weight:400 !important;
-    font-size:0.82rem !important;
-    color:rgba(246,243,236,0.7) !important;
-  }
-  #hubspotForm .actions{
-    margin-top:8px;
-  }
-  #hubspotForm .hs-button{
-    background:var(--brass) !important;
-    color:var(--navy) !important;
-    width:100% !important;
-    padding:16px !important;
-    font-size:1rem !important;
-    font-weight:700 !important;
-    border:none !important;
-    border-radius:4px !important;
-    cursor:pointer !important;
-    transition:background 0.2s ease !important;
+  .form-group input::placeholder{color:rgba(246,243,236,0.4);}
+  .form-group input:focus, .form-group select:focus{border-color:var(--brass);}
+
+  .btn-submit{
+    width:100%;
+    padding:16px 0;
+    background:var(--brass);
+    border:none;
+    border-radius:4px;
+    color:var(--navy);
+    font-size:1rem;
+    font-weight:700;
     text-transform:uppercase;
+    cursor:pointer;
+    margin-top:8px;
+    transition:background 0.2s ease;
   }
-  #hubspotForm .hs-button:hover{
-    background:var(--brass-light) !important;
+  .btn-submit:hover{background:var(--brass-light);}
+  .btn-submit:disabled{opacity:0.7; cursor:not-allowed;}
+
+  .success-message{
+    display:none;
+    text-align:center;
+    padding:20px 0 4px;
   }
-  #hubspotForm .submitted-message{
-    color:var(--ivory) !important;
+  .success-message .icon{
+    width:52px; height:52px;
+    margin:0 auto 18px;
+    border-radius:50%;
+    background:rgba(184,150,62,0.15);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .success-message h2{
     font-family:'Fraunces', serif;
-    font-size:1.15rem;
+    font-size:1.4rem;
+    color:var(--ivory);
+    margin-bottom:10px;
+  }
+  .success-message p{
+    color:rgba(246,243,236,0.75);
+    font-size:0.95rem;
+    max-width:420px;
+    margin:0 auto;
   }
 
   footer{
@@ -182,67 +172,50 @@
     <h1>Estudo Patrimonial Personalizado</h1>
     <p class="sub">Preencha os dados abaixo para alinharmos a melhor estratégia de crédito, consórcio ou alavancagem para o seu momento.</p>
 
-    <!-- FORMULÁRIO OFICIAL DO HUBSPOT — CSS injetado via parâmetro 'css' para estilizar por dentro do iframe -->
-    <div id="hubspotForm"></div>
-    <script src="https://js.hsforms.net/forms/v2.js"></script>
-    <script>
-      hbspt.forms.create({
-        region: "na1",
-        portalId: "51784410",
-        formId: "9463f943-26bd-43e4-a6f8-d4c94b20ad59",
-        target: "#hubspotForm",
-        cssClass: "bs-form",
-        inlineMessage: "Recebemos seus dados! Em breve entraremos em contato.",
-        css: `
-          body{ background:transparent !important; font-family:'Inter',sans-serif !important; }
-          .hs-richtext{ display:none !important; }
-          fieldset{ max-width:100% !important; }
-          .hs-form-field{ margin-bottom:18px !important; }
-          label{
-            display:block !important;
-            color:#D9BE72 !important;
-            font-family:'Inter',sans-serif !important;
-            font-weight:600 !important;
-            font-size:14px !important;
-            margin-bottom:6px !important;
-          }
-          label span.hs-form-required{ color:#D9BE72 !important; }
-          .hs-input{
-            width:100% !important;
-            background:rgba(255,255,255,0.08) !important;
-            border:1px solid rgba(217,190,114,0.35) !important;
-            color:#F6F3EC !important;
-            border-radius:4px !important;
-            padding:12px 16px !important;
-            font-size:15px !important;
-            font-family:'Inter',sans-serif !important;
-          }
-          .hs-input:focus{ border-color:#B8963E !important; outline:none !important; }
-          select.hs-input option{ color:#0B1D33 !important; }
-          .hs-error-msgs label{ color:#f2a5a5 !important; font-weight:400 !important; font-size:12px !important; }
-          .hs-form-booleancheckbox label, .hs-form-checkbox label{
-            display:flex !important; align-items:flex-start; gap:8px;
-            font-weight:400 !important; font-size:13px !important; color:#D9BE72 !important;
-          }
-          .hs-button{
-            background:#B8963E !important;
-            color:#0B1D33 !important;
-            width:100% !important;
-            padding:16px !important;
-            font-size:16px !important;
-            font-weight:700 !important;
-            border:none !important;
-            border-radius:4px !important;
-            cursor:pointer !important;
-            text-transform:uppercase;
-            margin-top:8px !important;
-          }
-          .hs-button:hover{ background:#D9BE72 !important; }
-          .submitted-message{ color:#F6F3EC !important; font-size:18px !important; }
-        `
-      });
-    </script>
+    <form id="simuladorForm">
+      <div class="form-group">
+        <label for="nome">Nome Completo</label>
+        <input type="text" id="nome" placeholder="Digite seu nome" required>
+      </div>
 
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" placeholder="seuemail@dominio.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="telefone">WhatsApp / Telefone</label>
+        <input type="tel" id="telefone" placeholder="(47) 99999-9999" maxlength="15" oninput="mascaraTelefone(this)" required>
+      </div>
+
+      <div class="form-group">
+        <label for="objetivo">Objetivo Principal</label>
+        <select id="objetivo" required>
+          <option value="Consórcio Imobiliário / Aquisição de Imóvel">Consórcio Imobiliário / Aquisição de Imóvel</option>
+          <option value="Consórcio de Veículos / Frota / Pesados">Consórcio de Veículos / Frota / Pesados</option>
+          <option value="Financiamento / Home Equity">Financiamento / Home Equity</option>
+          <option value="Wealth Management / Gestão Patrimonial">Wealth Management / Gestão Patrimonial</option>
+          <option value="Seguro de Vida Estruturado">Seguro de Vida Estruturado</option>
+          <option value="Previdência Privada">Previdência Privada</option>
+          <option value="Investimentos no Exterior / Offshore">Investimentos no Exterior / Offshore</option>
+          <option value="Câmbio e Remessas Internacionais">Câmbio e Remessas Internacionais</option>
+          <option value="Alavancagem Patrimonial / Capital de Giro">Alavancagem Patrimonial / Capital de Giro</option>
+          <option value="Outras Soluções de Crédito Estratégico">Outras Soluções de Crédito Estratégico</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="valor">Valor do Crédito / Aporte Desejado</label>
+        <select id="valor" required>
+          <option value="R$ 200.000 a R$ 500.000">R$ 200.000 a R$ 500.000</option>
+          <option value="R$ 500.000 a R$ 1.000.000">R$ 500.000 a R$ 1.000.000</option>
+          <option value="R$ 1.000.000 a R$ 3.000.000">R$ 1.000.000 a R$ 3.000.000</option>
+          <option value="Acima de R$ 3.000.000">Acima de R$ 3.000.000</option>
+        </select>
+      </div>
+
+      <button type="button" class="btn-submit" id="btnEnviar" onclick="enviarSimulacaoEHubspot()">Solicitar Estudo Personalizado</button>
+    </form>
   </div>
 </main>
 
@@ -251,6 +224,77 @@
     <span>Bezerra Strategic © Todos os direitos reservados.</span>
   </div>
 </footer>
+
+<script>
+  function mascaraTelefone(input) {
+    let valor = input.value.replace(/\D/g, "");
+    if (valor.length > 11) valor = valor.slice(0, 11);
+
+    if (valor.length > 10) {
+      valor = valor.replace(/^(\d{2})(\d{5})(\d{4})$/, "($1) $2-$3");
+    } else if (valor.length > 6) {
+      valor = valor.replace(/^(\d{2})(\d{4,5})(\d{0,4})$/, "($1) $2-$3");
+    } else if (valor.length > 2) {
+      valor = valor.replace(/^(\d{2})(\d{0,5})$/, "($1) $2");
+    } else if (valor.length > 0) {
+      valor = valor.replace(/^(\d*)/, "($1");
+    }
+    input.value = valor;
+  }
+
+  function enviarSimulacaoEHubspot() {
+    const nomeCompleto = document.getElementById('nome').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const telefone = document.getElementById('telefone').value.trim();
+    const objetivo = document.getElementById('objetivo').value;
+    const valor = document.getElementById('valor').value;
+
+    if (!nomeCompleto || !email || !telefone) {
+      alert('Por favor, preencha o seu nome, e-mail e telefone para continuar.');
+      return;
+    }
+
+    const btn = document.getElementById('btnEnviar');
+    btn.innerText = "ENVIANDO DADOS...";
+    btn.disabled = true;
+
+    const partesNome = nomeCompleto.split(" ");
+    const primeironome = partesNome[0];
+    const sobrenome = partesNome.slice(1).join(" ") || ".";
+
+    const portalId = "51784410";
+    const formId = "9463f943-26bd-43e4-a6f8-d4c94b20ad59";
+    const endpointHubspot = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`;
+
+    const payloadHubspot = {
+      fields: [
+        { name: "firstname", value: primeironome },
+        { name: "lastname", value: sobrenome },
+        { name: "email", value: email },
+        { name: "phone", value: telefone },
+        { name: "mobilephone", value: telefone },
+        { name: "message", value: `Simulação Bezerra Strategic:\n- Telefone: ${telefone}\n- Objetivo: ${objetivo}\n- Valor do Crédito/Aporte: ${valor}` }
+      ]
+    };
+
+    fetch(endpointHubspot, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payloadHubspot)
+    }).then(() => {
+      redirecionarParaWhatsapp();
+    }).catch(err => {
+      console.error("Erro ao enviar ao HubSpot:", err);
+      redirecionarParaWhatsapp();
+    });
+  }
+
+  function redirecionarParaWhatsapp() {
+    const numeroWhatsapp = "5547988307859";
+    const mensagem = encodeURIComponent("Olá! Preenchi o formulário no site da Bezerra Strategic e gostaria de receber o estudo personalizado.");
+    window.location.href = `https://api.whatsapp.com/send?phone=${numeroWhatsapp}&text=${mensagem}`;
+  }
+</script>
 
 </body>
 </html>
