@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crédito Corporativo Estruturado: Capital para Expansão | Bezerra Strategic</title>
+<meta name="description" content="Linhas de crédito e garantias estruturadas para expansão, aquisições ou reforço de caixa sem diluir o controle do negócio.">
+
+<meta property="og:title" content="Crédito Corporativo Estruturado: Capital para Expansão">
+<meta property="og:description" content="Linhas de crédito e garantias estruturadas para expansão, aquisições ou reforço de caixa sem diluir o controle do negócio.">
+<meta property="og:image" content="https://bezerrastrategic.github.io/simulador/banner.jpg">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://bezerrastrategic.github.io/simulador/credito-corporativo-estruturado.html">
+<meta property="og:locale" content="pt_BR">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --navy:#0B1D33; --navy-2:#122841; --ivory:#F6F3EC; --brass:#B8963E; --brass-light:#D9BE72; --slate:#5C6B7A; --teal:#1F4B43; --line:rgba(246,243,236,0.14);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--ivory); color:var(--navy); font-family:'Inter', sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased;}
+  h1,h2,h3{font-family:'Fraunces', serif; font-weight:600; letter-spacing:-0.01em; color:var(--navy);}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:760px; margin:0 auto; padding:0 24px;}
+  .eyebrow{font-family:'IBM Plex Mono', monospace; font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--brass);}
+
+  header.top{background:var(--navy); padding:28px 0; border-bottom:1px solid var(--line); text-align:center;}
+  header.top .banner-wrap{max-width:1080px; margin:0 auto; padding:0 24px; display:flex; justify-content:center;}
+  .brand-banner{display:inline-block; width:100%; max-width:420px;}
+  .brand-banner img{width:100%; height:auto; display:block; margin:0 auto;}
+
+  .breadcrumb{background:var(--navy-2); padding:16px 0;}
+  .breadcrumb .wrap{max-width:1080px;}
+  .breadcrumb a{color:var(--brass-light); font-family:'IBM Plex Mono', monospace; font-size:0.78rem;}
+  .breadcrumb span{color:rgba(246,243,236,0.5); font-family:'IBM Plex Mono', monospace; font-size:0.78rem;}
+
+  .article-hero{background:var(--navy); color:var(--ivory); padding:56px 0 64px;}
+  .article-hero .wrap{max-width:760px;}
+  .article-hero h1{font-size:clamp(1.9rem, 4vw, 2.6rem); color:var(--ivory); line-height:1.18; margin:14px 0 18px;}
+  .article-hero p.lead{color:rgba(246,243,236,0.78); font-size:1.05rem; max-width:620px;}
+
+  article{padding:56px 0 20px;}
+  article h2{font-size:1.5rem; margin:40px 0 16px;}
+  article h2:first-child{margin-top:0;}
+  article h3{font-size:1.15rem; margin:28px 0 10px;}
+  article p{color:var(--slate); font-size:1rem; margin-bottom:16px; max-width:680px;}
+  article ul{margin:0 0 20px 20px; color:var(--slate);}
+  article li{margin-bottom:8px;}
+  article strong{color:var(--navy);}
+
+  .callout{background:#fff; border:1px solid rgba(11,29,51,0.1); border-left:3px solid var(--brass); padding:20px 22px; border-radius:4px; margin:24px 0;}
+  .callout p{margin-bottom:0; color:var(--navy); font-size:0.95rem;}
+
+  .stat-row{display:flex; gap:20px; flex-wrap:wrap; margin:28px 0 36px;}
+  .stat-box{background:#fff; border:1px solid rgba(11,29,51,0.08); border-radius:4px; padding:18px 20px; flex:1; min-width:150px;}
+  .stat-box strong{display:block; font-family:'Fraunces', serif; font-size:1.5rem; color:var(--teal);}
+  .stat-box span{font-size:0.82rem; color:var(--slate);}
+
+  .btn{display:inline-flex; align-items:center; gap:8px; padding:14px 26px; border-radius:2px; font-weight:600; font-size:0.95rem; transition:transform .15s ease, background .15s ease;}
+  .btn-primary{background:var(--brass); color:var(--navy);}
+  .btn-primary:hover{background:var(--brass-light); transform:translateY(-1px);}
+  .btn-outline{border:1px solid rgba(11,29,51,0.25); color:var(--navy);}
+  .cta-row{display:flex; flex-wrap:wrap; gap:14px; margin-top:8px;}
+
+  .author-box{display:flex; align-items:center; gap:16px; background:#fff; border:1px solid rgba(11,29,51,0.08); border-radius:4px; padding:20px 22px; margin:40px 0;}
+  .author-box img{width:56px; height:56px; border-radius:50%; object-fit:cover; object-position:center top;}
+  .author-box .name{font-family:'Fraunces', serif; font-weight:600; font-size:1rem;}
+  .author-box .role{color:var(--brass); font-family:'IBM Plex Mono', monospace; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em;}
+
+  .final-cta{background:var(--navy); color:var(--ivory); text-align:center; padding:64px 0; margin-top:40px;}
+  .final-cta h2{color:var(--ivory); font-size:clamp(1.5rem,3vw,2rem); margin-bottom:14px;}
+  .final-cta p{color:rgba(246,243,236,0.72); max-width:480px; margin:0 auto 28px;}
+  .final-cta .cta-row{justify-content:center;}
+
+  footer{background:var(--navy-2); color:rgba(246,243,236,0.65); padding:28px 0; font-size:0.82rem;}
+  footer .wrap{max-width:1080px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;}
+
+  @media (max-width:560px){
+    .stat-row{flex-direction:column;}
+    .author-box{flex-direction:column; text-align:center;}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="banner-wrap">
+    <a href="index.html" class="brand-banner" title="Bezerra Strategic">
+      <img src="banner.jpg?v=2" alt="Bezerra Strategic">
+    </a>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <div class="wrap"><a href="index.html">Início</a> <span>/ Corporate &amp; Holding / Crédito Corporativo Estruturado</span></div>
+</div>
+
+<section class="article-hero">
+  <div class="wrap">
+    <span class="eyebrow">Corporate &amp; Holding</span>
+    <h1>Crédito Corporativo Estruturado: Capital para Expansão</h1>
+    <p class="lead">Linhas de crédito e garantias estruturadas para expansão, aquisições ou reforço de caixa sem diluir o controle do negócio.</p>
+  </div>
+</section>
+
+<article>
+  <div class="wrap">
+
+    <h2>O que é crédito corporativo estruturado</h2>
+    <p>Crédito corporativo estruturado é o desenho de operações de dívida sob medida para o momento e o perfil de garantias da empresa — em vez de recorrer à linha padrão de um único banco, a operação é modelada considerando prazo, garantia, custo financeiro e impacto no fluxo de caixa, muitas vezes combinando mais de uma instituição ou mais de um tipo de garantia.</p>
+    <p>A diferença central em relação a captar recursos via novos sócios ou investidores é que o crédito bem estruturado <strong>não dilui o controle</strong> da empresa: o empresário mantém 100% da participação societária e paga pelo capital por meio de juros, não de uma fatia do negócio.</p>
+
+    <h2>Quando faz sentido usar crédito estruturado</h2>
+    <ul>
+      <li><strong>Expansão</strong>: abertura de novas unidades, aumento de capacidade produtiva ou entrada em novos mercados;</li>
+      <li><strong>Aquisições</strong>: compra de outra empresa, de uma carteira de clientes ou de um concorrente;</li>
+      <li><strong>Reforço de capital de giro</strong> em momentos de sazonalidade ou crescimento acelerado do faturamento;</li>
+      <li><strong>Alongamento de dívidas caras</strong>, substituindo linhas de curto prazo por operações com prazo e custo mais adequados ao fôlego do negócio;</li>
+      <li><strong>Antecipação de recebíveis</strong> de forma mais eficiente que o desconto tradicional de duplicatas.</li>
+    </ul>
+
+    <div class="stat-row">
+      <div class="stat-box"><strong>0%</strong><span>de diluição societária, diferente de captar via sócio investidor</span></div>
+      <div class="stat-box"><strong>+1</strong><span>instituição financeira pode compor a operação</span></div>
+      <div class="stat-box"><strong>√</strong><span>garantias estruturadas para reduzir o custo do crédito</span></div>
+    </div>
+
+    <h2>Tipos de garantia que reduzem o custo</h2>
+    <p>O custo financeiro de uma operação de crédito está diretamente ligado ao risco percebido pelo credor. Por isso, estruturar garantias adequadas — como <strong>recebíveis</strong>, <strong>imóveis</strong>, <strong>duplicatas</strong> ou <strong>avais e fianças estruturadas</strong> — costuma reduzir significativamente a taxa de juros em comparação com uma linha de crédito sem garantia real.</p>
+    <div class="callout">
+      <p>Empresas que negociam crédito com um único banco, sem comparar estrutura e garantias entre diferentes instituições, frequentemente pagam mais caro do que precisariam pelo mesmo capital.</p>
+    </div>
+
+    <h2>Crédito estruturado vs. captação por equity</h2>
+    <p>Trazer um sócio investidor pode fazer sentido em alguns cenários — especialmente quando o negócio precisa de know-how ou rede de contatos além de capital. Mas quando o que falta é apenas capital, e o negócio já tem geração de caixa ou garantias suficientes, o crédito estruturado costuma ser a alternativa que preserva mais valor para o empresário no longo prazo, já que evita ceder parte permanente dos resultados futuros da empresa.</p>
+
+    <h2>Como funciona o processo</h2>
+    <ul>
+      <li><strong>Diagnóstico de crédito</strong>: análise do fluxo de caixa, garantias disponíveis e dívidas existentes da empresa;</li>
+      <li><strong>Desenho da operação</strong>: definição de prazo, tipo de garantia e instituições mais adequadas ao caso;</li>
+      <li><strong>Negociação multibanco</strong>, buscando as melhores condições entre diferentes credores;</li>
+      <li><strong>Formalização e acompanhamento</strong> da operação até a liberação do capital.</li>
+    </ul>
+
+    <div class="author-box">
+      <img src="douglas.jpeg" alt="Douglas Bezerra">
+      <div>
+        <div class="name">Douglas Bezerra</div>
+        <div class="role">Personal Banker &amp; Estrategista Patrimonial</div>
+      </div>
+    </div>
+
+  </div>
+</article>
+
+<section class="final-cta">
+  <div class="wrap">
+    <h2>Precisa de capital para crescer sem diluir o negócio?</h2>
+    <p>Faça uma análise gratuita das melhores opções de crédito estruturado para o momento da sua empresa.</p>
+    <div class="cta-row">
+      <a href="simulador.html" class="btn btn-primary">Solicitar estudo personalizado</a>
+      <a href="https://wa.me/5547988307859?text=Ol%C3%A1!%20Li%20o%20artigo%20sobre%20cr%C3%A9dito%20corporativo%20estruturado%20e%20gostaria%20de%20saber%20mais." class="btn btn-outline" style="border-color:rgba(246,243,236,0.35); color:var(--ivory);" target="_blank" rel="noopener">Falar no WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Douglas Bezerra — Personal Banker &amp; Estrategista Patrimonial</span>
+    <span>Bezerra Strategic</span>
+  </div>
+</footer>
+
+</body>
+</html>
