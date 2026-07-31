@@ -76,7 +76,6 @@
     color:var(--brass);
   }
 
-  /* HEADER COM BANNER INTEGRADO E SEM CORTES */
   header.top{
     background:var(--navy);
     padding:32px 0 20px 0;
@@ -115,7 +114,6 @@
     .brand-banner{max-width:100%;}
   }
 
-  /* HERO */
   .hero{
     background:var(--navy);
     color:var(--ivory);
@@ -171,12 +169,10 @@
   .btn-outline{border:1px solid rgba(246,243,236,0.35); color:var(--ivory);}
   .btn-outline:hover{background:rgba(246,243,236,0.08);}
 
-  /* SECTION SHARED */
   section{padding:80px 0;}
   .section-head{max-width:640px; margin-bottom:48px;}
   .section-head h2{font-size:clamp(1.6rem, 3vw, 2.2rem); margin-top:10px;}
 
-  /* SOLUÇÕES (GRID EXPANDIDO DE 8 PILARES) */
   .solutions-grid{
     display:grid; 
     grid-template-columns:repeat(4, 1fr); 
@@ -215,7 +211,28 @@
     line-height:1.5;
   }
 
-  /* ECOSSISTEMA CLEAN SEM CAIXINHAS */
+  /* SEÇÃO CORPORATE / HOLDING — fundo diferenciado para destacar público empresarial */
+  .corporate-section{
+    background:var(--navy);
+    color:var(--ivory);
+  }
+  .corporate-section .section-head .eyebrow{color:var(--brass-light);}
+  .corporate-section .section-head h2{color:var(--ivory);}
+  .corporate-section .section-head p{color:rgba(246,243,236,0.72); margin-top:10px; font-size:0.98rem;}
+  .corporate-section .solution-card{
+    background:rgba(246,243,236,0.04);
+    border:1px solid var(--line);
+  }
+  .corporate-section .solution-card:hover{
+    background:rgba(246,243,236,0.07);
+    box-shadow:none;
+    border-color:rgba(184,150,62,0.4);
+  }
+  .corporate-section .solution-card .icon-tag{color:var(--brass-light);}
+  .corporate-section .solution-card h3{color:var(--ivory);}
+  .corporate-section .solution-card p{color:rgba(246,243,236,0.68);}
+  .corporate-section .cta-row{margin-top:40px;}
+
   .partners-section{
     background:#fff;
     padding:54px 0;
@@ -282,7 +299,6 @@
     width:100%;
   }
 
-  /* TESTIMONIALS */
   .testi-section{background:var(--navy-2); color:var(--ivory);}
   .testi-section .section-head h2{color:var(--ivory);}
   .testi-section .section-head p{color:rgba(246,243,236,0.7);}
@@ -312,13 +328,11 @@
     padding-bottom:2px;
   }
 
-  /* FAQ */
   .faq-item{border-top:1px solid rgba(11,29,51,0.12); padding:24px 0;}
   .faq-item:last-child{border-bottom:1px solid rgba(11,29,51,0.12);}
   .faq-item h3{font-size:1.05rem; margin-bottom:10px; font-family:'Inter',sans-serif; font-weight:600;}
   .faq-item p{color:var(--slate); font-size:0.95rem; max-width:640px;}
 
-  /* ABOUT */
   .about{background:#fff;}
   .about-grid{display:grid; grid-template-columns:220px 1fr; gap:36px; align-items:start;}
   .about-photo{
@@ -330,7 +344,6 @@
   .about .role{color:var(--brass); font-family:'IBM Plex Mono', monospace; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:16px; display:block;}
   .about p{color:var(--slate); max-width:560px; margin-bottom:24px;}
 
-  /* ARTICLES GRID (8 CARDS / 4 COLUNAS) */
   .articles-grid{
     display:grid; 
     grid-template-columns:repeat(4, 1fr); 
@@ -354,7 +367,6 @@
   .article-card p{color:var(--slate); font-size:0.88rem; margin-bottom:18px; flex-grow:1; line-height:1.5;}
   .article-card .read-more{font-size:0.85rem; font-weight:600; color:var(--teal); border-bottom:1px solid currentColor; align-self:flex-start;}
 
-  /* FOOTER CTA */
   .final-cta{background:var(--navy); color:var(--ivory); text-align:center;}
   .final-cta h2{color:var(--ivory); font-size:clamp(1.6rem,3vw,2.2rem); margin-bottom:16px;}
   .final-cta p{color:rgba(246,243,236,0.72); max-width:480px; margin:0 auto 32px;}
@@ -413,7 +425,6 @@
   </div>
 </section>
 
-<!-- SEÇÃO DE SOLUÇÕES (8 PILARES) -->
 <section id="solucoes">
   <div class="wrap">
     <div class="section-head">
@@ -473,7 +484,48 @@
   </div>
 </section>
 
-<!-- FAIXA DE ECOSSISTEMA INSTITUCIONAL -->
+<!-- NOVA SEÇÃO: CORPORATE & HOLDING -->
+<section id="corporate" class="corporate-section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Corporate &amp; Holding</span>
+      <h2>Estruturação societária e patrimonial para empresários e famílias empresárias</h2>
+      <p>Soluções desenhadas para quem já construiu um negócio e precisa organizar governança, sucessão e eficiência tributária no nível corporativo.</p>
+    </div>
+
+    <div class="solutions-grid">
+      <a href="holding-patrimonial-familiar.html" class="solution-card">
+        <span class="icon-tag">09 • Blindagem &amp; Sucessão</span>
+        <h3>Holding Patrimonial e Familiar</h3>
+        <p>Estruturação de holding para centralizar ativos, proteger o patrimônio de riscos do negócio e organizar a sucessão sem inventário.</p>
+      </a>
+
+      <a href="estruturacao-societaria.html" class="solution-card">
+        <span class="icon-tag">10 • Governança</span>
+        <h3>Estruturação Societária</h3>
+        <p>Reorganização de quadro societário, acordos de sócios e governança familiar para reduzir conflitos e profissionalizar a gestão.</p>
+      </a>
+
+      <a href="planejamento-tributario-empresarial.html" class="solution-card">
+        <span class="icon-tag">11 • Eficiência Fiscal</span>
+        <h3>Planejamento Tributário Empresarial</h3>
+        <p>Revisão de regime tributário, distribuição de lucros e estrutura societária para reduzir a carga fiscal dentro da legalidade.</p>
+      </a>
+
+      <a href="credito-corporativo-estruturado.html" class="solution-card">
+        <span class="icon-tag">12 • Capital &amp; Expansão</span>
+        <h3>Crédito Corporativo Estruturado</h3>
+        <p>Linhas de crédito e garantias estruturadas para expansão, aquisições ou reforço de caixa sem diluir o controle do negócio.</p>
+      </a>
+    </div>
+
+    <div class="cta-row">
+      <a href="simulador.html" class="btn btn-primary">Falar sobre minha holding ou empresa</a>
+      <a href="https://wa.me/5547988307859?text=Ol%C3%A1!%20Tenho%20interesse%20em%20estrutura%C3%A7%C3%A3o%20de%20holding%2Fcorporate." class="btn btn-outline" target="_blank" rel="noopener">Falar no WhatsApp</a>
+    </div>
+  </div>
+</section>
+
 <div class="partners-section">
   <div class="wrap">
     <div class="partners-head">
@@ -564,13 +616,16 @@
       <p>É o uso estratégico de linhas de crédito para financiar crescimento ou capital de giro sem comprometer o caixa da empresa, otimizando o custo financeiro e o retorno sobre o capital investido.</p>
     </div>
     <div class="faq-item">
+      <h3>Quando faz sentido abrir uma holding patrimonial ou familiar?</h3>
+      <p>Geralmente quando há imóveis ou negócios que precisam de proteção patrimonial, quando a sucessão familiar precisa ser organizada em vida, ou quando a carga tributária sobre aluguéis e lucros pode ser reduzida com uma estrutura societária adequada.</p>
+    </div>
+    <div class="faq-item">
       <h3>Quanto custa fazer um estudo personalizado com a Bezerra Strategic?</h3>
       <p>O estudo inicial é gratuito e sem compromisso — o objetivo é entender seu momento financeiro e apresentar as opções mais adequadas.</p>
     </div>
   </div>
 </section>
 
-<!-- SEÇÃO DE ARTIGOS COMPLETA (Mapeada perfeitamente com os arquivos do GitHub) -->
 <section id="artigos" style="background:#fff;">
   <div class="wrap">
     <div class="section-head">
@@ -635,6 +690,13 @@
         <p>Guia de eficiência cambial para reduzir spread e taxas em transferências corporativas e aportes no exterior.</p>
         <a href="cambio-e-remessas-internacionais.html" class="read-more">Ler artigo →</a>
       </div>
+
+      <div class="article-card">
+        <span class="eyebrow">09 • Corporate &amp; Holding</span>
+        <h3>Holding Patrimonial: Guia Completo para Blindagem e Sucessão</h3>
+        <p>Quando abrir uma holding compensa, quais os custos envolvidos e como ela protege o patrimônio da família empresária.</p>
+        <a href="holding-patrimonial-familiar.html" class="read-more">Ler artigo →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -656,7 +718,6 @@
   </div>
 </footer>
 
-<!-- SCRIPT DO CHATBOT HUBSPOT (SOFIA) -->
 <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/51784410.js"></script>
 
 </body>
