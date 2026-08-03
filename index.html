@@ -8,35 +8,32 @@
 
 <meta property="og:title" content="Bezerra Strategic | Planejamento e Soluções Patrimoniais Global">
 <meta property="og:description" content="Soluções completas em câmbio, real estate, crédito, consórcio e wealth management para proteger e multiplicar seu patrimônio.">
-<meta property="og:image" content="https://bezerrastrategic.github.io/simulador/banner.jpg">
+<meta property="og:image" content="banner.jpg">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://bezerrastrategic.github.io/simulador/">
 <meta property="og:locale" content="pt_BR">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FinancialService",
-  "name": "Bezerra Strategic",
-  "description": "Planejamento patrimonial, wealth management, consórcios estruturados e alavancagem de crédito para investidores e empresas.",
-  "url": "https://bezerrastrategic.github.io/simulador/",
-  "image": "https://bezerrastrategic.github.io/simulador/banner.jpg",
-  "founder": {
-    "@type": "Person",
-    "name": "Douglas Bezerra",
-    "jobTitle": "Personal Banker & Estrategista Patrimonial"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "4"
-  },
-  "areaServed": "BR"
-}
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: { 900: '#0B1D33', 800: '#122841', 700: '#1c2d6b', 600: '#152254' },
+          gold: { 400: '#B8963E', 500: '#D9BE72', 600: '#a68233' },
+          ivory: '#F6F3EC',
+          brass: '#B8963E',
+          brassLight: '#D9BE72',
+          slateGray: '#5C6B7A',
+          tealColor: '#1F4B43'
+        }
+      }
+    }
+  }
 </script>
 
 <style>
@@ -58,6 +55,7 @@
     font-family:'Inter', sans-serif;
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
   }
   h1,h2,h3{
     font-family:'Fraunces', serif;
@@ -163,6 +161,7 @@
     font-weight:600;
     font-size:0.95rem;
     transition:transform .15s ease, background .15s ease;
+    cursor: pointer;
   }
   .btn-primary{background:var(--brass); color:var(--navy);}
   .btn-primary:hover{background:var(--brass-light); transform:translateY(-1px);}
@@ -384,6 +383,16 @@
   footer{background:var(--navy-2); color:rgba(246,243,236,0.65); padding:32px 0; font-size:0.82rem;}
   footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;}
 
+  /* Elementos interativos adicionados do Atlas OS */
+  .wizard-step { display: none; }
+  .wizard-step.active { display: block; }
+  .goal-chip { transition: all 0.2s; cursor: pointer; }
+  .goal-chip.selected { background: linear-gradient(135deg, #B8963E, #a68233); color: #0B1D33; border-color: #B8963E; font-weight: 600; }
+  .progress-bar { transition: width 1s ease; }
+  @keyframes pulse-gold { 0%,100%{box-shadow:0 0 0 0 rgba(184,150,62,0.3)} 50%{box-shadow:0 0 20px 4px rgba(184,150,62,0.1)} }
+  .pulse-gold { animation: pulse-gold 3s infinite; }
+  .chart-container canvas { width: 100% !important; height: 200px !important; }
+
   @media (max-width:1024px){
     .solutions-grid{grid-template-columns:repeat(2, 1fr);}
     .articles-grid{grid-template-columns:repeat(2, 1fr);}
@@ -428,7 +437,54 @@
     <h1>Alavancagem e proteção patrimonial para quem pensa em décadas, não em meses.</h1>
     <p class="lead">Modelagem de crédito inteligente, consórcios estruturados e arquitetura financeira personalizada para investidores e empresas.</p>
     <div class="cta-row">
-      <a href="simulador.html" class="btn btn-primary">Solicitar estudo personalizado</a>
+      <button onclick="showWizard()" class="btn btn-primary pulse-gold">Solicitar estudo personalizado</button>
+      <a href="#dashboard-preview" class="btn btn-outline">Ver Atlas OS Preview</a>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO ATLAS WEALTH OS (INTERATIVA FUNCIONAL) -->
+<section id="dashboard-preview" style="background:var(--navy-2); color:var(--ivory);">
+  <div class="wrap">
+    <div class="section-head" style="max-width:100%; text-align:center;">
+      <span class="eyebrow">Atlas Wealth OS • Inteligência Patrimonial</span>
+      <h2 style="color:var(--ivory);">Dashboard e Simulador Interativo</h2>
+      <p style="color:rgba(246,243,236,0.7); max-width:600px; margin:8px auto 0;">Explore as métricas de simulação e abra o assistente de planejamento automatizado.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 mb-8 text-white">
+      <div class="p-6 rounded-2xl bg-navy-900 border border-white/10">
+        <p class="text-white/50 text-sm mb-1">Patrimônio Total Modelado</p>
+        <p class="text-2xl font-bold text-gold-400">R$ 847.320</p>
+        <p class="text-xs text-emerald-400 mt-1">+12.4% este ano</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-navy-900 border border-white/10">
+        <p class="text-white/50 text-sm mb-1">Investimentos Ativos</p>
+        <p class="text-2xl font-bold text-white">R$ 523.000</p>
+        <p class="text-xs text-emerald-400 mt-1">+8.7% rentabilidade</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-navy-900 border border-white/10">
+        <p class="text-white/50 text-sm mb-1">Meta de Alocação Anual</p>
+        <p class="text-2xl font-bold text-white">73%</p>
+        <div class="mt-2 h-2 rounded-full bg-white/10 overflow-hidden">
+          <div class="h-full rounded-full bg-gold-400 progress-bar" style="width:73%"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 text-white mb-8">
+      <div class="p-6 rounded-2xl bg-navy-900 border border-white/10">
+        <p class="text-white/70 text-sm font-medium mb-4">Evolução Patrimonial (Projeção)</p>
+        <div class="chart-container"><canvas id="chart-evolution"></canvas></div>
+      </div>
+      <div class="p-6 rounded-2xl bg-navy-900 border border-white/10">
+        <p class="text-white/70 text-sm font-medium mb-4">Alocação de Ativos Recomendada</p>
+        <div class="chart-container"><canvas id="chart-allocation"></canvas></div>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <button onclick="showWizard()" class="btn btn-primary pulse-gold" style="font-size:1.05rem; padding:16px 32px;">Abrir Simulador / Assistente de Perfil →</button>
     </div>
   </div>
 </section>
@@ -527,8 +583,8 @@
       </a>
     </div>
 
-    <div class="cta-row">
-      <a href="simulador.html" class="btn btn-primary">Falar sobre minha holding ou empresa</a>
+    <div class="cta-row" style="margin-top:40px;">
+      <button onclick="showWizard()" class="btn btn-primary">Falar sobre minha holding ou empresa</button>
     </div>
   </div>
 </section>
@@ -592,13 +648,12 @@
 <section class="about">
   <div class="wrap">
     <div class="about-grid">
-      <!-- Substituído douglas.jpeg pelo novo arquivo PNG -->
       <img class="about-photo" src="douglas.png" alt="Douglas Bezerra, Personal Banker e Estrategista Patrimonial na Bezerra Strategic">
       <div>
         <span class="role">Personal Banker &amp; Estrategista Patrimonial</span>
         <h2>Douglas Bezerra</h2>
         <p>Com mais de 15 anos de atuação no mercado financeiro, ajudo famílias e empresários a estruturar soluções inteligentes de crédito, consórcio e planejamento de ativos, garantindo segurança e eficiência de capital.</p>
-        <a href="simulador.html" class="btn" style="background:var(--navy); color:var(--ivory);">Agendar conversa estratégica</a>
+        <button onclick="showWizard()" class="btn" style="background:var(--navy); color:var(--ivory);">Agendar conversa estratégica</button>
       </div>
     </div>
   </div>
@@ -749,7 +804,7 @@
     <h2>Pronto para estruturar sua estratégia patrimonial?</h2>
     <p>Estudo inicial gratuito, sem compromisso. Entenda em minutos qual caminho faz mais sentido para o seu momento.</p>
     <div class="cta-row">
-      <a href="simulador.html" class="btn btn-primary">Solicitar estudo personalizado</a>
+      <button onclick="showWizard()" class="btn btn-primary">Solicitar estudo personalizado</button>
     </div>
   </div>
 </section>
@@ -761,7 +816,230 @@
   </div>
 </footer>
 
+<!-- WIZARD MODAL INTERATIVO FUNCIONAL -->
+<div id="wizard-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" style="background:rgba(10,17,40,0.95)">
+  <div class="w-full max-w-lg bg-navy-800 rounded-2xl border border-white/10 p-8 relative max-h-[90vh] overflow-y-auto text-white">
+    <button onclick="closeWizard()" class="absolute top-4 right-4 text-white/50 hover:text-white"><i data-lucide="x" class="w-5 h-5"></i></button> 
+    <!-- Progress -->
+    <div class="flex gap-2 mb-8">
+      <div class="wizard-progress-dot flex-1 h-1 rounded-full bg-gold-400"></div>
+      <div class="wizard-progress-dot flex-1 h-1 rounded-full bg-white/10"></div>
+      <div class="wizard-progress-dot flex-1 h-1 rounded-full bg-white/10"></div>
+      <div class="wizard-progress-dot flex-1 h-1 rounded-full bg-white/10"></div>
+    </div>
+    <!-- Step 1 -->
+    <div class="wizard-step active" data-step="1">
+      <h3 class="text-xl font-bold mb-1 text-gold-400 font-serif">Perfil do Usuário</h3>
+      <p class="text-sm text-white/50 mb-6">Conte-nos sobre você</p>
+      <div class="space-y-4">
+        <div>
+          <label class="text-sm text-white/70 block mb-1" for="w-name">Nome completo</label>
+          <input id="w-name" type="text" class="w-full bg-navy-900 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-400 outline-none transition" placeholder="Seu nome">
+        </div>
+        <div>
+          <label class="text-sm text-white/70 block mb-1" for="w-age">Idade</label>
+          <input id="w-age" type="number" class="w-full bg-navy-900 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-400 outline-none transition" placeholder="35">
+        </div>
+        <div>
+          <label class="text-sm text-white/70 block mb-1" for="w-civil">Estado civil</label>
+          <select id="w-civil" class="w-full bg-navy-900 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-400 outline-none transition"><option>Solteiro(a)</option><option>Casado(a)</option><option>Divorciado(a)</option><option>Viúvo(a)</option></select>
+        </div>
+        <div>
+          <label class="text-sm text-white/70 block mb-1" for="w-dep">Dependentes</label>
+          <input id="w-dep" type="number" class="w-full bg-navy-900 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-400 outline-none transition" placeholder="0">
+        </div>
+      </div>
+    </div>
+    <!-- Step 2 -->
+    <div class="wizard-step" data-step="2">
+      <h3 class="text-xl font-bold mb-1 text-gold-400 font-serif">Diagnóstico Financeiro</h3>
+      <p class="text-sm text-white/50 mb-6">Sua situação atual</p>
+      <div class="space-y-4">
+        <div>
+          <label class="text-sm text-white/70 block mb-1" for="w-income">Renda mensal (R$)</label>
+          <input id="w-income" type="number" class="w-full bg-navy-900 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-400 outline-none transition" placeholder="15000">
+        </div>
+        <div>
+          <label class="text-sm text-white/70 block mb-1" for="w-expenses">Gastos médios (R$)</label>
+          <input id="w-expenses" type="number" class="w-full bg-navy-900 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-400 outline-none transition" placeholder="9000">
+        </div>
+        <div>
+          <label class="text-sm text-white/70 block mb-1" for="w-assets">Patrimônio atual (R$)</label>
+          <input id="w-assets" type="number" class="w-full bg-navy-900 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-400 outline-none transition" placeholder="300000">
+        </div>
+        <div>
+          <label class="text-sm text-white/70 block mb-1" for="w-debt">Dívidas (R$)</label>
+          <input id="w-debt" type="number" class="w-full bg-navy-900 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-400 outline-none transition" placeholder="0">
+        </div>
+      </div>
+    </div>
+    <!-- Step 3 -->
+    <div class="wizard-step" data-step="3">
+      <h3 class="text-xl font-bold mb-1 text-gold-400 font-serif">Seus Objetivos</h3>
+      <p class="text-sm text-white/50 mb-6">Selecione seus objetivos financeiros</p>
+      <div class="grid grid-cols-2 gap-3" id="goals-grid">
+        <button type="button" class="goal-chip p-4 rounded-xl border border-white/10 text-sm text-white/70 text-left hover:border-gold-400/50" data-goal="reserva"><i data-lucide="shield" class="w-5 h-5 mb-2 text-gold-400"></i><br>Reserva financeira</button> 
+        <button type="button" class="goal-chip p-4 rounded-xl border border-white/10 text-sm text-white/70 text-left hover:border-gold-400/50" data-goal="imovel"><i data-lucide="home" class="w-5 h-5 mb-2 text-gold-400"></i><br>Comprar imóvel</button> 
+        <button type="button" class="goal-chip p-4 rounded-xl border border-white/10 text-sm text-white/70 text-left hover:border-gold-400/50" data-goal="investimentos"><i data-lucide="trending-up" class="w-5 h-5 mb-2 text-gold-400"></i><br>Wealth Management</button> 
+        <button type="button" class="goal-chip p-4 rounded-xl border border-white/10 text-sm text-white/70 text-left hover:border-gold-400/50" data-goal="aposentadoria"><i data-lucide="sunset" class="w-5 h-5 mb-2 text-gold-400"></i><br>Aposentadoria</button> 
+        <button type="button" class="goal-chip p-4 rounded-xl border border-white/10 text-sm text-white/70 text-left hover:border-gold-400/50" data-goal="protecao"><i data-lucide="heart" class="w-5 h-5 mb-2 text-gold-400"></i><br>Proteção familiar</button> 
+        <button type="button" class="goal-chip p-4 rounded-xl border border-white/10 text-sm text-white/70 text-left hover:border-gold-400/50" data-goal="educacao"><i data-lucide="graduation-cap" class="w-5 h-5 mb-2 text-gold-400"></i><br>Holding / Sucessão</button>
+      </div>
+    </div>
+    <!-- Step 4 -->
+    <div class="wizard-step" data-step="4">
+      <h3 class="text-xl font-bold mb-1 text-gold-400 font-serif">Sua Estratégia Inicial</h3>
+      <p class="text-sm text-white/50 mb-6">Com base no seu perfil, aqui está sua visão inicial</p>
+      <div id="strategy-result" class="space-y-4"></div>
+    </div>
+    <!-- Navigation -->
+    <div class="flex justify-between mt-8">
+      <button id="wizard-prev" onclick="wizardPrev()" class="px-6 py-2.5 rounded-lg border border-white/10 text-white/70 text-sm hover:border-white/30 transition hidden">Voltar</button> 
+      <button id="wizard-next" onclick="wizardNext()" class="px-6 py-2.5 rounded-lg bg-gold-400 text-navy-900 font-semibold text-sm hover:opacity-90 transition ml-auto">Próximo</button>
+    </div>
+  </div>
+</div>
+
 <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/51784410.js"></script>
 
+<script>
+  // Wizard logic
+  let currentStep = 1;
+  const totalSteps = 4;
+
+  function showWizard() {
+      const modal = document.getElementById('wizard-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      lucide.createIcons();
+  }
+  function closeWizard() {
+      const modal = document.getElementById('wizard-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      currentStep = 1;
+      updateWizard();
+  }
+
+  function wizardNext() {
+      if (currentStep < totalSteps) {
+          currentStep++;
+          if (currentStep === 4) generateStrategy();
+          updateWizard();
+      } else {
+          closeWizard();
+      }
+  }
+  function wizardPrev() {
+      if (currentStep > 1) { currentStep--; updateWizard(); }
+  }
+
+  function updateWizard() {
+      document.querySelectorAll('.wizard-step').forEach(s => s.classList.remove('active'));
+      document.querySelector(`.wizard-step[data-step="${currentStep}"]`).classList.add('active');
+      document.querySelectorAll('.wizard-progress-dot').forEach((d, i) => {
+          d.className = `wizard-progress-dot flex-1 h-1 rounded-full ${i < currentStep ? 'bg-gold-400' : 'bg-white/10'}`;
+      });
+      document.getElementById('wizard-prev').classList.toggle('hidden', currentStep === 1);
+      document.getElementById('wizard-nextotene' || 'wizard-next').textContent = currentStep === totalSteps ? 'Finalizar' : 'Próximo';
+  }
+
+  // Goals selection
+  document.getElementById('goals-grid').addEventListener('click', e => {
+      const chip = e.target.closest('.goal-chip');
+      if (chip) chip.classList.toggle('selected');
+  });
+
+  function generateStrategy() {
+      const income = parseFloat(document.getElementById('w-income').value) || 15000;
+      const expenses = parseFloat(document.getElementById('w-expenses').value) || 9000;
+      const assets = parseFloat(document.getElementById('w-assets').value) || 300000;
+      const debt = parseFloat(document.getElementById('w-debt').value) || 0;
+      const savings = income - expenses;
+      const savingsRate = ((savings / income) * 100).toFixed(0);
+
+      const items = [
+          { icon: 'check-circle', title: 'Capacidade de Poupança', text: `Você pode direcionar R$ ${savings.toLocaleString('pt-BR')}/mês (${savingsRate}% da renda) para alavancagem.` },
+          { icon: debt > 0 ? 'alert-triangle' : 'check-circle', title: 'Ponto de Atenção', text: debt > 0 ? `Dívidas de R$ ${debt.toLocaleString('pt-BR')} — priorize a reestruturação.` : 'Sem dívidas informadas — excelente posição para consórcios e crédito.' },
+          { icon: 'arrow-right', title: 'Próximos Passos', text: assets < income * 6 ? 'Considere construir uma reserva de liquidez robusta.' : 'Estratégia ideal para estruturação de Wealth Management e Holdings.' }
+      ];
+
+      document.getElementById('strategy-result').innerHTML = items.map(i => `
+          <div class="p-4 rounded-xl bg-navy-900 border border-white/10">
+              <div class="flex items-start gap-3">
+                  <i data-lucide="${i.icon}" class="w-5 h-5 text-gold-400 mt-0.5 flex-shrink-0"></i>
+                  <div><p class="font-semibold text-sm text-white">${i.title}</p><p class="text-sm text-white/50 mt-1">${i.text}</p></div>
+              </div>
+          </div>
+      `).join('');
+      lucide.createIcons();
+  }
+
+  // Charts
+  function drawCharts() {
+      const c1 = document.getElementById('chart-evolution');
+      if (!c1) return;
+      const ctx1 = c1.getContext('2d');
+      const w = c1.width = c1.offsetWidth;
+      const h = c1.height = 200;
+      const data = [320, 380, 420, 460, 510, 580, 620, 690, 740, 800, 830, 847];
+      const maxVal = Math.max(...data);
+      ctx1.clearRect(0, 0, w, h);
+      
+      ctx1.strokeStyle = 'rgba(255,255,255,0.05)';
+      for (let i = 0; i < 4; i++) { ctx1.beginPath(); ctx1.moveTo(0, (h/4)*i+20); ctx1.lineTo(w, (h/4)*i+20); ctx1.stroke(); }
+      
+      const grad = ctx1.createLinearGradient(0, 0, 0, h);
+      grad.addColorStop(0, 'rgba(184,150,62,0.3)');
+      grad.addColorStop(1, 'rgba(184,150,62,0)');
+      ctx1.beginPath();
+      data.forEach((v, i) => {
+          const x = (i / (data.length - 1)) * (w - 40) + 20;
+          const y = h - 20 - ((v / maxVal) * (h - 40));
+          i === 0 ? ctx1.moveTo(x, y) : ctx1.lineTo(x, y);
+      });
+      ctx1.strokeStyle = '#B8963E';
+      ctx1.lineWidth = 2;
+      ctx1.stroke();
+      ctx1.lineTo((w - 40) + 20, h - 20);
+      ctx1.lineTo(20, h - 20);
+      ctx1.fillStyle = grad;
+      ctx1.fill();
+
+      const c2 = document.getElementById('chart-allocation');
+      if (!c2) return;
+      const ctx2 = c2.getContext('2d');
+      c2.width = c2.offsetWidth;
+      c2.height = 200;
+      const cx = c2.width / 2, cy = 100, r = 70;
+      const slices = [{v:35,c:'#B8963E'},{v:25,c:'#3b82f6'},{v:20,c:'#10b981'},{v:15,c:'#8b5cf6'},{v:5,c:'#ef4444'}];
+      const labels = ['Renda Fixa','Ações','FIIs','Internacional','Cripto'];
+      let angle = -Math.PI/2;
+      slices.forEach((s) => {
+          const sliceAngle = (s.v/100)*Math.PI*2;
+          ctx2.beginPath();
+          ctx2.moveTo(cx, cy);
+          ctx2.arc(cx, cy, r, angle, angle+sliceAngle);
+          ctx2.fillStyle = s.c;
+          ctx2.fill();
+          angle += sliceAngle;
+      });
+      ctx2.beginPath(); ctx2.arc(cx, cy, 40, 0, Math.PI*2); ctx2.fillStyle = '#122841'; ctx2.fill();
+      
+      ctx2.font = '11px Inter, sans-serif';
+      slices.forEach((s, i) => {
+          ctx2.fillStyle = s.c;
+          ctx2.fillRect(cx + r + 15, 25 + i*28, 10, 10);
+          ctx2.fillStyle = 'rgba(255,255,255,0.7)';
+          ctx2.fillText(`${labels[i]} ${s.v}%`, cx + r + 30, 34 + i*28);
+      });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+      setTimeout(drawCharts, 300);
+      window.addEventListener('resize', drawCharts);
+  });
+</script>
 </body>
 </html>
