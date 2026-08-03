@@ -1,4 +1,1478 @@
-<!doctype html>
+ <!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bezerra Strategic | Wealth Management, Crédito e Soluções Patrimoniais</title>
+
+<meta name="description" content="Consultoria financeira global: consórcios estruturados, alavancagem de crédito, offshore, seguro de vida e gestão patrimonial para investidores e empresas. +R$54MM sob gestão.">
+
+
+<meta property="og:title" content="Bezerra Strategic | Planejamento e Soluções Patrimoniais Global">
+
+<meta property="og:description" content="Soluções completas em câmbio, real estate, crédito, consórcio e wealth management para proteger e multiplicar seu patrimônio.">
+
+<meta property="og:image" content="https://bezerrastrategic.github.io/simulador/banner.jpg">
+
+<meta property="og:type" content="website">
+
+<meta property="og:url" content="https://bezerrastrategic.github.io/simulador/">
+
+<meta property="og:locale" content="pt_BR">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+
+<script type="application/ld+json">
+
+{
+
+  "@context": "https://schema.org",
+
+  "@type": "FinancialService",
+
+  "name": "Bezerra Strategic",
+
+  "description": "Planejamento patrimonial, wealth management, consórcios estruturados e alavancagem de crédito para investidores e empresas.",
+
+  "url": "https://bezerrastrategic.github.io/simulador/",
+
+  "image": "https://bezerrastrategic.github.io/simulador/banner.jpg",
+
+  "founder": {
+
+    "@type": "Person",
+
+    "name": "Douglas Bezerra",
+
+    "jobTitle": "Personal Banker & Estrategista Patrimonial"
+
+  },
+
+  "aggregateRating": {
+
+    "@type": "AggregateRating",
+
+    "ratingValue": "5.0",
+
+    "reviewCount": "4"
+
+  },
+
+  "areaServed": "BR"
+
+}
+
+</script>
+
+
+<style>
+
+  :root{
+
+    --navy:#0B1D33;
+
+    --navy-2:#122841;
+
+    --ivory:#F6F3EC;
+
+    --brass:#B8963E;
+
+    --brass-light:#D9BE72;
+
+    --slate:#5C6B7A;
+
+    --teal:#1F4B43;
+
+    --line:rgba(246,243,236,0.14);
+
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+
+    background:var(--ivory);
+
+    color:var(--navy);
+
+    font-family:'Inter', sans-serif;
+
+    line-height:1.6;
+
+    -webkit-font-smoothing:antialiased;
+
+  }
+
+  h1,h2,h3{
+
+    font-family:'Fraunces', serif;
+
+    font-weight:600;
+
+    letter-spacing:-0.01em;
+
+    color:var(--navy);
+
+  }
+
+  a{color:inherit; text-decoration:none;}
+
+  img{max-width:100%; display:block;}
+
+  .wrap{max-width:1080px; margin:0 auto; padding:0 24px;}
+
+  .eyebrow{
+
+    font-family:'IBM Plex Mono', monospace;
+
+    font-size:0.72rem;
+
+    letter-spacing:0.14em;
+
+    text-transform:uppercase;
+
+    color:var(--brass);
+
+  }
+
+
+  header.top{
+
+    background:var(--navy);
+
+    padding:32px 0 20px 0;
+
+    border-bottom:1px solid var(--line);
+
+    text-align:center;
+
+  }
+
+  header.top .banner-wrap{
+
+    max-width:1080px;
+
+    margin:0 auto;
+
+    padding:0 24px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+  }
+
+  .brand-banner{
+
+    display:inline-block;
+
+    width:100%;
+
+    max-width:680px;
+
+  }
+
+  .brand-banner img{
+
+    width:100%;
+
+    height:auto;
+
+    display:block;
+
+    margin:0 auto;
+
+    border-radius:0;
+
+    box-shadow:none;
+
+    transition:transform 0.2s ease;
+
+  }
+
+  .brand-banner img:hover{
+
+    transform:scale(1.01);
+
+  }
+
+
+  @media (max-width:520px){
+
+    header.top{padding:20px 0 10px 0;}
+
+    header.top .banner-wrap{padding:0 16px;}
+
+    .brand-banner{max-width:100%;}
+
+  }
+
+
+  .hero{
+
+    background:var(--navy);
+
+    color:var(--ivory);
+
+    padding:64px 0 88px;
+
+    position:relative;
+
+    overflow:hidden;
+
+  }
+
+  .hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:-8%;
+
+    bottom:-20%;
+
+    width:640px; height:640px;
+
+    background:radial-gradient(circle, rgba(184,150,62,0.16) 0%, rgba(184,150,62,0) 70%);
+
+    pointer-events:none;
+
+  }
+
+  .hero .growth-line{
+
+    position:absolute;
+
+    left:0; right:0; bottom:0;
+
+    width:100%; height:auto;
+
+    opacity:0.5;
+
+  }
+
+  .hero-inner{position:relative; z-index:2; max-width:680px;}
+
+  .stat-bar{
+
+    display:flex; gap:28px; flex-wrap:wrap;
+
+    margin-bottom:28px;
+
+  }
+
+  .stat-bar div{font-family:'IBM Plex Mono', monospace; font-size:0.78rem; color:var(--brass-light); letter-spacing:0.02em;}
+
+  .stat-bar strong{display:block; font-family:'Fraunces', serif; font-size:1.4rem; color:var(--ivory); font-weight:600;}
+
+  .hero h1{
+
+    font-size:clamp(2rem, 4.2vw, 3.1rem);
+
+    color:var(--ivory);
+
+    line-height:1.12;
+
+    margin-bottom:20px;
+
+  }
+
+  .hero p.lead{
+
+    color:rgba(246,243,236,0.78);
+
+    font-size:1.08rem;
+
+    max-width:520px;
+
+    margin-bottom:32px;
+
+  }
+
+  .cta-row{display:flex; flex-wrap:wrap; gap:14px;}
+
+  .btn{
+
+    display:inline-flex; align-items:center; gap:8px;
+
+    padding:14px 26px;
+
+    border-radius:2px;
+
+    font-weight:600;
+
+    font-size:0.95rem;
+
+    transition:transform .15s ease, background .15s ease;
+
+  }
+
+  .btn-primary{background:var(--brass); color:var(--navy);}
+
+  .btn-primary:hover{background:var(--brass-light); transform:translateY(-1px);}
+
+  .btn-outline{border:1px solid rgba(246,243,236,0.35); color:var(--ivory);}
+
+  .btn-outline:hover{background:rgba(246,243,236,0.08);}
+
+
+  section{padding:80px 0;}
+
+  .section-head{max-width:640px; margin-bottom:48px;}
+
+  .section-head h2{font-size:clamp(1.6rem, 3vw, 2.2rem); margin-top:10px;}
+
+
+  .solutions-grid{
+
+    display:grid; 
+
+    grid-template-columns:repeat(4, 1fr); 
+
+    gap:20px;
+
+  }
+
+  .solution-card{
+
+    background:#fff;
+
+    border:1px solid rgba(11,29,51,0.08);
+
+    padding:28px 22px;
+
+    border-radius:4px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    transition:transform 0.2s ease, box-shadow 0.2s ease;
+
+  }
+
+  .solution-card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 28px rgba(11,29,51,0.06);
+
+  }
+
+  .solution-card .icon-tag{
+
+    font-family:'IBM Plex Mono', monospace;
+
+    font-size:0.7rem;
+
+    color:var(--teal);
+
+    text-transform:uppercase;
+
+    letter-spacing:0.1em;
+
+    margin-bottom:12px;
+
+    font-weight:600;
+
+  }
+
+  .solution-card h3{
+
+    font-size:1.1rem; 
+
+    margin-bottom:10px;
+
+    line-height:1.25;
+
+  }
+
+  .solution-card p{
+
+    color:var(--slate); 
+
+    font-size:0.88rem;
+
+    line-height:1.5;
+
+  }
+
+
+  .corporate-section{
+
+    background:var(--navy);
+
+    color:var(--ivory);
+
+  }
+
+  .corporate-section .section-head .eyebrow{color:var(--brass-light);}
+
+  .corporate-section .section-head h2{color:var(--ivory);}
+
+  .corporate-section .section-head p{color:rgba(246,243,236,0.72); margin-top:10px; font-size:0.98rem;}
+
+  .corporate-section .solution-card{
+
+    background:rgba(246,243,236,0.04);
+
+    border:1px solid var(--line);
+
+  }
+
+  .corporate-section .solution-card:hover{
+
+    background:rgba(246,243,236,0.07);
+
+    box-shadow:none;
+
+    border-color:rgba(184,150,62,0.4);
+
+  }
+
+  .corporate-section .solution-card .icon-tag{color:var(--brass-light);}
+
+  .corporate-section .solution-card h3{color:var(--ivory);}
+
+  .corporate-section .solution-card p{color:rgba(246,243,236,0.68);}
+
+  .corporate-section .cta-row{margin-top:40px;}
+
+
+  .partners-section{
+
+    background:#fff;
+
+    padding:54px 0;
+
+    border-top:1px solid rgba(11,29,51,0.08);
+
+    border-bottom:1px solid rgba(11,29,51,0.08);
+
+  }
+
+  .partners-head{
+
+    text-align:center;
+
+    margin-bottom:28px;
+
+    max-width:680px;
+
+    margin-left:auto;
+
+    margin-right:auto;
+
+  }
+
+  .partners-head span.eyebrow{
+
+    margin-bottom:6px;
+
+    display:block;
+
+  }
+
+  .partners-head p{
+
+    font-size:0.95rem;
+
+    color:var(--slate);
+
+  }
+
+  .partners-flow{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:18px 28px;
+
+    max-width:920px;
+
+    margin:0 auto;
+
+  }
+
+  .partner-item{
+
+    font-weight:700;
+
+    font-size:1.05rem;
+
+    color:var(--navy);
+
+    letter-spacing:-0.01em;
+
+    position:relative;
+
+    transition:color 0.2s ease;
+
+  }
+
+  .partner-item:hover{
+
+    color:var(--brass);
+
+  }
+
+  .partner-item:not(:last-child)::after{
+
+    content:"•";
+
+    position:absolute;
+
+    right:-16px;
+
+    color:var(--brass);
+
+    opacity:0.6;
+
+    font-weight:400;
+
+  }
+
+  .partner-tag-more{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    margin-top:20px;
+
+    padding:8px 18px;
+
+    background:var(--navy);
+
+    color:var(--brass-light);
+
+    border-radius:2px;
+
+    font-family:'IBM Plex Mono', monospace;
+
+    font-size:0.78rem;
+
+    letter-spacing:0.04em;
+
+  }
+
+  .partners-footer-wrap{
+
+    text-align:center;
+
+    width:100%;
+
+  }
+
+
+  .testi-section{background:var(--navy-2); color:var(--ivory);}
+
+  .testi-section .section-head h2{color:var(--ivory);}
+
+  .testi-section .section-head p{color:rgba(246,243,236,0.7);}
+
+  .testi-grid{display:grid; grid-template-columns:repeat(4, 1fr); gap:20px;}
+
+  .testi{
+
+    background:rgba(246,243,236,0.05);
+
+    border:1px solid var(--line);
+
+    padding:24px 20px;
+
+    border-radius:4px;
+
+  }
+
+  .testi .stars{color:var(--brass); font-size:0.85rem; margin-bottom:12px;}
+
+  .testi p.quote{font-size:0.92rem; color:rgba(246,243,236,0.85); margin-bottom:18px;}
+
+  .testi .who{display:flex; align-items:center; gap:10px;}
+
+  .testi .avatar{
+
+    width:32px; height:32px; border-radius:50%;
+
+    background:var(--brass); color:var(--navy);
+
+    display:flex; align-items:center; justify-content:center;
+
+    font-family:'Fraunces', serif; font-weight:700; font-size:0.85rem;
+
+  }
+
+  .testi .who small{display:block; color:rgba(246,243,236,0.55); font-size:0.75rem;}
+
+  .google-link{
+
+    display:inline-flex; align-items:center; gap:6px;
+
+    margin-top:28px;
+
+    font-size:0.9rem;
+
+    color:var(--brass-light);
+
+    border-bottom:1px solid var(--brass-light);
+
+    padding-bottom:2px;
+
+  }
+
+
+  .faq-item{border-top:1px solid rgba(11,29,51,0.12); padding:24px 0;}
+
+  .faq-item:last-child{border-bottom:1px solid rgba(11,29,51,0.12);}
+
+  .faq-item h3{font-size:1.05rem; margin-bottom:10px; font-family:'Inter',sans-serif; font-weight:600;}
+
+  .faq-item p{color:var(--slate); font-size:0.95rem; max-width:640px;}
+
+
+  .about{background:#fff;}
+
+  .about-grid{display:grid; grid-template-columns:280px 1fr; gap:36px; align-items:center;}
+
+  .about-photo{
+
+    width:100%; aspect-ratio:3/4; border-radius:4px;
+
+    object-fit:cover; object-position:center top;
+
+    background:var(--navy);
+
+  }
+
+  .about h2{font-size:1.7rem; margin-bottom:6px;}
+
+  .about .role{color:var(--brass); font-family:'IBM Plex Mono', monospace; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:16px; display:block;}
+
+  .about p{color:var(--slate); max-width:560px; margin-bottom:24px;}
+
+
+  .articles-grid{
+
+    display:grid; 
+
+    grid-template-columns:repeat(4, 1fr); 
+
+    gap:20px;
+
+  }
+
+  .article-card{
+
+    background:#fff; 
+
+    border:1px solid rgba(11,29,51,0.08); 
+
+    border-radius:4px;
+
+    padding:24px 20px; 
+
+    display:flex; 
+
+    flex-direction:column;
+
+    transition:transform 0.2s ease, box-shadow 0.2s ease;
+
+  }
+
+  .article-card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 28px rgba(11,29,51,0.06);
+
+  }
+
+  .article-card .eyebrow{margin-bottom:12px;}
+
+  .article-card h3{font-size:1.05rem; margin-bottom:10px; line-height:1.3;}
+
+  .article-card p{color:var(--slate); font-size:0.88rem; margin-bottom:18px; flex-grow:1; line-height:1.5;}
+
+  .article-card .read-more{font-size:0.85rem; font-weight:600; color:var(--teal); border-bottom:1px solid currentColor; align-self:flex-start;}
+
+  .article-card{scroll-margin-top:32px;}
+
+  .article-card:target{
+
+    border-color:var(--brass);
+
+    box-shadow:0 0 0 3px rgba(184,150,62,0.18);
+
+    animation:card-pulse 1.6s ease-out 1;
+
+  }
+
+  @keyframes card-pulse{
+
+    0%{box-shadow:0 0 0 0 rgba(184,150,62,0.35);}
+
+    100%{box-shadow:0 0 0 8px rgba(184,150,62,0);}
+
+  }
+
+
+  .final-cta{background:var(--navy); color:var(--ivory); text-align:center;}
+
+  .final-cta h2{color:var(--ivory); font-size:clamp(1.6rem,3vw,2.2rem); margin-bottom:16px;}
+
+  .final-cta p{color:rgba(246,243,236,0.72); max-width:480px; margin:0 auto 32px;}
+
+  .final-cta .cta-row{justify-content:center;}
+
+  
+
+  footer{background:var(--navy-2); color:rgba(246,243,236,0.65); padding:32px 0; font-size:0.82rem;}
+
+  footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;}
+
+
+  @media (max-width:1024px){
+
+    .solutions-grid{grid-template-columns:repeat(2, 1fr);}
+
+    .articles-grid{grid-template-columns:repeat(2, 1fr);}
+
+  }
+
+  @media (max-width:860px){
+
+    .testi-grid{grid-template-columns:1fr 1fr;}
+
+    .about-grid{grid-template-columns:1fr;}
+
+    .about-photo{max-width:240px; margin:0 auto 24px auto;}
+
+  }
+
+  @media (max-width:560px){
+
+    .solutions-grid{grid-template-columns:1fr;}
+
+    .articles-grid{grid-template-columns:1fr;}
+
+    .testi-grid{grid-template-columns:1fr;}
+
+    .partner-item{font-size:0.95rem;}
+
+    .partner-item:not(:last-child)::after{right:-14px;}
+
+    .partners-flow{gap:14px 22px;}
+
+    .stat-bar{gap:20px;}
+
+  }
+
+</style>
+
+</head>
+
+<body>
+
+
+<header class="top">
+
+  <div class="banner-wrap">
+
+    <a href="index.html" class="brand-banner" title="Bezerra Strategic">
+
+      <img src="banner.jpg?v=2" alt="Bezerra Strategic - Consórcios, Crédito e Planejamento">
+
+    </a>
+
+  </div>
+
+</header>
+
+
+<section class="hero">
+
+  <svg class="growth-line" viewBox="0 0 1080 140" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+
+    <path d="M0,120 C120,110 180,60 280,70 C380,80 420,20 540,30 C660,40 700,90 820,60 C900,40 960,10 1080,20"
+
+          fill="none" stroke="#B8963E" stroke-width="2"/>
+
+  </svg>
+
+  <div class="wrap hero-inner">
+
+    <div class="stat-bar">
+
+      <div><strong>R$54MM+</strong>sob gestão</div>
+
+      <div><strong>200+</strong>clientes atendidos</div>
+
+      <div><strong>15+</strong>anos de mercado</div>
+
+    </div>
+
+    <h1>Alavancagem e proteção patrimonial para quem pensa em décadas, não em meses.</h1>
+
+    <p class="lead">Modelagem de crédito inteligente, consórcios estruturados e arquitetura financeira personalizada para investidores e empresas.</p>
+
+    <div class="cta-row">
+
+      <a href="simulador.html" class="btn btn-primary">Solicitar estudo personalizado</a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section id="solucoes">
+
+  <div class="wrap">
+
+    <div class="section-head">
+
+      <span class="eyebrow">Soluções Patrimoniais</span>
+
+      <h2>Arquitetura financeira completa para cada momento do seu capital</h2>
+
+    </div>
+
+    
+
+    <div class="solutions-grid">
+
+      <a href="#artigo-consorcio" class="solution-card">
+
+        <span class="icon-tag">01 • Crédito &amp; Aquisição</span>
+
+        <h3>Consórcios Estruturados</h3>
+
+        <p>Alavancagem preditiva de patrimônio imobiliário, veículos de alto padrão e frota com custo financeiro significativamente inferior ao financiamento.</p>
+
+      </a>
+
+
+      <a href="#artigo-home-equity" class="solution-card">
+
+        <span class="icon-tag">02 • Liquidez &amp; Expansão</span>
+
+        <h3>Financiamento e Home Equity</h3>
+
+        <p>Acesso a recursos com imóvel em garantia para alavancagem de negócios ou otimização do balanço patrimonial com taxas competitivas.</p>
+
+      </a>
+
+
+      <a href="#artigo-wealth" class="solution-card">
+
+        <span class="icon-tag">03 • Estratégia Patrimonial</span>
+
+        <h3>Wealth Management</h3>
+
+        <p>Estratégia integrada de wealth conectando proteção, crescimento e sucessão para garantir controle absoluto sobre seus ativos.</p>
+
+      </a>
+
+
+      <a href="#artigo-seguro-vida" class="solution-card">
+
+        <span class="icon-tag">04 • Proteção Familiar</span>
+
+        <h3>Seguro de Vida Estruturado</h3>
+
+        <p>Proteção financeira com eficiência tributária, liquidez imediata para sucessão e blindagem em cenários imprevistos.</p>
+
+      </a>
+
+
+      <a href="#artigo-previdencia" class="solution-card">
+
+        <span class="icon-tag">05 • Longo Prazo</span>
+
+        <h3>Previdência Privada</h3>
+
+        <p>Planejamento de aposentadoria e sucessão com gestão ativa, incentivo fiscal (PGBL/VGBL) e liberdade de alocação.</p>
+
+      </a>
+
+
+      <a href="#artigo-offshore" class="solution-card">
+
+        <span class="icon-tag">06 • Proteção Cambial</span>
+
+        <h3>Investimentos no Exterior</h3>
+
+        <p>Alocação de capital off-shore e diversificação em moeda forte para proteger seu patrimônio do risco geopolítico e econômico local.</p>
+
+      </a>
+
+
+      <a href="#artigo-cambio" class="solution-card">
+
+        <span class="icon-tag">07 • Transações Globais</span>
+
+        <h3>Câmbio &amp; Remessas</h3>
+
+        <p>Soluções de câmbio eficientes para transferências internacionais, aportes ou operações corporativas com agilidade e cotação competitiva.</p>
+
+      </a>
+
+
+      <a href="#artigo-real-estate" class="solution-card">
+
+        <span class="icon-tag">08 • Ativos Reais</span>
+
+        <h3>Real Estate</h3>
+
+        <p>Operações estruturadas no mercado imobiliário voltadas para valorização de capital e geração de renda passiva consistente.</p>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SEÇÃO: CORPORATE & HOLDING -->
+
+<section id="corporate" class="corporate-section">
+
+  <div class="wrap">
+
+    <div class="section-head">
+
+      <span class="eyebrow">Corporate &amp; Holding</span>
+
+      <h2>Estruturação societária e patrimonial para empresários e famílias empresárias</h2>
+
+      <p>Soluções desenhadas para quem já construiu um negócio e precisa organizar governança, sucessão e eficiência tributária no nível corporativo.</p>
+
+    </div>
+
+
+    <div class="solutions-grid">
+
+      <a href="#artigo-holding" class="solution-card">
+
+        <span class="icon-tag">09 • Blindagem &amp; Sucessão</span>
+
+        <h3>Holding Patrimonial e Familiar</h3>
+
+        <p>Estruturação de holding para centralizar ativos, proteger o patrimônio de riscos do negócio e organizar a sucessão sem inventário.</p>
+
+      </a>
+
+
+      <a href="#artigo-societaria" class="solution-card">
+
+        <span class="icon-tag">10 • Governança</span>
+
+        <h3>Estruturação Societária</h3>
+
+        <p>Reorganização de quadro societário, acordos de sócios e governança familiar para reduzir conflitos e profissionalizar a gestão.</p>
+
+      </a>
+
+
+      <a href="#artigo-tributario" class="solution-card">
+
+        <span class="icon-tag">11 • Eficiência Fiscal</span>
+
+        <h3>Planejamento Tributário Empresarial</h3>
+
+        <p>Revisão de regime tributário, distribuição de lucros e estrutura societária para reduzir a carga fiscal dentro da legalidade.</p>
+
+      </a>
+
+
+      <a href="#artigo-credito-corporativo" class="solution-card">
+
+        <span class="icon-tag">12 • Capital &amp; Expansão</span>
+
+        <h3>Crédito Corporativo Estruturado</h3>
+
+        <p>Linhas de crédito e garantias estruturadas para expansão, aquisições ou reforço de caixa sem diluir o controle do negócio.</p>
+
+      </a>
+
+    </div>
+
+
+    <div class="cta-row">
+
+      <a href="simulador.html" class="btn btn-primary">Falar sobre minha holding ou empresa</a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<div class="partners-section">
+
+  <div class="wrap">
+
+    <div class="partners-head">
+
+      <span class="eyebrow">Arquitetura Aberta &amp; Multibanco</span>
+
+      <p>Acesso e independência para operar com os principais bancos, seguradoras e plataformas do mercado</p>
+
+    </div>
+
+    
+
+    <div class="partners-flow">
+
+      <span class="partner-item">XP Inc.</span>
+
+      <span class="partner-item">BTG Pactual</span>
+
+      <span class="partner-item">Itaú</span>
+
+      <span class="partner-item">Icatu Seguros</span>
+
+      <span class="partner-item">MetLife</span>
+
+      <span class="partner-item">Porto Seguro</span>
+
+      <span class="partner-item">Bradesco</span>
+
+      <span class="partner-item">Santander</span>
+
+    </div>
+
+
+    <div class="partners-footer-wrap">
+
+      <span class="partner-tag-more">+ Principais bancos e seguradoras do país</span>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<section class="testi-section">
+
+  <div class="wrap">
+
+    <div class="section-head">
+
+      <span class="eyebrow">Reputação</span>
+
+      <h2>O que dizem nossos clientes</h2>
+
+    </div>
+
+    <div class="testi-grid">
+
+      <div class="testi">
+
+        <div class="stars">★★★★★</div>
+
+        <p class="quote">"Super profissional, um verdadeiro consultor!"</p>
+
+        <div class="who"><div class="avatar">H</div><div>Herodes Bezerra<small>Avaliação via Google</small></div></div>
+
+      </div>
+
+      <div class="testi">
+
+        <div class="stars">★★★★★</div>
+
+        <p class="quote">"Pode confiar, melhor profissional que eu já consultei."</p>
+
+        <div class="who"><div class="avatar">V</div><div>Vanessa Rocha<small>Avaliação via Google</small></div></div>
+
+      </div>
+
+      <div class="testi">
+
+        <div class="stars">★★★★★</div>
+
+        <p class="quote">"Profissional super comprometido e de grande excelência no que faz."</p>
+
+        <div class="who"><div class="avatar">J</div><div>Juliana Alves<small>Avaliação via Google</small></div></div>
+
+      </div>
+
+      <div class="testi">
+
+        <div class="stars">★★★★★</div>
+
+        <p class="quote">"Muito bom, confiável e tem muita opção de produtos."</p>
+
+        <div class="who"><div class="avatar">D</div><div>David William<small>Avaliação via Google</small></div></div>
+
+      </div>
+
+    </div>
+
+    <a class="google-link" href="https://g.page/r/CaV8w1BWYfd2EBM/review" target="_blank" rel="noopener">Ver todas as avaliações no Google →</a>
+
+  </div>
+
+</section>
+
+
+<section class="about">
+
+  <div class="wrap">
+
+    <div class="about-grid">
+
+      <!-- Substituído douglas.jpeg pelo novo arquivo PNG -->
+
+      <img class="about-photo" src="douglas.png" alt="Douglas Bezerra, Personal Banker e Estrategista Patrimonial na Bezerra Strategic">
+
+      <div>
+
+        <span class="role">Personal Banker &amp; Estrategista Patrimonial</span>
+
+        <h2>Douglas Bezerra</h2>
+
+        <p>Com mais de 15 anos de atuação no mercado financeiro, ajudo famílias e empresários a estruturar soluções inteligentes de crédito, consórcio e planejamento de ativos, garantindo segurança e eficiência de capital.</p>
+
+        <a href="simulador.html" class="btn" style="background:var(--navy); color:var(--ivory);">Agendar conversa estratégica</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section id="faq" style="background:var(--ivory);">
+
+  <div class="wrap">
+
+    <div class="section-head">
+
+      <span class="eyebrow">Dúvidas frequentes</span>
+
+      <h2>Perguntas frequentes</h2>
+
+    </div>
+
+
+    <div class="faq-item">
+
+      <h3>Consórcio vale a pena ou é melhor financiar?</h3>
+
+      <p>Depende do objetivo. O consórcio tem juros menores que o financiamento, mas exige planejamento de prazo, já que a contemplação pode não ser imediata. Para quem não tem pressa e quer economizar no custo total, costuma ser mais vantajoso.</p>
+
+    </div>
+
+    <div class="faq-item">
+
+      <h3>Preciso ter um patrimônio alto para contratar planejamento patrimonial?</h3>
+
+      <p>Não necessariamente. Planejamento patrimonial é útil tanto para quem está começando a construir patrimônio quanto para quem já tem ativos consolidados e quer proteção, sucessão ou eficiência fiscal.</p>
+
+    </div>
+
+    <div class="faq-item">
+
+      <h3>Como funciona a alavancagem de crédito para empresas?</h3>
+
+      <p>É o uso estratégico de linhas de crédito para financiar crescimento ou capital de giro sem comprometer o caixa da empresa, otimizando o custo financeiro e o retorno sobre o capital investido.</p>
+
+    </div>
+
+    <div class="faq-item">
+
+      <h3>Quando faz sentido abrir uma holding patrimonial ou familiar?</h3>
+
+      <p>Geralmente quando há imóveis ou negócios que precisam de proteção patrimonial, quando a sucessão familiar precisa ser organizada em vida, ou quando a carga tributária sobre aluguéis e lucros pode ser reduzida com uma estrutura societária adequada.</p>
+
+    </div>
+
+    <div class="faq-item">
+
+      <h3>Quanto custa fazer um estudo personalizado com a Bezerra Strategic?</h3>
+
+      <p>O estudo inicial é gratuito e sem compromisso — o objetivo é entender seu momento financeiro e apresentar as opções mais adequadas.</p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section id="artigos" style="background:#fff;">
+
+  <div class="wrap">
+
+    <div class="section-head">
+
+      <span class="eyebrow">Aprenda mais</span>
+
+      <h2>Artigos e guias estratégicos</h2>
+
+      <p style="color:var(--slate); margin-top:8px;">Conteúdo aprofundado sobre crédito, proteção patrimonial e investimentos globais.</p>
+
+    </div>
+
+
+    <div class="articles-grid">
+
+      <div class="article-card" id="artigo-consorcio">
+
+        <span class="eyebrow">01 • Consórcio &amp; Crédito</span>
+
+        <h3>Consórcio Vale a Pena em 2026? Guia Completo</h3>
+
+        <p>Consórcio ou financiamento: entenda quando cada estratégia compensa mais e como usar lances para acelerar a contemplação.</p>
+
+        <a href="consorcio-vale-a-pena-2026.html" class="read-more">Ler artigo →</a>
+
+      </div>
+
+
+      <div class="article-card" id="artigo-home-equity">
+
+        <span class="eyebrow">02 • Liquidez Imobiliária</span>
+
+        <h3>Home Equity: Crédito de Baixo Custo com Imóvel</h3>
+
+        <p>Como usar seu imóvel quitado para obter liquidez sem precisar vender o bem, com os menores juros do mercado.</p>
+
+        <a href="home-equity-liquidez.html" class="read-more">Ler artigo →</a>
+
+      </div>
+
+
+      <div class="article-card">
+
+        <span class="eyebrow">03 • Crédito Corporativo</span>
+
+        <h3>Alavancagem de Crédito para Empresas</h3>
+
+        <p>Como crescer e expandir operações usando crédito estratégico sem comprometer o capital de giro do seu negócio.</p>
+
+        <a href="alavancagem-credito-empresas.html" class="read-more">Ler artigo →</a>
+
+      </div>
+
+
+      <div class="article-card" id="artigo-wealth">
+
+        <span class="eyebrow">04 • Gestão de Fortunas</span>
+
+        <h3>Wealth Management: O Guia Definitivo</h3>
+
+        <p>Entenda como funciona a gestão patrimonial integrada conectando ativos, eficiência fiscal e sucessão familiar.</p>
+
+        <a href="wealth-management-guia.html" class="read-more">Ler artigo →</a>
+
+      </div>
+
+
+      <div class="article-card" id="artigo-seguro-vida">
+
+        <span class="eyebrow">05 • Proteção &amp; Liquidez</span>
+
+        <h3>Seguro de Vida Estruturado e Sucessão</h3>
+
+        <p>Como garantir liquidez imediata isenta de impostos para cobrir custos de inventário e blindar a família.</p>
+
+        <a href="seguro-de-vida-estruturado.html" class="read-more">Ler artigo →</a>
+
+      </div>
+
+
+      <div class="article-card">
+
+        <span class="eyebrow">06 • Planejamento Familiar</span>
+
+        <h3>Planejamento Sucessório e Holdings</h3>
+
+        <p>As principais ferramentas jurídicas e financeiras para organizar a transmissão do patrimônio sem conflitos.</p>
+
+        <a href="planejamento-sucessorio-patrimonial.html" class="read-more">Ler artigo →</a>
+
+      </div>
+
+
+      <div class="article-card" id="artigo-offshore">
+
+        <span class="eyebrow">07 • Proteção Cambial</span>
+
+        <h3>Investimentos no Exterior e Off-shore</h3>
+
+        <p>Como diversificar seu patrimônio em moeda forte e proteger seu capital contra riscos econômicos locais.</p>
+
+        <a href="investimentos-no-exterior-offshore.html" class="read-more">Ler artigo →</a>
+
+      </div>
+
+
+      <div class="article-card" id="artigo-cambio">
+
+        <span class="eyebrow">08 • Operações Globais</span>
+
+        <h3>Câmbio e Remessas Internacionais</h3>
+
+        <p>Guia de eficiência cambial para reduzir spread e taxas em transferências corporativas e aportes no exterior.</p>
+
+        <a href="cambio-e-remessas-internacionais.html" class="read-more">Ler artigo →</a>
+
+      </div>
+
+
+      <div class="article-card" id="artigo-holding">
+
+        <span class="eyebrow">09 • Corporate &amp; Holding</span>
+
+        <h3>Holding Patrimonial: Guia Completo para Blindagem e Sucessão</h3>
+
+        <p>Quando abrir uma holding compensa, quais os custos envolvidos e como ela protege o patrimônio da família empresária.</p>
+
+        <a href="holding-patrimonial-familiar.html" class="read-more">Ler artigo →</a>
+
+      </div>
+
+
+      <div class="article-card" id="artigo-societaria">
+
+        <span class="eyebrow">10 • Corporate &amp; Holding</span>
+
+        <h3>Acordo de Sócios: Como Evitar Conflitos Antes que Eles Apareçam</h3>
+
+        <p>As cláusulas que definem o que acontece na saída, morte ou divergência entre sócios — e por que a maioria das empresas só sente falta delas tarde demais.</p>
+
+        <a href="estruturacao-societaria.html" class="read-more">Ler artigo →</a>
+
+      </div>
+
+
+      <div class="article-card" id="artigo-tributario">
+
+        <span class="eyebrow">11 • Corporate &amp; Holding</span>
+
+        <h3>Sua Empresa Está Pagando Imposto a Mais?</h3>
+
+        <p>Regime tributário, pró-labore x distribuição de lucros e outros pontos onde pequenas e médias empresas costumam deixar dinheiro na mesa.</p>
+
+        <a href="planejamento-tributario-empresarial.html" class="read-more">Ler artigo →</a>
+
+      </div>
+
+
+      <div class="article-card" id="artigo-credito-corporativo">
+
+        <span class="eyebrow">12 • Corporate &amp; Holding</span>
+
+        <h3>Crescer com Crédito sem Abrir Mão do Controle</h3>
+
+        <p>Como montar operações de crédito com garantias inteligentes para financiar expansão ou aquisições sem ceder participação societária.</p>
+
+        <a href="credito-corporativo-estruturado.html" class="read-more">Ler artigo →</a>
+
+      </div>
+
+
+      <div class="article-card" id="artigo-previdencia">
+
+        <span class="eyebrow">13 • Longo Prazo</span>
+
+        <h3>PGBL ou VGBL: Como Escolher sua Previdência Privada</h3>
+
+        <p>A diferença entre os dois planos, o regime regressivo que reduz o imposto com o tempo e por que a previdência não entra em inventário.</p>
+
+        <a href="previdencia-privada-planejamento.html" class="read-more">Ler artigo →</a>
+
+      </div>
+
+
+      <div class="article-card" id="artigo-real-estate">
+
+        <span class="eyebrow">14 • Ativos Reais</span>
+
+        <h3>Real Estate: Renda Passiva ou Valorização de Capital?</h3>
+
+        <p>As diferentes formas de investir em imóveis — de FIIs a participação em empreendimentos — e como escolher a que combina com seu objetivo.</p>
+
+        <a href="real-estate-investimento-estruturado.html" class="read-more">Ler artigo →</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="final-cta">
+
+  <div class="wrap">
+
+    <h2>Pronto para estruturar sua estratégia patrimonial?</h2>
+
+    <p>Estudo inicial gratuito, sem compromisso. Entenda em minutos qual caminho faz mais sentido para o seu momento.</p>
+
+    <div class="cta-row">
+
+      <a href="simulador.html" class="btn btn-primary">Solicitar estudo personalizado</a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<footer>
+
+  <div class="wrap">
+
+    <span>Douglas Bezerra — Personal Banker &amp; Estrategista Patrimonial</span>
+
+    <span>Bezerra Strategic</span>
+
+  </div>
+
+</footer>
+
+
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/51784410.js"></script>
+
+
+</body>
+
+</html> <!doctype html>
 <html lang="pt-BR">
  <head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260803-03-c990d82","C":{"Abril Fatface":"YACgEZbkUVE,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo":"YAHO2-t-jNE,0","Arial":"YAGyDvJ_4Ts,0","Bebas Neue":"YACgESME5ew,0","Broken Glyph":"YADZ-exUkv0,0","Canva Sans":"YAFdJjTk5UU,0","Caveat":"YALBs2ploWQ,0","Comic Sans MS":"YAHO2VMiyZo,0","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAEul-FRQw4,0","Georgia":"YAGzXkO0pEM,0","Ghost Mono":"YAHO2EIdDP0,0","Helvetica Neue":"YAFcf6CtJfI,0","Impact":"YAFcfnjI7Vk,0","Inter":"YAFdJvSyp_k,3","Iowan Old Style":"YAGNIFa8j9o,0","Jacques Francois":"YAHO2a5g66Q,0","JetBrains Mono":"YADy3sAhvXQ,0","Oleo Script":"YACgEQQ14jI,0","Playfair Display":"YAFdJhem5V8,1","Poppins":"YAE5fPSY9qM,0","Press Start 2P":"YAFyGr-8pmQ,0","Source Sans 3":"YAG4lO1Mj10,0","Space Grotesk":"YAHO2sjPCSM,0","Times New Roman":"YAGzXW3gftg,0","Times":"YAGzXW3gftg,0","Trebuchet MS":"YAFcfrglpVA,0","Verdana":"YAGzXTctYtQ,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0"}}');</script><script src="/_sdk/7949ff62d67710d5.telemetry_sdk.js" integrity="sha512-KIvXA82Di44YY/RH9/63A9MuTuavYgDFG8PfErJn7Wli4K0LAOk+coo/aPXk3+ZNL96nHh9VYD4PE+fLes+laQ=="></script>
   <meta charset="UTF-8">
