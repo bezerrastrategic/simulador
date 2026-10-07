@@ -37,14 +37,10 @@
     padding:32px 16px calc(32px + env(safe-area-inset-bottom));
   }
   .card{width:100%; max-width:420px; text-align:center;}
-  .brand{
-    font-family:'IBM Plex Mono', monospace; font-size:0.72rem;
-    letter-spacing:0.18em; text-transform:uppercase; color:var(--brass-light);
-  }
-  .photo{
-    width:132px; height:132px; border-radius:50%; object-fit:cover;
-    margin:22px auto 18px; display:block;
-    border:3px solid var(--brass); box-shadow:0 10px 30px rgba(0,0,0,0.35);
+  .logo{
+    width:100%; height:auto; display:block; margin:0 auto 22px;
+    border-radius:16px; border:1px solid var(--line);
+    box-shadow:0 10px 30px rgba(0,0,0,0.35);
   }
   h1{font-family:'Fraunces', serif; font-weight:600; font-size:1.9rem; line-height:1.15;}
   .role{margin-top:6px; color:rgba(246,243,236,0.78); font-size:0.95rem;}
@@ -95,8 +91,7 @@
 </head>
 <body>
 <main class="card">
-  <div class="brand">Bezerra Strategic</div>
-  <img class="photo" src="douglas.jpeg" alt="Douglas Bezerra" width="132" height="132">
+  <img class="logo" src="banner.jpg?v=2" alt="Bezerra Strategic" width="1268" height="317">
   <h1 id="name"></h1>
   <div class="role" id="role"></div>
   <p class="tagline">Wealth management, crédito, consórcio, câmbio e planejamento patrimonial para pessoas e empresas.</p>
