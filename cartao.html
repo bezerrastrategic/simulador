@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Douglas Bezerra | Cartão Digital</title>
+<meta name="description" content="Cartão digital de Douglas Bezerra — Personal Banker & Estrategista Patrimonial na Bezerra Strategic.">
+<meta name="theme-color" content="#0B1D33">
+<meta property="og:title" content="Douglas Bezerra | Bezerra Strategic">
+<meta property="og:description" content="Personal Banker & Estrategista Patrimonial. Salve meu contato e fale comigo.">
+<meta property="og:image" content="https://bezerrastrategic.github.io/simulador/douglas.jpeg">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://bezerrastrategic.github.io/simulador/cartao.html">
+<meta property="og:locale" content="pt_BR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B1D33;
+    --navy-2:#122a47;
+    --ivory:#F6F3EC;
+    --brass:#B8963E;
+    --brass-light:#D9BE72;
+    --slate:#5C6B7A;
+    --line:rgba(246,243,236,0.14);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{min-height:100%;}
+  body{
+    font-family:'Inter', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    background:radial-gradient(120% 80% at 50% 0%, var(--navy-2) 0%, var(--navy) 60%);
+    background-color:var(--navy);
+    color:var(--ivory);
+    display:flex; justify-content:center;
+    padding:32px 16px calc(32px + env(safe-area-inset-bottom));
+  }
+  .card{width:100%; max-width:420px; text-align:center;}
+  .brand{
+    font-family:'IBM Plex Mono', monospace; font-size:0.72rem;
+    letter-spacing:0.18em; text-transform:uppercase; color:var(--brass-light);
+  }
+  .photo{
+    width:132px; height:132px; border-radius:50%; object-fit:cover;
+    margin:22px auto 18px; display:block;
+    border:3px solid var(--brass); box-shadow:0 10px 30px rgba(0,0,0,0.35);
+  }
+  h1{font-family:'Fraunces', serif; font-weight:600; font-size:1.9rem; line-height:1.15;}
+  .role{margin-top:6px; color:rgba(246,243,236,0.78); font-size:0.95rem;}
+  .tagline{
+    margin:18px auto 0; max-width:340px; font-size:0.9rem; line-height:1.5;
+    color:rgba(246,243,236,0.62);
+  }
+  .primary{
+    margin-top:26px; width:100%; border:0; cursor:pointer;
+    background:var(--brass); color:var(--navy);
+    font:700 1rem 'Inter', sans-serif; padding:16px; border-radius:14px;
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    transition:background .2s;
+  }
+  .primary:hover{background:var(--brass-light);}
+  .quick{display:grid; grid-template-columns:repeat(auto-fit, minmax(0,1fr)); gap:10px; margin-top:12px;}
+  .quick a{
+    display:flex; flex-direction:column; align-items:center; gap:6px;
+    padding:14px 6px; border-radius:14px; border:1px solid var(--line);
+    background:rgba(246,243,236,0.04); color:var(--ivory); text-decoration:none;
+    font-size:0.78rem; font-weight:500;
+  }
+  .quick a:hover{border-color:var(--brass);}
+  .list{margin-top:22px; display:flex; flex-direction:column; gap:10px; text-align:left;}
+  .list a, .list button{
+    display:flex; align-items:center; gap:14px; width:100%;
+    padding:15px 16px; border-radius:14px; border:1px solid var(--line);
+    background:rgba(246,243,236,0.04); color:var(--ivory); text-decoration:none;
+    font:500 0.95rem 'Inter', sans-serif; cursor:pointer; text-align:left;
+  }
+  .list a:hover, .list button:hover{border-color:var(--brass);}
+  .list small{display:block; color:rgba(246,243,236,0.55); font-size:0.78rem; font-weight:400; margin-top:2px;}
+  .list .arrow{margin-left:auto; color:var(--brass-light);}
+  svg{width:22px; height:22px; flex-shrink:0; stroke:var(--brass-light); fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round;}
+  .primary svg{stroke:var(--navy);}
+  .hidden{display:none !important;}
+  .toast{
+    position:fixed; left:50%; bottom:calc(24px + env(safe-area-inset-bottom));
+    transform:translateX(-50%) translateY(20px); opacity:0;
+    background:var(--ivory); color:var(--navy); font-size:0.88rem; font-weight:600;
+    padding:12px 18px; border-radius:12px; transition:all .25s; pointer-events:none;
+    max-width:calc(100% - 32px);
+  }
+  .toast.show{opacity:1; transform:translateX(-50%) translateY(0);}
+  footer{margin-top:28px; font-size:0.75rem; color:rgba(246,243,236,0.4);}
+  footer a{color:inherit;}
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="brand">Bezerra Strategic</div>
+  <img class="photo" src="douglas.jpeg" alt="Douglas Bezerra" width="132" height="132">
+  <h1 id="name"></h1>
+  <div class="role" id="role"></div>
+  <p class="tagline">Wealth management, crédito, consórcio, câmbio e planejamento patrimonial para pessoas e empresas.</p>
+
+  <button class="primary" id="save-contact" type="button">
+    <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
+    Salvar contato
+  </button>
+
+  <nav class="quick" id="quick">
+    <a id="q-whatsapp" class="hidden" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.6 7.3L3 20.5l1.8-5.2A8.4 8.4 0 1 1 21 11.5z"/></svg>WhatsApp
+    </a>
+    <a id="q-phone" class="hidden">
+      <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Ligar
+    </a>
+    <a id="q-email" class="hidden">
+      <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>E-mail
+    </a>
+    <a id="q-linkedin" class="hidden" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn
+    </a>
+    <a id="q-instagram" class="hidden" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>Instagram
+    </a>
+  </nav>
+
+  <div class="list">
+    <a href="atendimento.html">
+      <svg viewBox="0 0 24 24"><path d="M8 2v4M16 2v4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/></svg>
+      <span>Agendar atendimento<small>Fale com um especialista</small></span><span class="arrow">→</span>
+    </a>
+    <a href="simulador.html">
+      <svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01M8 18h8"/></svg>
+      <span>Simulador<small>Simule seu consórcio ou crédito</small></span><span class="arrow">→</span>
+    </a>
+    <a href="index.html">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20"/></svg>
+      <span>Site e conteúdos<small>bezerrastrategic.github.io/simulador</small></span><span class="arrow">→</span>
+    </a>
+    <a href="https://g.page/r/CaV8w1BWYfd2EBM/review" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+      <span>Avaliar no Google<small>Sua opinião faz diferença</small></span><span class="arrow">→</span>
+    </a>
+    <button id="share" type="button">
+      <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>
+      <span>Compartilhar cartão<small>Envie este cartão para alguém</small></span><span class="arrow">→</span>
+    </button>
+    <button id="nfc-write" type="button" class="hidden">
+      <svg viewBox="0 0 24 24"><path d="M6 8.3a6 6 0 0 1 0 7.4M9.5 5.5a10 10 0 0 1 0 13M13 3a14 14 0 0 1 0 18"/></svg>
+      <span>Gravar em tag NFC<small>Encoste uma tag NFC no celular (Chrome Android)</small></span><span class="arrow">→</span>
+    </button>
+  </div>
+
+  <footer>© <span id="year"></span> Bezerra Strategic · <a href="index.html">bezerrastrategic.github.io</a></footer>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+  // Dados do cartão — preencha os campos vazios; itens em branco ficam ocultos.
+  const CONTACT = {
+    name: 'Douglas Bezerra',
+    role: 'Personal Banker & Estrategista Patrimonial',
+    company: 'Bezerra Strategic',
+    phone: '',      // ex.: '+5511999999999'
+    whatsapp: '',   // ex.: '5511999999999' (só números, com DDI e DDD)
+    email: '',      // ex.: 'contato@exemplo.com'
+    linkedin: '',   // URL completa
+    instagram: '',  // URL completa
+    site: 'https://bezerrastrategic.github.io/simulador/',
+    card: 'https://bezerrastrategic.github.io/simulador/cartao.html',
+    photo: 'https://bezerrastrategic.github.io/simulador/douglas.jpeg'
+  };
+
+  const $ = id => document.getElementById(id);
+  const toast = msg => {
+    const t = $('toast'); t.textContent = msg; t.classList.add('show');
+    clearTimeout(toast.timer); toast.timer = setTimeout(() => t.classList.remove('show'), 2600);
+  };
+
+  $('name').textContent = CONTACT.name;
+  $('role').textContent = CONTACT.role;
+  $('year').textContent = new Date().getFullYear();
+
+  const links = {
+    'q-whatsapp': CONTACT.whatsapp && 'https://wa.me/' + CONTACT.whatsapp.replace(/\D/g, '') + '?text=' + encodeURIComponent('Olá Douglas, peguei seu cartão digital e gostaria de conversar.'),
+    'q-phone': CONTACT.phone && 'tel:' + CONTACT.phone.replace(/[^\d+]/g, ''),
+    'q-email': CONTACT.email && 'mailto:' + CONTACT.email,
+    'q-linkedin': CONTACT.linkedin,
+    'q-instagram': CONTACT.instagram
+  };
+  let visible = 0;
+  for (const [id, href] of Object.entries(links)) {
+    if (href) { $(id).href = href; $(id).classList.remove('hidden'); visible++; }
+  }
+  if (!visible) $('quick').classList.add('hidden');
+
+  // vCard
+  const esc = s => String(s).replace(/([\\;,])/g, '\\$1');
+  function buildVCard() {
+    const [first, ...rest] = CONTACT.name.split(' ');
+    const lines = [
+      'BEGIN:VCARD', 'VERSION:3.0',
+      'N:' + esc(rest.join(' ')) + ';' + esc(first) + ';;;',
+      'FN:' + esc(CONTACT.name),
+      'ORG:' + esc(CONTACT.company),
+      'TITLE:' + esc(CONTACT.role)
+    ];
+    if (CONTACT.phone) lines.push('TEL;TYPE=CELL:' + CONTACT.phone);
+    if (CONTACT.email) lines.push('EMAIL;TYPE=WORK:' + CONTACT.email);
+    lines.push('URL:' + CONTACT.site);
+    if (CONTACT.linkedin) lines.push('X-SOCIALPROFILE;TYPE=linkedin:' + CONTACT.linkedin);
+    lines.push('PHOTO;VALUE=URI:' + CONTACT.photo);
+    lines.push('NOTE:' + esc('Cartão digital: ' + CONTACT.card));
+    lines.push('END:VCARD');
+    return lines.join('\r\n');
+  }
+  $('save-contact').addEventListener('click', () => {
+    const blob = new Blob([buildVCard()], { type: 'text/vcard;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'douglas-bezerra.vcf';
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    toast('Contato gerado — abra o arquivo para salvar');
+  });
+
+  // Compartilhar
+  $('share').addEventListener('click', async () => {
+    const data = { title: CONTACT.name + ' | ' + CONTACT.company, text: CONTACT.role, url: CONTACT.card };
+    try {
+      if (navigator.share) { await navigator.share(data); return; }
+      await navigator.clipboard.writeText(CONTACT.card);
+      toast('Link copiado');
+    } catch (e) {
+      if (e && e.name !== 'AbortError') toast(CONTACT.card);
+    }
+  });
+
+  // Web NFC: grava o link deste cartão em uma tag (Chrome no Android)
+  if ('NDEFReader' in window) {
+    $('nfc-write').classList.remove('hidden');
+    $('nfc-write').addEventListener('click', async () => {
+      try {
+        toast('Aproxime a tag NFC do celular…');
+        await new NDEFReader().write({ records: [{ recordType: 'url', data: CONTACT.card }] });
+        toast('Tag NFC gravada com sucesso');
+      } catch (e) {
+        toast('Não foi possível gravar: ' + e.message);
+      }
+    });
+  }
+</script>
+</body>
+</html>
