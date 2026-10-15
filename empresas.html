@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Soluções para empresas | Douglas Bezerra</title>
+<meta name="description" content="Holding patrimonial e familiar, estruturação societária, planejamento tributário e crédito corporativo para empresários em Itajaí e Balneário Camboriú.">
+<meta property="og:title" content="Soluções para empresas | Douglas Bezerra">
+<meta property="og:description" content="Holding, estrutura societária, planejamento tributário e crédito corporativo, com parceiros especializados.">
+<meta property="og:image" content="https://bezerrastrategic.github.io/simulador/banner.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bezerrastrategic.github.io/simulador/empresas.html">
+<meta property="og:locale" content="pt_BR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B1D33; --navy-2:#122841; --brass:#B8963E; --brass-light:#D9BE72;
+  --bg:#F6F3EC; --surface:#FFFFFF; --ink:#0B1D33; --muted:#5C6B7A;
+  --rule:rgba(11,29,51,0.12); --accent:#8A6E24; --on-accent:#0B1D33;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0A1729; --surface:#122841; --ink:#F2EEE4; --muted:#A7B2BE;
+    --rule:rgba(242,238,228,0.14); --accent:#D9BE72; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0A1729; --surface:#122841; --ink:#F2EEE4; --muted:#A7B2BE;
+  --rule:rgba(242,238,228,0.14); --accent:#D9BE72; color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,-apple-system,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:600;letter-spacing:-0.01em;line-height:1.15}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--brass-light);outline-offset:3px}
+
+/* topo */
+.top{background:var(--navy);padding:18px 0 6px}
+.top img{width:100%;max-width:420px;margin:0 auto}
+
+/* hero */
+.hero{background:var(--navy);color:#F2EEE4;padding:28px 0 56px}
+.back{display:inline-block;color:rgba(242,238,228,.7);font-size:.88rem;text-decoration:none;margin-bottom:22px}
+.back:hover{color:var(--brass-light)}
+.role{color:var(--brass-light);font-size:.92rem;margin-bottom:14px}
+.hero h1{font-size:clamp(2rem,5.4vw,3.1rem);margin-bottom:18px;max-width:18ch}
+.hero .lead{color:rgba(242,238,228,.8);font-size:1.06rem;max-width:52ch;margin-bottom:28px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:3px;font-weight:600;font-size:.95rem;text-decoration:none;transition:background .15s}
+.btn-gold{background:var(--brass);color:var(--navy)}
+.btn-gold:hover{background:var(--brass-light)}
+.btn-line{border:1px solid rgba(242,238,228,.35);color:#F2EEE4}
+.btn-line:hover{background:rgba(242,238,228,.08)}
+
+section{padding:64px 0}
+.head{max-width:620px;margin-bottom:32px}
+.head h2{font-size:clamp(1.55rem,3.4vw,2.1rem);margin-bottom:10px}
+.head p{color:var(--muted)}
+
+/* serviços */
+.doors{border-top:1px solid var(--rule)}
+.door{display:grid;grid-template-columns:1fr auto;gap:6px 24px;align-items:center;padding:26px 4px;border-bottom:1px solid var(--rule);text-decoration:none}
+.door h3{font-size:clamp(1.3rem,3.2vw,1.75rem)}
+.door p{color:var(--muted);grid-column:1;max-width:58ch}
+.door .tools{grid-column:1;font-size:.85rem;color:var(--accent);font-weight:500}
+.door .go{grid-row:1/span 3;grid-column:2;font-weight:600;color:var(--accent);white-space:nowrap;font-size:.92rem}
+.door:hover h3{color:var(--accent)}
+.note{margin-top:22px;color:var(--muted);font-size:.92rem}
+
+/* final */
+.final{background:var(--navy);color:#F2EEE4;text-align:left}
+.final h2{font-size:clamp(1.7rem,4vw,2.4rem);max-width:18ch;margin-bottom:12px}
+.final p{color:rgba(242,238,228,.78);max-width:48ch;margin-bottom:26px}
+.final .back{margin:28px 0 0}
+footer{background:var(--navy);color:rgba(242,238,228,.6);font-size:.85rem;padding:22px 0 28px;border-top:1px solid rgba(242,238,228,.12)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px}
+footer a{text-decoration:none}
+
+@media (max-width:760px){
+  .hero{padding:20px 0 44px}
+  .ctas .btn{flex:1 1 100%}
+  .door{grid-template-columns:1fr}
+  .door .go{grid-row:auto;grid-column:1;margin-top:6px}
+  section{padding:52px 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap"><a href="index.html"><img src="banner.jpg?v=2" alt="Bezerra Strategic"></a></div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <a class="back" href="index.html">← Voltar para a página inicial</a>
+    <p class="role">Para empresários e famílias empresárias</p>
+    <h1>Estrutura para o negócio e para o patrimônio da família.</h1>
+    <p class="lead">Para quem já construiu uma empresa e precisa organizar governança, sucessão e eficiência tributária no nível corporativo.</p>
+    <div class="ctas">
+      <a class="btn btn-gold" href="https://wa.me/5547988307859?text=Ol%C3%A1%2C%20Douglas!%20Vi%20a%20p%C3%A1gina%20para%20empresas.%20Vamos%20marcar%20uma%20visita%20ou%20videochamada%3F">Marcar visita ou videochamada</a>
+      <a class="btn btn-line" href="simulador.html">Pedir estudo gratuito</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="head">
+      <h2>Soluções para empresas</h2>
+      <p>Cada caso começa com um diagnóstico da empresa, dos sócios e do patrimônio da família.</p>
+    </div>
+    <div class="doors">
+      <a class="door" href="holding-patrimonial-familiar.html">
+        <h3>Holding Patrimonial e Familiar</h3>
+        <p>Estruturação de holding para centralizar ativos, proteger o patrimônio de riscos do negócio e organizar a sucessão em vida, o que pode reduzir custos de inventário.</p>
+        <span class="tools">Proteção patrimonial e sucessão</span>
+        <span class="go">Ler o guia</span>
+      </a>
+      <a class="door" href="estruturacao-societaria.html">
+        <h3>Estruturação Societária</h3>
+        <p>Reorganização de quadro societário, acordos de sócios e governança familiar para reduzir conflitos e profissionalizar a gestão.</p>
+        <span class="tools">Governança</span>
+        <span class="go">Ler o guia</span>
+      </a>
+      <a class="door" href="planejamento-tributario-empresarial.html">
+        <h3>Planejamento Tributário Empresarial</h3>
+        <p>Revisão de regime tributário, distribuição de lucros e estrutura societária para operar com eficiência tributária, dentro da legalidade.</p>
+        <span class="tools">Eficiência fiscal</span>
+        <span class="go">Ler o guia</span>
+      </a>
+      <a class="door" href="credito-corporativo-estruturado.html">
+        <h3>Crédito Corporativo Estruturado</h3>
+        <p>Linhas de crédito e garantias estruturadas para expansão, aquisições ou reforço de caixa sem diluir o controle do negócio.</p>
+        <span class="tools">Capital e expansão</span>
+        <span class="go">Ler o guia</span>
+      </a>
+    </div>
+    <p class="note">Soluções desenvolvidas com parceiros especializados (advogados e contadores).</p>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Vamos olhar a sua empresa com calma?</h2>
+    <p>Uma conversa presencial ou por vídeo, para entender o momento do negócio e mostrar o caminho que faz mais sentido.</p>
+    <div class="ctas">
+      <a class="btn btn-gold" href="https://wa.me/5547988307859?text=Ol%C3%A1%2C%20Douglas!%20Vi%20a%20p%C3%A1gina%20para%20empresas.%20Vamos%20marcar%20uma%20visita%20ou%20videochamada%3F">Marcar visita ou videochamada</a>
+      <a class="btn btn-line" href="simulador.html">Pedir estudo gratuito</a>
+    </div>
+    <a class="back" href="index.html">← Voltar para a página inicial</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Douglas Bezerra, Bezerra Strategic</span>
+    <span><a href="tel:+5547988307859">(47) 98830-7859</a> &nbsp; <a href="mailto:douglas.bezerra@outlook.com">douglas.bezerra@outlook.com</a></span>
+  </div>
+</footer>
+
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/51784410.js"></script>
+</body>
+</html>
