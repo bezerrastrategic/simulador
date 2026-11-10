@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kansas City Residence, Porto Belo | Douglas Bezerra</title>
+<meta name="description" content="Kansas City Residence em Porto Belo/SC: pré-lançamento em tabela zero, com lote de unidades a preço congelado e pagamento em até 120 parcelas. Entrega prevista para outubro de 2032.">
+<meta property="og:title" content="Kansas City Residence, Porto Belo">
+<meta property="og:description" content="Pré-lançamento em tabela zero, com lote de unidades a preço congelado e pagamento em até 120 parcelas.">
+<meta property="og:image" content="https://bezerrastrategic.github.io/simulador/banner.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bezerrastrategic.github.io/simulador/kansas-city-residence.html">
+<meta property="og:locale" content="pt_BR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B1D33; --navy-2:#122841; --brass:#B8963E; --brass-light:#D9BE72;
+  --bg:#F6F3EC; --surface:#FFFFFF; --ink:#0B1D33; --muted:#5C6B7A;
+  --rule:rgba(11,29,51,0.12); --accent:#8A6E24;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0A1729; --surface:#122841; --ink:#F2EEE4; --muted:#A7B2BE;
+    --rule:rgba(242,238,228,0.14); --accent:#D9BE72; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0A1729; --surface:#122841; --ink:#F2EEE4; --muted:#A7B2BE;
+  --rule:rgba(242,238,228,0.14); --accent:#D9BE72; color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,-apple-system,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:600;letter-spacing:-0.01em;line-height:1.15}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--brass-light);outline-offset:3px}
+
+.top{background:var(--navy);padding:18px 0 6px}
+.top img{width:100%;max-width:420px;margin:0 auto}
+.back{background:var(--navy);padding:6px 0 0}
+.back a{color:var(--brass-light);font-size:.88rem;text-decoration:none}
+.back a:hover{text-decoration:underline}
+
+.hero{background:var(--navy);color:#F2EEE4;padding:30px 0 56px}
+.status{display:inline-block;border:1px solid var(--brass);color:var(--brass-light);font-size:.85rem;padding:4px 12px;border-radius:2px;margin-bottom:18px}
+.hero h1{font-size:clamp(2.3rem,6.4vw,4rem);margin-bottom:8px}
+.hero .where{color:rgba(242,238,228,.72);font-size:1.05rem;margin-bottom:22px}
+.hero .lead{color:rgba(242,238,228,.84);font-size:1.08rem;max-width:50ch;margin-bottom:28px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:3px;font-weight:600;font-size:.95rem;text-decoration:none;transition:background .15s}
+.btn-gold{background:var(--brass);color:var(--navy)}
+.btn-gold:hover{background:var(--brass-light)}
+.btn-line{border:1px solid rgba(242,238,228,.35);color:#F2EEE4}
+.btn-line:hover{background:rgba(242,238,228,.08)}
+
+section{padding:64px 0}
+.head{max-width:620px;margin-bottom:32px}
+.head h2{font-size:clamp(1.55rem,3.4vw,2.1rem);margin-bottom:10px}
+.head p{color:var(--muted)}
+.alt{background:var(--surface);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+
+/* por que agora */
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.why div{padding-top:16px;border-top:1px solid var(--rule)}
+.why h3{font-size:1.2rem;margin-bottom:6px}
+.why p{color:var(--muted);font-size:.96rem}
+
+/* linha do tempo do pagamento: o elemento marcante */
+.track{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:0 18px;margin-top:8px}
+.track::before{content:"";position:absolute;left:0;right:0;top:9px;height:2px;background:linear-gradient(90deg,var(--brass) 0%,var(--brass) 70%,var(--rule) 70%)}
+.stop{position:relative;padding-top:34px}
+.stop::before{content:"";position:absolute;top:2px;left:0;width:16px;height:16px;border-radius:50%;background:var(--bg);border:2px solid var(--brass)}
+.alt .stop::before{background:var(--surface)}
+.stop:first-child::before{background:var(--brass)}
+.stop .when{display:block;font-family:'Fraunces',Georgia,serif;font-size:1.5rem;color:var(--accent);line-height:1.1;margin-bottom:6px}
+.stop h3{font-size:1.08rem;margin-bottom:4px}
+.stop p{color:var(--muted);font-size:.93rem}
+.fine{margin-top:30px;color:var(--muted);font-size:.92rem;max-width:64ch}
+
+/* para quem */
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.fit div{padding:24px;border:1px solid var(--rule);border-radius:3px}
+.fit h3{font-size:1.25rem;margin-bottom:8px}
+.fit p{color:var(--muted)}
+
+/* faq */
+details{border-bottom:1px solid var(--rule);padding:18px 0}
+details:first-of-type{border-top:1px solid var(--rule)}
+summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--accent);font-size:1.3rem;line-height:1}
+details[open] summary::after{content:"–"}
+details p{color:var(--muted);margin-top:10px;max-width:64ch}
+
+.final{background:var(--navy);color:#F2EEE4}
+.final h2{font-size:clamp(1.7rem,4vw,2.4rem);max-width:20ch;margin-bottom:12px}
+.final p{color:rgba(242,238,228,.78);max-width:50ch;margin-bottom:26px}
+footer{background:var(--navy);color:rgba(242,238,228,.6);font-size:.85rem;padding:22px 0 28px;border-top:1px solid rgba(242,238,228,.12)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px}
+footer a{text-decoration:none}
+
+@media (max-width:760px){
+  .hero{padding:22px 0 44px}
+  .ctas .btn{flex:1 1 100%}
+  .why,.fit{grid-template-columns:1fr}
+  .track{grid-template-columns:1fr;gap:26px;padding-left:30px}
+  .track::before{left:7px;right:auto;top:4px;bottom:4px;width:2px;height:auto;background:linear-gradient(180deg,var(--brass) 0%,var(--brass) 70%,var(--rule) 70%)}
+  .stop{padding-top:0}
+  .stop::before{left:-30px;top:4px}
+  section{padding:52px 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap"><a href="index.html"><img src="banner.jpg?v=2" alt="Bezerra Strategic"></a></div>
+</header>
+<div class="back"><div class="wrap"><a href="index.html#empreendimentos">Voltar aos empreendimentos</a></div></div>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="status">Pré-lançamento, tabela zero</span>
+    <h1>Kansas City Residence</h1>
+    <p class="where">Porto Belo, Santa Catarina</p>
+    <p class="lead">Um empreendimento ainda no começo das vendas, com preço de lançamento e um lote de unidades com valor congelado. É a fase em que quem entra primeiro escolhe melhor e paga menos.</p>
+    <div class="ctas">
+      <a class="btn btn-gold" href="https://wa.me/5547988307859?text=Ol%C3%A1%2C%20Douglas!%20Vi%20o%20Kansas%20City%20Residence%20no%20seu%20site.%20Vamos%20marcar%20uma%20visita%20ou%20videochamada%3F">Marcar visita ou videochamada</a>
+      <a class="btn btn-line" href="#pagamento">Ver como funciona o pagamento</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="head">
+      <h2>Por que olhar agora</h2>
+      <p>Em pré-lançamento, o momento da compra pesa tanto quanto a unidade escolhida.</p>
+    </div>
+    <div class="why">
+      <div><h3>Tabela zero</h3><p>É o primeiro preço do empreendimento. A tabela costuma ser reajustada conforme as vendas e a obra avançam.</p></div>
+      <div><h3>Lote com preço congelado</h3><p>Um grupo limitado de unidades está com o valor travado até ser vendido. Quando essas acabam, as próximas entram com nova tabela.</p></div>
+      <div><h3>Escolha da unidade</h3><p>Com as vendas recém-abertas, você ainda escolhe andar, posição e final. Mais para frente, sobra o que os outros não quiseram.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="pagamento">
+  <div class="wrap">
+    <div class="head">
+      <h2>Como o pagamento acontece</h2>
+      <p>Do sinal até as chaves, o pagamento é diluído ao longo da obra. No estudo, eu ajusto esse fluxo para caber no seu orçamento.</p>
+    </div>
+    <div class="track">
+      <div class="stop">
+        <span class="when">Hoje</span>
+        <h3>Reserva e entrada</h3>
+        <p>Sinal para reservar a unidade e entrada que pode ser dividida em algumas vezes.</p>
+      </div>
+      <div class="stop">
+        <span class="when">Todo mês</span>
+        <h3>Até 120 parcelas</h3>
+        <p>Parcelas mensais direto com a construtora, que seguem normalmente mesmo depois das chaves.</p>
+      </div>
+      <div class="stop">
+        <span class="when">Todo ano</span>
+        <h3>Reforços anuais</h3>
+        <p>Parte do valor em reforços. Dá para trocar parte do reforço por parcela mensal maior, ou o contrário.</p>
+      </div>
+      <div class="stop">
+        <span class="when">Out/2032</span>
+        <h3>Chaves</h3>
+        <p>Entrega prevista para outubro de 2032, com uma parcela de chaves.</p>
+      </div>
+    </div>
+    <p class="fine">O saldo é corrigido pelo CUB até o final. Valores, unidades disponíveis e condições são confirmados na tabela vigente, que eu envio depois de entender o seu objetivo.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="head">
+      <h2>Para quem faz sentido</h2>
+      <p>O mesmo imóvel pode ser uma ótima ou uma péssima compra, dependendo do seu plano. Por isso a conversa começa pelo objetivo.</p>
+    </div>
+    <div class="fit">
+      <div>
+        <h3>Para investir</h3>
+        <p>Quem quer comprar na planta pensando em valorização até a entrega e não precisa do imóvel agora. Comprar na fase de tabela zero tende a deixar mais espaço para essa valorização, sem garantia de resultado.</p>
+      </div>
+      <div>
+        <h3>Para morar</h3>
+        <p>Quem planeja estar em Porto Belo nos próximos anos e prefere ir pagando aos poucos durante a obra, em vez de juntar tudo ou financiar de uma vez.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="head"><h2>Perguntas frequentes</h2></div>
+    <details>
+      <summary>Como faço para reservar uma unidade?</summary>
+      <p>Com um sinal, documento de identidade e comprovante de endereço. A partir daí a unidade sai da tabela e fica reservada para você.</p>
+    </details>
+    <details>
+      <summary>A entrada pode ser parcelada?</summary>
+      <p>Sim, em algumas vezes. O número exato de parcelas a gente define no estudo, junto com o resto do fluxo.</p>
+    </details>
+    <details>
+      <summary>Como funciona a correção das parcelas?</summary>
+      <p>O saldo é corrigido pelo CUB até o final do pagamento. Eu mostro no estudo o efeito disso ao longo do tempo.</p>
+    </details>
+    <details>
+      <summary>Vou poder alugar por temporada?</summary>
+      <p>As regras de locação por temporada são definidas na convenção do condomínio, que é feita mais perto da entrega.</p>
+    </details>
+    <details>
+      <summary>Tem desconto à vista?</summary>
+      <p>Não nesta condição. O que dá para ajustar é o desenho do pagamento: entrada, reforços e parcelas mensais.</p>
+    </details>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Quer ver as unidades disponíveis?</h2>
+    <p>Em uma visita ou videochamada rápida eu mostro as unidades do lote congelado, as fotos e a localização, e monto o fluxo de pagamento para o seu caso.</p>
+    <div class="ctas">
+      <a class="btn btn-gold" href="https://wa.me/5547988307859?text=Ol%C3%A1%2C%20Douglas!%20Quero%20ver%20as%20unidades%20do%20Kansas%20City%20Residence.%20Vamos%20marcar%20uma%20visita%20ou%20videochamada%3F">Marcar visita ou videochamada</a>
+      <a class="btn btn-line" href="index.html#empreendimentos">Ver outros empreendimentos</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Douglas Bezerra, Bezerra Strategic</span>
+    <span><a href="tel:+5547988307859">(47) 98830-7859</a> &nbsp; <a href="mailto:douglas.bezerra@outlook.com">douglas.bezerra@outlook.com</a></span>
+  </div>
+</footer>
+
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/51784410.js"></script>
+</body>
+</html>
