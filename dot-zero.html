@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dot Zero, Itajaí | Douglas Bezerra</title>
+<meta name="description" content="Dot Zero, studios de 24 a 39 m² no Centro de Itajaí, da CEG+ Incorporadora. Entrega prevista para dezembro de 2030, com simulação de valorização.">
+<meta property="og:title" content="Dot Zero, Itajaí">
+<meta property="og:description" content="Dot Zero, studios de 24 a 39 m² no Centro de Itajaí, da CEG+ Incorporadora. Entrega prevista para dezembro de 2030, com simulação de valorização.">
+<meta property="og:image" content="https://bezerrastrategic.github.io/simulador/img/dot-zero-fachada.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bezerrastrategic.github.io/simulador/dot-zero.html">
+<meta property="og:locale" content="pt_BR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B1D33; --navy-2:#122841; --brass:#B8963E; --brass-light:#D9BE72;
+  --bg:#F6F3EC; --surface:#FFFFFF; --ink:#0B1D33; --muted:#5C6B7A;
+  --rule:rgba(11,29,51,0.12); --accent:#8A6E24;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0A1729; --surface:#122841; --ink:#F2EEE4; --muted:#A7B2BE;
+    --rule:rgba(242,238,228,0.14); --accent:#D9BE72; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0A1729; --surface:#122841; --ink:#F2EEE4; --muted:#A7B2BE;
+  --rule:rgba(242,238,228,0.14); --accent:#D9BE72; color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,-apple-system,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:600;letter-spacing:-0.01em;line-height:1.15}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--brass-light);outline-offset:3px}
+
+.top{background:var(--navy);padding:18px 0 6px}
+.top img{width:100%;max-width:420px;margin:0 auto}
+.back{background:var(--navy);padding:6px 0 0}
+.back a{color:var(--brass-light);font-size:.88rem;text-decoration:none}
+.back a:hover{text-decoration:underline}
+
+.hero{background:var(--navy);color:#F2EEE4;padding:30px 0 56px}
+.status{display:inline-block;border:1px solid var(--brass);color:var(--brass-light);font-size:.85rem;padding:4px 12px;border-radius:2px;margin-bottom:18px}
+.hero h1{font-size:clamp(2.3rem,6.4vw,4rem);margin-bottom:8px}
+.hero .where{color:rgba(242,238,228,.72);font-size:1.05rem;margin-bottom:22px}
+.hero .lead{color:rgba(242,238,228,.84);font-size:1.08rem;max-width:50ch;margin-bottom:28px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:3px;font-weight:600;font-size:.95rem;text-decoration:none;transition:background .15s}
+.btn-gold{background:var(--brass);color:var(--navy)}
+.btn-gold:hover{background:var(--brass-light)}
+.btn-line{border:1px solid rgba(242,238,228,.35);color:#F2EEE4}
+.btn-line:hover{background:rgba(242,238,228,.08)}
+
+section{padding:64px 0}
+.head{max-width:620px;margin-bottom:32px}
+.head h2{font-size:clamp(1.55rem,3.4vw,2.1rem);margin-bottom:10px}
+.head p{color:var(--muted)}
+.alt{background:var(--surface);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+
+/* por que agora */
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.why div{padding-top:16px;border-top:1px solid var(--rule)}
+.why h3{font-size:1.2rem;margin-bottom:6px}
+.why p{color:var(--muted);font-size:.96rem}
+
+/* linha do tempo do pagamento: o elemento marcante */
+.track{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:0 18px;margin-top:8px}
+.track::before{content:"";position:absolute;left:0;right:0;top:9px;height:2px;background:linear-gradient(90deg,var(--brass) 0%,var(--brass) 70%,var(--rule) 70%)}
+.stop{position:relative;padding-top:34px}
+.stop::before{content:"";position:absolute;top:2px;left:0;width:16px;height:16px;border-radius:50%;background:var(--bg);border:2px solid var(--brass)}
+.alt .stop::before{background:var(--surface)}
+.stop:first-child::before{background:var(--brass)}
+.stop .when{display:block;font-family:'Fraunces',Georgia,serif;font-size:1.5rem;color:var(--accent);line-height:1.1;margin-bottom:6px}
+.stop h3{font-size:1.08rem;margin-bottom:4px}
+.stop p{color:var(--muted);font-size:.93rem}
+.fine{margin-top:30px;color:var(--muted);font-size:.92rem;max-width:64ch}
+
+/* para quem */
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.fit div{padding:24px;border:1px solid var(--rule);border-radius:3px}
+.fit h3{font-size:1.25rem;margin-bottom:8px}
+.fit p{color:var(--muted)}
+
+/* faq */
+details{border-bottom:1px solid var(--rule);padding:18px 0}
+details:first-of-type{border-top:1px solid var(--rule)}
+summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--accent);font-size:1.3rem;line-height:1}
+details[open] summary::after{content:"–"}
+details p{color:var(--muted);margin-top:10px;max-width:64ch}
+
+.final{background:var(--navy);color:#F2EEE4}
+.final h2{font-size:clamp(1.7rem,4vw,2.4rem);max-width:20ch;margin-bottom:12px}
+.final p{color:rgba(242,238,228,.78);max-width:50ch;margin-bottom:26px}
+footer{background:var(--navy);color:rgba(242,238,228,.6);font-size:.85rem;padding:22px 0 28px;border-top:1px solid rgba(242,238,228,.12)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px}
+footer a{text-decoration:none}
+
+@media (max-width:760px){
+  .hero{padding:22px 0 44px}
+  .ctas .btn{flex:1 1 100%}
+  .why,.fit{grid-template-columns:1fr}
+  .track{grid-template-columns:1fr;gap:26px;padding-left:30px}
+  .track::before{left:7px;right:auto;top:4px;bottom:4px;width:2px;height:auto;background:linear-gradient(180deg,var(--brass) 0%,var(--brass) 70%,var(--rule) 70%)}
+  .stop{padding-top:0}
+  .stop::before{left:-30px;top:4px}
+  section{padding:52px 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.hero-split{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+.hero-fig{margin:0}
+.hero-fig img{width:100%;max-height:520px;object-fit:cover;border-radius:3px}
+.hero-fig figcaption{color:rgba(242,238,228,.6);font-size:.8rem;margin-top:8px}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:8px}
+.gal figure{margin:0}
+.gal img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:3px}
+.gal figcaption{color:var(--muted);font-size:.85rem;margin-top:8px}
+.amen{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px;border-top:1px solid var(--rule)}
+.amen li{padding:13px 2px;border-bottom:1px solid var(--rule);font-size:.96rem}
+.units{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px}
+.units div{padding-top:16px;border-top:2px solid var(--brass)}
+.units h3{font-size:1.2rem;margin-bottom:6px}
+.units p{color:var(--muted);font-size:.96rem}
+.cond{max-width:64ch;color:var(--muted)}
+.legal{margin-top:10px;font-size:.78rem;color:rgba(242,238,228,.5);max-width:90ch;line-height:1.5}
+@media (max-width:760px){
+  .hero-split{grid-template-columns:1fr;gap:26px}
+  .hero-fig img{max-height:360px}
+  .amen{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap"><a href="index.html"><img src="banner.jpg?v=2" alt="Bezerra Strategic"></a></div>
+</header>
+<div class="back"><div class="wrap"><a href="index.html#empreendimentos">Voltar aos empreendimentos</a></div></div>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-split">
+      <div>
+        <span class="status">Entrega prevista: dezembro de 2030</span>
+        <h1>Dot Zero</h1>
+        <p class="where">Centro de Itajaí, Rua Tijucas esquina com Rua Samuel Heusi</p>
+        <p class="lead">Studios de 24 a 39 m² no ponto mais central de Itajaí, pensados para morar, trabalhar ou alugar. Uma incorporação da CEG+.</p>
+        <div class="ctas">
+          <a class="btn btn-gold" href="https://wa.me/5547988307859?text=Ol%C3%A1%2C%20Douglas%21%20Vi%20o%20Dot%20Zero%20no%20seu%20site.%20Vamos%20marcar%20uma%20visita%20ou%20videochamada%3F">Marcar visita ou videochamada</a>
+          <a class="btn btn-line" href="#projecao">Simular a valorização</a>
+        </div>
+      </div>
+      <figure class="hero-fig"><img src="img/dot-zero-fachada.jpg" alt="Fachada do Dot Zero, em imagem ilustrativa" width="520" height="654"><figcaption>Imagem ilustrativa.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="head">
+      <h2>Por que olhar o Dot Zero</h2>
+      <p>Localização, formato de unidade e estrutura de serviços trabalham juntos.</p>
+    </div>
+    <div class="why">
+      <div><h3>Endereço central</h3><p>Hospitais, universidades, comércio e as principais vias da cidade ficam a poucos passos. O aeroporto de Navegantes está a 7 km, as praias a 6 km e Balneário Camboriú a 9 km.</p></div>
+      <div><h3>Feito para locação</h3><p>Fechadura eletrônica, concierge, lavanderia 24 horas e um sistema de gestão parceiro do condomínio facilitam o aluguel anual e o de temporada.</p></div>
+      <div><h3>Estrutura no prédio</h3><p>Coworking, academia, piscina aquecida e saunas no rooftop, espaços gourmet e um mini mercado autônomo 24 horas dentro do empreendimento.</p></div>
+    </div>
+  </div>
+</section>
+<section class="alt">
+  <div class="wrap">
+    <div class="head">
+      <h2>Por dentro do projeto</h2>
+    </div>
+    <div class="gal">
+      <figure><img src="img/dot-zero-lazer.jpg" alt="Piscina aquecida do Dot Zero, em imagem ilustrativa" loading="lazy"><figcaption>Piscina aquecida no rooftop</figcaption></figure>
+      <figure><img src="img/dot-zero-studio.jpg" alt="Studio tipo do Dot Zero, em imagem ilustrativa" loading="lazy"><figcaption>Studio tipo, com opção de pack mobiliário</figcaption></figure>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="wrap">
+    <div class="head">
+      <h2>O que o prédio oferece</h2>
+      <p>Áreas comuns entregues equipadas, decoradas, climatizadas e com Wi-Fi.</p>
+    </div>
+    <ul class="amen">
+      <li>Concierge</li>
+      <li>Mini mercado autônomo 24 horas</li>
+      <li>Lavanderia profissional 24 horas</li>
+      <li>Oficina compartilhada</li>
+      <li>Coworking</li>
+      <li>Piscina aquecida, sauna seca e sauna úmida</li>
+      <li>Academia interna e externa</li>
+      <li>Três espaços gourmet</li>
+      <li>Sala de convivência e sala de jogos</li>
+      <li>Patinete point</li>
+      <li>Quatro elevadores de alta velocidade</li>
+      <li>Gerador para as áreas comuns</li>
+      <li>CFTV com acesso remoto</li>
+      <li>Fechadura eletrônica nos studios</li>
+      <li>Manta acústica entre as unidades</li>
+      <li>Água quente central</li>
+    </ul>
+  </div>
+</section>
+<section class="alt">
+  <div class="wrap">
+    <div class="head">
+      <h2>As unidades</h2>
+      <p>Plantas otimizadas, que atendem moradia e locação.</p>
+    </div>
+    <div class="units">
+      <div><h3>Studios de 24 a 39 m²</h3><p>Há também unidades diferenciadas de 32 a 39 m² e uma de 60 m², além de salas comerciais no térreo.</p></div>
+      <div><h3>Pack mobiliário</h3><p>As unidades podem ser entregues mobiliadas, decoradas e equipadas pela construtora. Consulte as opções.</p></div>
+      <div><h3>Serviços sob demanda</h3><p>Limpeza, lavanderia, pequenos reparos, personal trainer e gestão de locação, contratados quando você precisar.</p></div>
+      <div><h3>Vagas</h3><p>A vaga não está incluída na unidade e pode ser adquirida separadamente. O estacionamento é gerido por empresa terceirizada.</p></div>
+    </div>
+  </div>
+</section>
+<section id="pagamento">
+  <div class="wrap">
+    <div class="head">
+      <h2>Como o pagamento acontece</h2>
+      <p>Do sinal até as chaves, o pagamento é dividido em entrada, parcelas mensais e reforços anuais. No estudo, eu comparo o fluxo com o seu orçamento.</p>
+    </div>
+    <div class="track">
+      <div class="stop"><span class="when">Hoje</span><h3>Entrada de 5%</h3><p>Uma parcela para reservar a unidade.</p></div>
+      <div class="stop"><span class="when">Todo mês</span><h3>120 parcelas (80%)</h3><p>Parcelas mensais, que seguem também depois das chaves.</p></div>
+      <div class="stop"><span class="when">Todo ano</span><h3>10 reforços (15%)</h3><p>Parcelas anuais ao longo do fluxo.</p></div>
+      <div class="stop"><span class="when">Dez/2030</span><h3>Chaves</h3><p>Entrega prevista para dezembro de 2030.</p></div>
+    </div>
+    <p class="fine">Até as chaves, o saldo é corrigido pelo INCC. Depois das chaves, a correção passa para o IPCA mais juros, conforme a tabela vigente. Existe também uma condição com fluxo mais curto, com quitação até a entrega. Valores e disponibilidade são confirmados na tabela do mês, que eu envio depois de entender o seu objetivo.</p>
+  </div>
+</section>
+<section id="projecao" class="alt"></section>
+<script src="projecao.js"></script>
+<script>Projecao.mount("#projecao", {"entrega": "2030-12", "entregaTxt": "dezembro de 2030", "fluxos": [{"id": "padrao", "label": "120 parcelas", "entrada": 5, "mensal": {"n": 120, "pct": 80}, "reforco": {"n": 10, "pct": 15}, "chaves": 0, "nota": "5% de entrada, 120 parcelas mensais (80%) e 10 reforços anuais (15%)."}, {"id": "investidor", "label": "Quitação até a entrega", "entrada": 5, "mensal": {"n": 49, "pct": 80}, "reforco": {"n": 4, "pct": 15}, "chaves": 0, "nota": "5% de entrada, 49 parcelas mensais e 4 reforços anuais, com tabela própria e quitação até a entrega."}], "wa": "https://wa.me/5547988307859?text=Ol%C3%A1%2C%20Douglas%21%20Fiz%20a%20simula%C3%A7%C3%A3o%20de%20valoriza%C3%A7%C3%A3o%20do%20Dot%20Zero%20no%20seu%20site.%20Vamos%20marcar%20uma%20visita%20ou%20videochamada%20para%20ver%20o%20meu%20caso%3F"});</script>
+<section>
+  <div class="wrap">
+    <div class="head">
+      <h2>Para quem faz sentido</h2>
+      <p>O mesmo studio serve a perfis diferentes. A conversa começa pelo seu objetivo.</p>
+    </div>
+    <div class="fit">
+      <div><h3>Para investir</h3><p>Quem busca valorização até a entrega e, depois, renda de locação anual ou por temporada. O resultado depende do mercado e não é garantido.</p></div>
+      <div><h3>Para morar ou trabalhar</h3><p>Quem quer viver no centro sem depender de carro, com coworking, lavanderia e serviços no próprio prédio.</p></div>
+    </div>
+  </div>
+</section>
+<section class="alt">
+  <div class="wrap">
+    <div class="head">
+      <h2>Perguntas frequentes</h2>
+    </div>
+    <details>
+      <summary>Posso morar e também alugar?</summary>
+      <p>Sim. Os studios foram projetados para os dois usos. O condomínio terá um sistema de gestão parceiro para quem quiser alugar, por contrato anual ou em plataformas de temporada.</p>
+    </details>
+    <details>
+      <summary>A vaga de garagem está incluída?</summary>
+      <p>Não. A vaga pode ser comprada separadamente, e o estacionamento é gerido por uma empresa terceirizada.</p>
+    </details>
+    <details>
+      <summary>Existe condição para investidor?</summary>
+      <p>Sim. Há uma tabela com fluxo mais curto, com quitação até a entrega. Eu mostro as duas e comparo para o seu caso.</p>
+    </details>
+    <details>
+      <summary>Como funcionam as 120 parcelas?</summary>
+      <p>Você paga 5% de entrada, 80% em parcelas mensais direto com a incorporadora e 15% em reforços anuais.</p>
+    </details>
+    <details>
+      <summary>Quando entrega?</summary>
+      <p>A previsão é dezembro de 2030, conforme a tabela vigente.</p>
+    </details>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Quer ver as unidades e comparar os fluxos?</h2>
+    <p>Em uma visita ou videochamada rápida eu mostro as plantas, o fluxo de pagamento e a simulação para o seu caso.</p>
+    <div class="ctas">
+      <a class="btn btn-gold" href="https://wa.me/5547988307859?text=Ol%C3%A1%2C%20Douglas%21%20Quero%20ver%20as%20unidades%20do%20Dot%20Zero.%20Vamos%20marcar%20uma%20visita%20ou%20videochamada%3F">Marcar visita ou videochamada</a>
+      <a class="btn btn-line" href="index.html#empreendimentos">Ver outros empreendimentos</a>
+    </div>
+    <p class="legal">Imagens ilustrativas. Mobiliário, decoração e equipamentos são sugestões e podem sofrer variações conforme os projetos, de acordo com a Lei nº 4.591/64. Registro de incorporação nº 91.455, 1º Ofício de Registro de Imóveis de Itajaí. Incorporação CEG+ Incorporadora.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Douglas Bezerra, Bezerra Strategic</span>
+    <span><a href="tel:+5547988307859">(47) 98830-7859</a> &nbsp; <a href="mailto:douglas.bezerra@outlook.com">douglas.bezerra@outlook.com</a></span>
+  </div>
+</footer>
+
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/51784410.js"></script>
+</body>
+</html>
