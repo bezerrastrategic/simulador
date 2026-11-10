@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Conecta Towers, Porto Belo | Douglas Bezerra</title>
-<meta name="description" content="Conecta Towers, empreendimento da MAXCES em Porto Belo, em frente ao VivaPark, com entrega prevista para dezembro de 2032 e financiamento direto com a construtora.">
+<meta name="description" content="Conecta Towers, duas torres da MAXCES em Porto Belo, em frente ao VivaPark, com entrega prevista para dezembro de 2032, financiamento direto com a construtora e simulação de valorização.">
 <meta property="og:title" content="Conecta Towers, Porto Belo">
-<meta property="og:description" content="Conecta Towers, empreendimento da MAXCES em Porto Belo, em frente ao VivaPark, com entrega prevista para dezembro de 2032 e financiamento direto com a construtora.">
+<meta property="og:description" content="Conecta Towers, duas torres da MAXCES em Porto Belo, em frente ao VivaPark, com entrega prevista para dezembro de 2032, financiamento direto com a construtora e simulação de valorização.">
 <meta property="og:image" content="https://bezerrastrategic.github.io/simulador/img/conecta-fachada.jpg">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bezerrastrategic.github.io/simulador/conecta.html">
@@ -156,10 +156,10 @@ footer a{text-decoration:none}
         <span class="status">Entrega prevista: dezembro de 2032</span>
         <h1>Conecta Towers</h1>
         <p class="where">MAXCES, Porto Belo, em frente ao VivaPark Porto Belo</p>
-        <p class="lead">Um projeto moderno e funcional em Porto Belo, com financiamento direto com a construtora e atendimento por videochamada para quem mora fora do Brasil.</p>
+        <p class="lead">Duas torres, Mar e Park, com flats, apartamentos de 2 suítes e lofts, e financiamento direto com a construtora. Atendimento por videochamada para quem mora fora do Brasil.</p>
         <div class="ctas">
           <a class="btn btn-gold" href="https://wa.me/5547988307859?text=Ol%C3%A1%2C%20Douglas%21%20Vi%20o%20Conecta%20Towers%20no%20seu%20site.%20Vamos%20marcar%20uma%20visita%20ou%20videochamada%3F">Marcar visita ou videochamada</a>
-          <a class="btn btn-line" href="#pagamento">Ver as condições</a>
+          <a class="btn btn-line" href="#projecao">Simular a valorização</a>
         </div>
       </div>
       <figure class="hero-fig"><img src="img/conecta-fachada.jpg" alt="Conecta Towers, em imagem ilustrativa" width="598" height="622"><figcaption>Imagem ilustrativa.</figcaption></figure>
@@ -195,17 +195,38 @@ footer a{text-decoration:none}
     </ul>
   </div>
 </section>
-<section id="pagamento">
+<section>
   <div class="wrap">
     <div class="head">
-      <h2>Condições de pagamento</h2>
-      <p>Financiamento direto com a construtora, sem depender de banco.</p>
+      <h2>As unidades</h2>
+      <p>Duas torres, Mar e Park, com tipologias para morar e para investir.</p>
     </div>
-    <p class="cond">O fluxo é composto por entrada, 120 parcelas mensais e reforços, com entrega prevista para dezembro de 2032.</p>
-    <p class="cond">Valores e unidades disponíveis mudam com a tabela vigente. Eu envio a tabela depois de entender o seu objetivo.</p>
-
+    <div class="units">
+      <div><h3>Flats de 36,5 a 37,3 m²</h3><p>Unidades compactas, a porta de entrada para quem busca um ticket menor.</p></div>
+      <div><h3>2 suítes de 73,4 m²</h3><p>Apartamentos de 2 suítes, para morar ou para um perfil de locação diferente.</p></div>
+      <div><h3>Lofts</h3><p>Lofts studio de 54 a 55,7 m² e lofts de apartamento de 108 a 110 m².</p></div>
+      <div><h3>Salas comerciais e cobertura</h3><p>Também há salas comerciais e um apartamento de 231 m².</p></div>
+    </div>
   </div>
 </section>
+<section class="alt" id="pagamento">
+  <div class="wrap">
+    <div class="head">
+      <h2>Como o pagamento acontece</h2>
+      <p>Financiamento direto com a construtora, sem depender de banco.</p>
+    </div>
+    <div class="track">
+      <div class="stop"><span class="when">Hoje</span><h3>Entrada</h3><p>Uma parcela para reservar a unidade.</p></div>
+      <div class="stop"><span class="when">Todo mês</span><h3>120 parcelas</h3><p>Parcelas mensais, direto com a construtora.</p></div>
+      <div class="stop"><span class="when">Todo ano</span><h3>10 reforços</h3><p>Parcelas anuais ao longo do fluxo.</p></div>
+      <div class="stop"><span class="when">Dez/2032</span><h3>Entrega</h3><p>Entrega prevista para dezembro de 2032.</p></div>
+    </div>
+    <p class="fine">Valores e unidades disponíveis seguem a tabela vigente, que eu envio depois de entender o seu objetivo.</p>
+  </div>
+</section>
+<section id="projecao" class=""></section>
+<script src="projecao.js"></script>
+<script>Projecao.mount("#projecao", {"entrega": "2032-12", "entregaTxt": "dezembro de 2032", "tabelaRef": "novembro de 2026", "fluxos": [{"id": "promo", "label": "Unidade promocional", "entrada": 6, "mensal": {"n": 120, "pct": 37.5}, "reforco": {"n": 10, "pct": 56.5}, "chaves": 0, "valor": 539000, "valorNota": "Menor valor entre as unidades promocionais disponíveis: flat de 37 m² (novembro/2026).", "nota": "Estrutura de referência: 6% de entrada, 120 parcelas mensais (37,5%) e 10 reforços anuais (56,5%)."}, {"id": "comercial", "label": "Tabela comercial", "entrada": 6, "mensal": {"n": 120, "pct": 37.5}, "reforco": {"n": 10, "pct": 56.5}, "chaves": 0, "valor": 636803, "valorNota": "Menor valor disponível na tabela comercial: flat de 36,5 m² (novembro/2026).", "nota": "Estrutura de referência: 6% de entrada, 120 parcelas mensais (37,5%) e 10 reforços anuais (56,5%)."}], "wa": "https://wa.me/5547988307859?text=Ol%C3%A1%2C%20Douglas%21%20Fiz%20a%20simula%C3%A7%C3%A3o%20de%20valoriza%C3%A7%C3%A3o%20do%20Conecta%20Towers%20no%20seu%20site.%20Vamos%20marcar%20uma%20visita%20ou%20videochamada%20para%20ver%20o%20meu%20caso%3F"});</script>
 <section class="alt">
   <div class="wrap">
     <div class="head">
@@ -230,6 +251,10 @@ footer a{text-decoration:none}
     <details>
       <summary>Preciso de financiamento bancário?</summary>
       <p>Não. O financiamento é direto com a construtora.</p>
+    </details>
+    <details>
+      <summary>Qual a diferença entre as torres Mar e Park?</summary>
+      <p>São duas torres do mesmo empreendimento. Eu mostro as unidades disponíveis de cada uma e comparo para o seu caso.</p>
     </details>
     <details>
       <summary>Quando entrega?</summary>

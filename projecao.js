@@ -87,12 +87,13 @@
     }
     var T = monthsUntil(cfg.entrega);
     var d = cfg.padrao || { g: 8, incc: 6.75, rf: 12 };
-    var state = { fluxo: 0, g: d.g, incc: d.incc, rf: d.rf, valor: 100000 };
+    var ix = cfg.indice || 'INCC';
+    var state = { fluxo: 0, g: d.g, incc: d.incc, rf: d.rf, valor: cfg.fluxos[0].valor || 100000, edited: false };
     var h = '';
     h += '<div class="wrap"><div class="head"><h2>E se o imóvel valorizar?</h2>';
     h += '<p>Pagar parcelado enquanto o imóvel inteiro valoriza é o que chamamos de alavancagem. Ajuste as hipóteses e veja o efeito no seu caso.</p></div>';
     h += '<div class="pj-grid"><div class="pj-ctl">';
-    h += '<div class="pj-f"><label for="pj-valor">Valor do imóvel (R$)</label><input class="pj-in" id="pj-valor" inputmode="numeric" value="100.000" autocomplete="off"><small>Troque pelo valor da unidade que você está avaliando. Os percentuais não mudam.</small></div>';
+    h += '<div class="pj-f"><label for="pj-valor">Valor do imóvel (R$)</label><input class="pj-in" id="pj-valor" inputmode="numeric" value="' + state.valor.toLocaleString('pt-BR') + '" autocomplete="off"><small id="pj-vnota"></small></div>';
     if (cfg.fluxos.length > 1) {
       h += '<div class="pj-f"><span class="pj-lbl" id="pj-fl">Fluxo de pagamento</span><div class="pj-chips" role="group" aria-labelledby="pj-fl">';
       cfg.fluxos.forEach(function (f, k) { h += '<button type="button" class="pj-chip" data-fl="' + k + '" aria-pressed="' + (k === 0) + '">' + f.label + '</button>'; });
@@ -101,7 +102,7 @@
     h += '<div class="pj-f"><label for="pj-g">Valorização do imóvel ao ano</label><div class="pj-row"><input type="range" id="pj-g" min="0" max="15" step="0.5" value="' + state.g + '"><output id="pj-go" for="pj-g"></output></div>';
     h += '<div class="pj-chips" role="group" aria-label="Cenários de valorização"><button type="button" class="pj-chip" data-g="5">5% mais cauteloso</button><button type="button" class="pj-chip" data-g="8">8% intermediário</button><button type="button" class="pj-chip" data-g="12">12% mais aquecido</button></div>';
     h += '<small>Referência: o FipeZAP mostrou para Itajaí cerca de 5,4% em 12 meses (maio/2026) e 12,2% em 12 meses (julho/2024). Valorização passada não garante a futura.</small></div>';
-    h += '<div class="pj-f"><label for="pj-i">Correção do saldo (INCC) ao ano</label><div class="pj-row"><input type="range" id="pj-i" min="0" max="12" step="0.25" value="' + state.incc + '"><output id="pj-io" for="pj-i"></output></div><small>INCC-M em 12 meses até outubro/2026: 6,75% (FGV).</small></div>';
+    h += '<div class="pj-f"><label for="pj-i">Correção do saldo (' + ix + ') ao ano</label><div class="pj-row"><input type="range" id="pj-i" min="0" max="12" step="0.25" value="' + state.incc + '"><output id="pj-io" for="pj-i"></output></div><small>' + (cfg.indiceNota || 'INCC-M em 12 meses até outubro/2026: 6,75% (FGV).') + '</small></div>';
     h += '<div class="pj-f"><label for="pj-r">Renda fixa alternativa ao ano (líquida)</label><div class="pj-row"><input type="range" id="pj-r" min="0" max="20" step="0.5" value="' + state.rf + '"><output id="pj-ro" for="pj-r"></output></div><small>Selic em 13,75% ao ano (Copom, novembro/2026). Cerca de 12% é uma referência líquida de imposto.</small></div>';
     h += '</div><div><div class="pj-res" aria-live="polite" id="pj-out"></div>';
     h += '<a class="btn btn-gold pj-cta" href="' + cfg.wa + '">Quero essa simulação com a minha situação</a></div></div>';
@@ -120,12 +121,13 @@
       Array.prototype.forEach.call(root.querySelectorAll('[data-g]'), function (b) { b.setAttribute('aria-pressed', String(parseFloat(b.getAttribute('data-g')) === state.g)); });
       Array.prototype.forEach.call(root.querySelectorAll('[data-fl]'), function (b) { b.setAttribute('aria-pressed', String(parseInt(b.getAttribute('data-fl'), 10) === state.fluxo)); });
       if ($('pj-flnota')) $('pj-flnota').textContent = f.nota || '';
+      $('pj-vnota').textContent = (f.valorNota ? f.valorNota + ' ' : '') + 'Troque pelo valor da unidade que você está avaliando.';
       var o = '';
       o += '<div class="pj-big">' + (r.profit >= 0 ? '+' : '') + pc(r.roi * 100, 0) + '</div>';
       o += '<div class="pj-bigl">sobre o que você paga até a entrega' + (r.irr !== null ? ', cerca de ' + pc(r.irr * 100, 1) + ' ao ano' : '') + '</div>';
       o += '<div class="pj-list">';
       o += '<div class="pj-li"><span>O imóvel inteiro valoriza</span><span>' + pc((r.V / 100 - 1) * 100, 0) + '</span></div>';
-      o += '<div class="pj-li"><span>Você paga até a entrega (com INCC)</span><span>' + brl(r.paid * s) + ' · ' + pc(r.basePaid, 0) + ' do valor</span></div>';
+      o += '<div class="pj-li"><span>Você paga até a entrega (com ' + ix + ')</span><span>' + brl(r.paid * s) + ' · ' + pc(r.basePaid, 0) + ' do valor</span></div>';
       o += '<div class="pj-li"><span>Valor estimado na entrega</span><span>' + brl(r.V * s) + '</span></div>';
       o += '<div class="pj-li"><span>Saldo restante na entrega</span><span>' + brl(r.rem * s) + '</span></div>';
       o += '<div class="pj-li"><span>Ganho estimado</span><span>' + brl(r.profit * s) + '</span></div>';
@@ -140,20 +142,25 @@
       o += '<div class="pj-verdict">' + v + '</div>';
       o += '<div class="pj-be">Para empatar com a correção do saldo, o imóvel precisa valorizar cerca de <b>' + pc(gbe * 100, 1) + ' ao ano</b>. Para igualar a renda fixa, cerca de <b>' + pc(grf * 100, 1) + ' ao ano</b>.</div>';
       $('pj-out').innerHTML = o;
-      $('pj-fine').textContent = 'Simulação ilustrativa, com hipóteses ajustáveis por você. Não é promessa, garantia nem recomendação de investimento, e a valorização real pode ser menor, igual ou maior. Entrega prevista em ' + cfg.entregaTxt + ' (cerca de ' + T + ' meses a partir de hoje). Reforços considerados anuais. Não estão considerados: saldo após as chaves, ITBI, comissão de venda, imposto sobre ganho de capital, condomínio e renda de aluguel. Valores e condições seguem a tabela vigente da incorporadora.';
+      $('pj-fine').textContent = 'Simulação ilustrativa, com hipóteses ajustáveis por você. Não é promessa, garantia nem recomendação de investimento, e a valorização real pode ser menor, igual ou maior. Entrega prevista em ' + cfg.entregaTxt + ' (cerca de ' + T + ' meses a partir de hoje). Reforços considerados anuais. Não estão considerados: saldo após as chaves, ITBI, comissão de venda, imposto sobre ganho de capital, condomínio e renda de aluguel. Valores e condições seguem a tabela vigente da incorporadora' + (cfg.tabelaRef ? ' (referência: ' + cfg.tabelaRef + ')' : '') + '.';
     }
     root.addEventListener('click', function (e) {
       var b = e.target.closest ? e.target.closest('button') : null;
       if (!b) return;
       if (b.hasAttribute('data-g')) { state.g = parseFloat(b.getAttribute('data-g')); $('pj-g').value = state.g; render(); }
-      if (b.hasAttribute('data-fl')) { state.fluxo = parseInt(b.getAttribute('data-fl'), 10); render(); }
+      if (b.hasAttribute('data-fl')) {
+        state.fluxo = parseInt(b.getAttribute('data-fl'), 10);
+        if (!state.edited && cfg.fluxos[state.fluxo].valor) { state.valor = cfg.fluxos[state.fluxo].valor; $('pj-valor').value = state.valor.toLocaleString('pt-BR'); }
+        render();
+      }
     });
     $('pj-g').addEventListener('input', function (e) { state.g = parseFloat(e.target.value); render(); });
     $('pj-i').addEventListener('input', function (e) { state.incc = parseFloat(e.target.value); render(); });
     $('pj-r').addEventListener('input', function (e) { state.rf = parseFloat(e.target.value); render(); });
     $('pj-valor').addEventListener('input', function (e) {
       var n = parseInt(String(e.target.value).replace(/\D/g, ''), 10);
-      state.valor = isNaN(n) || n <= 0 ? 100000 : n;
+      state.edited = true;
+      state.valor = isNaN(n) || n <= 0 ? (cfg.fluxos[state.fluxo].valor || 100000) : n;
       render();
     });
     $('pj-valor').addEventListener('blur', function (e) { e.target.value = state.valor.toLocaleString('pt-BR'); });
